@@ -1,3 +1,13 @@
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue'
+
+const is_expanded = ref(false)
+const ToggleMenu = () => {
+  is_expanded.value = !is_expanded.value
+}
+</script>
+
 <template>
   <aside :class="`${is_expanded ? 'is-expanded' : ''}`">
 
@@ -24,18 +34,6 @@
   <RouterView />
 
 </template>
-
-<script setup>
-
-import { ref } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
-
-const is_expanded = ref(false)
-const ToggleMenu = () => {
-  is_expanded.value = !is_expanded.value
-}
-
-</script>
 
 <style lang="scss" scoped>
 aside {

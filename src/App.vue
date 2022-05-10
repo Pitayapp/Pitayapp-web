@@ -4,18 +4,20 @@ import SideBar from '@/components/SideBar.vue'
 </script>
 
 <template>
-  <header>
 
-    <RouterLink />
-    <SideBar />
-  </header>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/discover">Discover</router-link>
+    <router-link to="/upload">Upload</router-link>
+    <router-link to="/collections">Collections</router-link>
+  </div>
+  <router-view />
 
+  <SideBar />
   <RouterView />
 </template>
 
 <style lang="scss">
-@import '@/assets/base.css';
-
 :root {
   --primary: #F9458E;
   --secondary: #FFF;
