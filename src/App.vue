@@ -21,7 +21,7 @@ import SideBar from '@/components/SideBar.vue'
 :root {
   --primary: #F9458E;
   --secondary: #FFF;
-  --cursor-color: rgb(221, 220, 220, 0.5);
+  --cursor-color: rgb(221, 220, 220, 0.2);
   --sidebar-width: 300px;
 }
 
