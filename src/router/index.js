@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import DiscoverView from '@/views/DiscoverView.vue'
 import UploadView from '@/views/UploadView.vue'
 import CollectionsView from '@/views/CollectionsView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,12 @@ const router = createRouter({
       path: '/collections',
       name: 'collections',
       component: CollectionsView
+      /* component: () => import('../views/CollectionsView.vue') */
+    },
+        {
+      path: '/profile',
+      name: 'profile',
+      component: ProfileView
       /* component: () => import('../views/CollectionsView.vue') */
     },
   ]
