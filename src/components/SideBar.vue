@@ -16,6 +16,7 @@ const ToggleMenu = () => {
     <div class="top-elements">
       <button class="menu-icon" @click="ToggleMenu">
         <img src="../assets/svg/menu-icon.svg" alt="" class="menu">
+        <h2 class="toggle-title">Menú</h2>
       </button>
 
 
@@ -37,6 +38,9 @@ const ToggleMenu = () => {
             src="../assets/svg/collections-iconn.svg" alt=""></button>
         <h2>Collections</h2>
       </RouterLink>
+      <RouterLink class="profile-link" to="/profile"><button><img class="profile-icon" src="../assets/svg/user-icon.svg"
+            alt=""></button>
+      </RouterLink>
     </div>
   </aside>
   <RouterView />
@@ -44,133 +48,267 @@ const ToggleMenu = () => {
 </template>
 
 <style lang="scss" scoped>
-aside {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--primary);
-  width: calc(5rem + 32px);
-  min-height: 100vh;
-  overflow: hidden;
-  padding: 1rem;
-  transition: 0.5s ease-out;
-  color: var(--secondary);
-
-
-  .top-elements {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary);
-
-
-
-    .menu-icon {
-      background-color: var(--primary);
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-      margin-bottom: 2rem;
-      outline: none;
-      border: none;
-
-      .menu {
-        background-color: var(--primary);
-        width: 2.5rem;
-        cursor: pointer;
-      }
-    }
-
-    .logo {
-      display: flex;
-      justify-content: center;
-      visibility: hidden;
-      margin-top: 1.2rem;
-
-      img {
-        background-color: transparent;
-        width: 70px;
-        visibility: hidden;
-      }
-    }
-  }
-
-  .nav-icons {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
+@media (min-width: 400px) {
+  aside {
+    background-color: red;
+    -webkit-box-shadow: 1px -4px 16px 8px rgba(0, 0, 0, 0.28);
+    box-shadow: 1px -4px 16px 8px rgba(0, 0, 0, 0.28);
     width: 100%;
-    transition: 0.3s ease-in-out;
+    height: 100%;
+    z-index: 1;
+    border-radius: 20px 20px 0 0;
 
+    .top-elements {
 
-    .router-link {
-      background-color: transparent;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
+      .menu-icon {
+        display: none;
 
-      &:hover {
-        background-color: var(--cursor-color);
-        transition: 0.5s all;
-        z-index: 1;
-        width: 100%
+        .menu {
+
+          cursor: pointer;
+        }
+
+        .toggle-title {
+          display: none;
+          background-color: transparent;
+        }
       }
+    }
 
-      h2 {
+    .nav-icons {
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 4rem;
+      width: 100%;
+      transition: 0.3s ease-in-out;
+
+
+      .router-link {
         background-color: transparent;
         text-decoration: none;
-        visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          background-color: var(--cursor-color);
+          transition: 0.3s all;
+          z-index: 1;
+          width: 100%
+        }
+
+        h2 {
+          display: none;
+        }
+
+
+        button {
+          background-color: transparent;
+          outline: none;
+          border: none;
+          justify-content: center;
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+
+
+          .nav-icon {
+            background-color: transparent;
+            width: 3rem;
+            transition: 0.2s ease-out;
+            fill: black;
+          }
+        }
       }
 
-
-      button {
+      .profile-link {
         background-color: transparent;
-        outline: none;
-        border: none;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-        margin-left: 1rem;
+        width: 100%;
+        transition: 0.3s ease-in-out;
 
-        .nav-icon {
+        .profile-icon {
           background-color: transparent;
           width: 3rem;
           transition: 0.2s ease-out;
+          cursor: pointer;
+
+        }
+
+        button {
+          background-color: transparent;
+          outline: none;
+          border: none;
+          justify-content: center;
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
 
         }
       }
 
-
     }
 
   }
+}
 
-  &.is-expanded {
-    width: var(--sidebar-width);
+@media (min-width: 800px) {
+  #app {
+    display: flex;
 
-    .router-link {
-      width: 100%;
+    aside {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--primary);
+      width: calc(5rem + 32px);
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 1rem;
+      transition: 0.5s ease-out;
+      color: var(--secondary);
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-radius: 0;
+
+
+      .top-elements {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--primary);
+        justify-content: center;
+
+
+        .menu-icon {
+          background-color: var(--primary);
+          display: flex;
+          justify-content: center;
+          padding: 1rem;
+          margin-bottom: 2rem;
+          outline: none;
+          border: none;
+          transition: 0.3s ease-out;
+
+          .menu {
+            background-color: var(--primary);
+            width: 2.5rem;
+            cursor: pointer;
+          }
+
+          .toggle-title {
+            display: none;
+            background-color: transparent;
+          }
+        }
+
+
+      }
 
       .nav-icons {
         background-color: transparent;
-        margin-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
+        width: 100%;
+        transition: 0.3s ease-in-out;
+
+
+        .router-link {
+          background-color: transparent;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            background-color: var(--cursor-color);
+            transition: 0.3s all;
+            z-index: 1;
+            width: 100%
+          }
+
+          h2 {
+            background-color: transparent;
+            text-decoration: none;
+            display: none;
+          }
+
+
+          button {
+            background-color: transparent;
+            outline: none;
+            border: none;
+            justify-content: center;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+
+
+            .nav-icon {
+              background-color: transparent;
+              width: 3rem;
+              transition: 0.2s ease-out;
+              fill: black;
+            }
+          }
+
+
+        }
+
+        .profile-link {
+          display: none;
+        }
+
       }
 
-      h2 {
-        background-color: transparent;
-        color: var(--secondary);
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-decoration: none;
-        margin-left: 20px;
-        transition: 0.3s ease-in-out;
-        visibility: visible;
+      &.is-expanded {
+        width: var(--sidebar-width);
+
+        .top-elements {
+          .toggle-title {
+            display: block;
+            background-color: transparent;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            transition: 0.3s ease-in-out;
+            margin-left: 10px;
+          }
+        }
+
+        .router-link {
+          width: 100%;
+          justify-content: flex-start;
+
+
+          .nav-icons {
+            background-color: transparent;
+            margin-right: 1rem;
+
+          }
+
+          h2 {
+            background-color: transparent;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s ease-in-out;
+            display: block;
+          }
+        }
+
       }
     }
-
   }
 }
 </style>
