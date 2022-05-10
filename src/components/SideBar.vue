@@ -54,6 +54,7 @@ aside {
   @media (max-width: 780px) {
     position: fixed;
     z-index: 99;
+    display: none;
   }
 
   .top-elements {

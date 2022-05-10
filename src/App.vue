@@ -1,19 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import SideBar from '@/components/SideBar.vue'
+import { RouterLink } from 'vue-router' /* RouterView hay que cambiarlo */
+// import SideBar from '@/components/SideBar.vue'
+import HomeView from '@/views/HomeView.vue'
 </script>
 
 <template>
-  <div class="wrapper">
-    <SideBar msg="You did it!" />
-  </div>
-  <div id="nav">
+  <!-- <SideBar /> -->
+  <HomeView />
+  <!--   <div id="nav">
     <RouterLink to="/">Home</RouterLink> |
     <RouterLink to="/discover">Discover</RouterLink>
     <RouterLink to="/upload">Upload</RouterLink>
     <RouterLink to="/collections">Collections</RouterLink>
-  </div>
-  <RouterView />
+  </div> -->
+  <!--   <RouterView /> -->
 
 </template>
 
@@ -32,12 +32,17 @@ import SideBar from '@/components/SideBar.vue'
   margin: 0;
   padding: 0;
 
-  .app {
+
+  #app {
     display: flex;
+    width: 100%;
+    height: 100%;
+
 
     main {
       flex: 1 1 0;
-      padding: 2rem;
+      /*       padding: 2rem;
+ */
     }
 
   }
