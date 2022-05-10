@@ -15,9 +15,10 @@ const ToggleMenu = () => {
       <button class="menu-icon" @click="ToggleMenu">
         <img src="../assets/menu-icon.svg" alt="" class="menu">
       </button>
+      /*
       <!--  <div class="logo">
           <img src="../assets/pitayapp-white-iso.png" alt="">
-        </div> -->
+        </div> --> */
     </div>
     <div class="nav-icons">
       <RouterLink to="/"><button><img class="nav-icon" src="../assets/home-iconn.svg" alt=""></button>Home</RouterLink>
