@@ -4,17 +4,17 @@ import SideBar from '@/components/SideBar.vue'
 </script>
 
 <template>
-
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/discover">Discover</router-link>
-    <router-link to="/upload">Upload</router-link>
-    <router-link to="/collections">Collections</router-link>
+  <div class="wrapper">
+    <SideBar msg="You did it!" />
   </div>
-  <router-view />
-
-  <SideBar />
+  <div id="nav">
+    <RouterLink to="/">Home</RouterLink> |
+    <RouterLink to="/discover">Discover</RouterLink>
+    <RouterLink to="/upload">Upload</RouterLink>
+    <RouterLink to="/collections">Collections</RouterLink>
+  </div>
   <RouterView />
+
 </template>
 
 <style lang="scss">
