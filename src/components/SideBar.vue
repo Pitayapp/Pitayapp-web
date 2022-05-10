@@ -13,21 +13,19 @@ const ToggleMenu = () => {
 
     <div class="top-elements">
       <button class="menu-icon" @click="ToggleMenu">
-        <img src="../assets/menu-icon.svg" alt="" class="menu">
+        <img src="../assets/svg/menu-icon.svg" alt="" class="menu">
       </button>
-      /*
-      <!--  <div class="logo">
-          <img src="../assets/pitayapp-white-iso.png" alt="">
-        </div> --> */
+
     </div>
     <div class="nav-icons">
-      <RouterLink to="/"><button><img class="nav-icon" src="../assets/home-iconn.svg" alt=""></button>Home</RouterLink>
-      <RouterLink to="/discover"><button><img class="nav-icon" src="../assets/discover-iconn.svg"
+      <RouterLink to="/">Home<button><img class="nav-icon" src="../assets/svg/home-iconn.svg" alt=""></button>
+      </RouterLink>
+      <RouterLink to="/discover"><button><img class="nav-icon" src="../assets/svg/discover-iconn.svg"
             alt=""></button>Discover
       </RouterLink>
-      <RouterLink to="/upload"><button><img class="nav-icon" src="../assets/upload-iconn.svg" alt=""></button>Upload
+      <RouterLink to="/upload"><button><img class="nav-icon" src="../assets/svg/upload-iconn.svg" alt=""></button>Upload
       </RouterLink>
-      <RouterLink to="/collections"><button><img class="nav-icon" src="../assets/collections-iconn.svg"
+      <RouterLink to="/collections"><button><img class="nav-icon" src="../assets/svg/collections-iconn.svg"
             alt=""></button>Collections
       </RouterLink>
     </div>
@@ -46,6 +44,7 @@ aside {
   overflow: hidden;
   padding: 1rem;
   transition: 0.5s ease-out;
+  color: var(--second);
 
   &.is-expanded {
     width: var(--sidebar-width);
@@ -54,6 +53,7 @@ aside {
   @media (max-width: 780px) {
     position: fixed;
     z-index: 99;
+    display: none;
   }
 
   .top-elements {

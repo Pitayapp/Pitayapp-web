@@ -1,19 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+/* import { RouterLink, RouterView } from 'vue-router' */
 import SideBar from '@/components/SideBar.vue'
 </script>
 
 <template>
-  <div class="wrapper">
-    <SideBar msg="You did it!" />
-  </div>
-  <div id="nav">
+
+  <SideBar />
+
+  <!-- <div id="nav">
     <RouterLink to="/">Home</RouterLink> |
     <RouterLink to="/discover">Discover</RouterLink>
     <RouterLink to="/upload">Upload</RouterLink>
     <RouterLink to="/collections">Collections</RouterLink>
-  </div>
-  <RouterView />
+  </div> -->
+
 
 </template>
 
@@ -40,6 +40,10 @@ import SideBar from '@/components/SideBar.vue'
       padding: 2rem;
     }
 
+  }
+
+  .router-link {
+    background-color: var(--primary);
   }
 }
 </style>
