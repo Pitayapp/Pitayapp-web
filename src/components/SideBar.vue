@@ -2,9 +2,11 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { ref } from 'vue'
 
-const is_expanded = ref(false)
+
+const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 const ToggleMenu = () => {
   is_expanded.value = !is_expanded.value
+  localStorage.setItem("is_expanded", is_expanded.value)
 }
 </script>
 
@@ -16,19 +18,24 @@ const ToggleMenu = () => {
         <img src="../assets/svg/menu-icon.svg" alt="" class="menu">
       </button>
 
+
     </div>
     <div class="nav-icons">
       <RouterLink class="router-link" to="/"><button><img class="nav-icon" src="../assets/svg/home-iconn.svg"
-            alt=""></button>Home
+            alt=""></button>
+        <h2>Home</h2>
       </RouterLink>
       <RouterLink class="router-link" to="/discover"><button><img class="nav-icon"
-            src="../assets/svg/discover-iconn.svg" alt=""></button>Discover
+            src="../assets/svg/discover-iconn.svg" alt=""></button>
+        <h2>Discover</h2>
       </RouterLink>
       <RouterLink class="router-link" to="/upload"><button><img class="nav-icon" src="../assets/svg/upload-iconn.svg"
-            alt=""></button>Upload
+            alt=""></button>
+        <h2>Upload</h2>
       </RouterLink>
       <RouterLink class="router-link" to="/collections"><button><img class="nav-icon"
-            src="../assets/svg/collections-iconn.svg" alt=""></button>Collections
+            src="../assets/svg/collections-iconn.svg" alt=""></button>
+        <h2>Collections</h2>
       </RouterLink>
     </div>
   </aside>
@@ -46,23 +53,14 @@ aside {
   overflow: hidden;
   padding: 1rem;
   transition: 0.5s ease-out;
-  color: var(--second);
+  color: var(--secondary);
 
-  &.is-expanded {
-    width: var(--sidebar-width);
-  }
-
-  @media (max-width: 780px) {
-    position: fixed;
-    z-index: 99;
-    display: none;
-  }
 
   .top-elements {
     display: flex;
     flex-direction: column;
     background-color: var(--primary);
-    ;
+
 
 
     .menu-icon {
@@ -82,56 +80,97 @@ aside {
     }
 
     .logo {
-      background-color: var(--primary);
       display: flex;
       justify-content: center;
-      display: none;
+      visibility: hidden;
+      margin-top: 1.2rem;
 
       img {
-        background-color: var(--primary);
-        width: 70%;
-
+        background-color: transparent;
+        width: 70px;
+        visibility: hidden;
       }
     }
   }
 
   .nav-icons {
-    background-color: var(--primary);
+    background-color: transparent;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin-top: 6rem;
+    margin-top: 4rem;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+
 
     .router-link {
-      background-color: var(--primary);
-      color: var(--secondary);
-      font-size: 1.5rem;
-      font-weight: 700;
+      background-color: transparent;
       text-decoration: none;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      width: 100%;
+
+      &:hover {
+        background-color: var(--cursor-color);
+        transition: 0.5s all;
+        z-index: 1;
+        width: 100%
+      }
+
+      h2 {
+        background-color: transparent;
+        text-decoration: none;
+        visibility: hidden;
+      }
+
 
       button {
-        background-color: var(--primary);
+        background-color: transparent;
         outline: none;
         border: none;
-        display: flex;
-        cursor: pointer;
         justify-content: center;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        margin-left: 1rem;
 
         .nav-icon {
-          background-color: var(--primary);
+          background-color: transparent;
           width: 3rem;
+          transition: 0.2s ease-out;
 
         }
       }
+
+
     }
 
   }
 
+  &.is-expanded {
+    width: var(--sidebar-width);
+
+    .router-link {
+      width: 100%;
+
+      .nav-icons {
+        background-color: transparent;
+        margin-right: 1rem;
+      }
+
+      h2 {
+        background-color: transparent;
+        color: var(--secondary);
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        margin-left: 20px;
+        transition: 0.3s ease-in-out;
+        visibility: visible;
+      }
+    }
+
+  }
 }
 </style>
