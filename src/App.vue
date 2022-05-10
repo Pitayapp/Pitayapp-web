@@ -32,8 +32,10 @@ import SideBar from '@/components/SideBar.vue'
   margin: 0;
   padding: 0;
 
-  .app {
+  #app {
     display: flex;
+    width: 100%;
+    height: 100%;
 
     main {
       flex: 1 1 0;

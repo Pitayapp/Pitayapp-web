@@ -18,15 +18,17 @@ const ToggleMenu = () => {
 
     </div>
     <div class="nav-icons">
-      <RouterLink to="/">Home<button><img class="nav-icon" src="../assets/svg/home-iconn.svg" alt=""></button>
+      <RouterLink class="router-link" to="/"><button><img class="nav-icon" src="../assets/svg/home-iconn.svg"
+            alt=""></button>Home
       </RouterLink>
-      <RouterLink to="/discover"><button><img class="nav-icon" src="../assets/svg/discover-iconn.svg"
-            alt=""></button>Discover
+      <RouterLink class="router-link" to="/discover"><button><img class="nav-icon"
+            src="../assets/svg/discover-iconn.svg" alt=""></button>Discover
       </RouterLink>
-      <RouterLink to="/upload"><button><img class="nav-icon" src="../assets/svg/upload-iconn.svg" alt=""></button>Upload
+      <RouterLink class="router-link" to="/upload"><button><img class="nav-icon" src="../assets/svg/upload-iconn.svg"
+            alt=""></button>Upload
       </RouterLink>
-      <RouterLink to="/collections"><button><img class="nav-icon" src="../assets/svg/collections-iconn.svg"
-            alt=""></button>Collections
+      <RouterLink class="router-link" to="/collections"><button><img class="nav-icon"
+            src="../assets/svg/collections-iconn.svg" alt=""></button>Collections
       </RouterLink>
     </div>
   </aside>
@@ -101,21 +103,31 @@ aside {
     align-items: center;
     margin-top: 6rem;
 
-
-    button {
+    .router-link {
       background-color: var(--primary);
-      outline: none;
-      border: none;
+      color: var(--secondary);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
       display: flex;
-      cursor: pointer;
+      align-items: center;
       justify-content: center;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
 
-      .nav-icon {
+      button {
         background-color: var(--primary);
-        width: 3rem;
+        outline: none;
+        border: none;
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
 
+        .nav-icon {
+          background-color: var(--primary);
+          width: 3rem;
+
+        }
       }
     }
 
