@@ -52,6 +52,11 @@ import HeaderApp from '@/components/HeaderApp.vue'
     .router-view {
       margin-top: 2.5rem;
       margin-left: 10rem;
+
+      @media (max-width: 800px) {
+        margin-top: 0;
+        margin-left: 0;
+      }
     }
   }
 
