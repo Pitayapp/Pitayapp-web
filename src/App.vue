@@ -1,12 +1,18 @@
 <script setup>
 /* import { RouterLink, RouterView } from 'vue-router' */
 import SideBar from '@/components/SideBar.vue'
+import HeaderApp from '@/components/HeaderApp.vue'
 </script>
 
 <template>
 
   <SideBar />
-
+  <header>
+    <HeaderApp />
+  </header>
+  <main>
+    <RouterView class="router-view" />
+  </main>
   <!-- <div id="nav">
     <RouterLink to="/">Home</RouterLink> |
     <RouterLink to="/discover">Discover</RouterLink>
@@ -22,7 +28,7 @@ import SideBar from '@/components/SideBar.vue'
   --primary: #F9458E;
   --secondary: #FFF;
   --cursor-color: rgb(221, 220, 220, 0.2);
-  --sidebar-width: 300px;
+  --sidebar-width: 320px;
 }
 
 * {
@@ -31,6 +37,8 @@ import SideBar from '@/components/SideBar.vue'
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+
 
   #app {
     width: 100%;
@@ -41,10 +49,11 @@ import SideBar from '@/components/SideBar.vue'
       padding: 2rem;
     } */
 
+    .router-view {
+      margin-top: 4rem;
+      margin-left: 10rem;
+    }
   }
 
-  .router-link {
-    background-color: var(--primary);
-  }
 }
 </style>

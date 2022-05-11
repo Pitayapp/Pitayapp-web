@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 
 
@@ -43,7 +43,6 @@ const ToggleMenu = () => {
       </RouterLink>
     </div>
   </aside>
-  <RouterView />
 
 </template>
 
@@ -167,7 +166,7 @@ const ToggleMenu = () => {
       display: flex;
       flex-direction: column;
       background-color: var(--primary);
-      width: calc(5rem + 32px);
+      width: calc(5rem + 1.5rem);
       min-height: 100vh;
       overflow: hidden;
       padding: 1rem;
