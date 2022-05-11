@@ -50,7 +50,7 @@
       box-shadow: 2px 10px 15px 1px rgba(0, 0, 0, 0.2);
       -webkit-box-shadow: 2px 10px 15px 1px rgba(0, 0, 0, 0.2);
       width: 100%;
-      height: 6rem;
+      height: 5.5rem;
 
       .logo {
         display: flex;
