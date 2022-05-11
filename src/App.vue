@@ -28,12 +28,12 @@ import HeaderApp from '@/components/HeaderApp.vue'
   --primary: #F9458E;
   --secondary: #FFF;
   --cursor-color: rgb(221, 220, 220, 0.2);
-  --sidebar-width: 320px;
+  --sidebar-width: 310px;
 }
 
 * {
   font-family: 'Inter', sans-serif;
-  background-color: #fff;
+  background-color: transparent;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -50,7 +50,7 @@ import HeaderApp from '@/components/HeaderApp.vue'
     } */
 
     .router-view {
-      margin-top: 4rem;
+      margin-top: 2.5rem;
       margin-left: 10rem;
     }
   }
