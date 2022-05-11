@@ -17,29 +17,21 @@ export default {
       }
       ],
       categories: [{
-        title: "Categoría 1",
-        // image: "imagen 1"
+        title: "Recetas de la semana",
+        image: "../assets/img/category1.png"
         // url: "url 1"
       }, {
-        title: "Categoría 2",
-        // image: "imagen 2"
+        title: "Para cenar en familia",
+        image: "../assets/img/category1.png"
         // url: "url 2"
       }, {
-        title: "Categoría 3",
-        // image: "imagen 3"
+        title: "Comenzando la dieta",
+        image: "../assets/img/category1.png"
         // url: "url 3"
       }, {
-        title: "Categoría 4",
-        // image: "imagen 4"
+        title: "Para los más peques",
+        image: "../assets/img/category1.png"
         // url: "url 4"
-      }, {
-        title: "Categoría 5",
-        // image: "imagen 5"
-        // url: "url 5"
-      }, {
-        title: "Categoría 6",
-        // image: "imagen 6"
-        // url: "url 6"
       }
       ]
     };
@@ -61,7 +53,10 @@ export default {
         </div>
       </div>
       <div class="most-popular">
-        <h2>Más populares</h2>
+        <div class="most-popular-text">
+          <h2>Más populares</h2>
+          <a href="">Ver más</a>
+        </div>
         <div class="recipe-list">
           <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
             <h4 class="title">{{ recipe.title }}</h4>
@@ -72,6 +67,7 @@ export default {
       <div class="bottom-container">
         <div v-for="(categorie, i) in categories" :key="i" class="categories">
           <div class="categorie-container">
+            <!-- Hay que añadir un background-image en el v-for con la ruta de cada imagen en categories -->
             <h3 class="title">{{ categorie.title }}</h3>
           </div>
         </div>
@@ -106,9 +102,9 @@ body {
         border-radius: 0 0 15px 15px;
         display: flex;
         flex-direction: column;
-        padding: 5% 20% 5% 20%;
+        padding: 5% 12% 5% 12%;
         box-sizing: border-box;
-        justify-content: center;
+        justify-content: space-evenly;
 
         & .hello {
           display: flex;
@@ -116,13 +112,13 @@ body {
           align-items: center;
           background-color: transparent;
           height: 3rem;
-          margin-bottom: 0.5rem;
 
           & p {
             background-color: transparent;
             height: auto;
             width: auto;
             font-weight: bold;
+            font-size: 1.2rem;
           }
 
           &.bell {
@@ -139,21 +135,20 @@ body {
           background-color: transparent;
 
           .searcher-bar {
-            width: 10rem;
-            height: 1.2rem;
+            width: 12rem;
+            height: 1.5rem;
             border-radius: 15px;
             border: 0;
-            height: 1.2rem;
           }
 
           & input::placeholder {
-            font-size: 0.6rem;
+            font-size: 0.8rem;
 
           }
 
           & button {
             width: 3.5rem;
-            height: 1.2rem;
+            height: 1.5rem;
             background: #FFFFFF;
             border: 0;
             border-radius: 15px;
@@ -170,10 +165,22 @@ body {
         width: 100%;
         height: 33%;
 
-        & h2 {
-          margin: 1rem;
+        & .most-popular-text {
+          margin-top: 1rem;
+          padding: 0 1.5rem 0 1.2rem;
+          box-sizing: border-box;
           width: 100%;
-          height: 10%;
+          height: 20%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          & a {
+            color: gray;
+            font-size: 0.8rem;
+            text-decoration: none;
+            font-weight: bold;
+          }
         }
 
         & .recipe-list {
