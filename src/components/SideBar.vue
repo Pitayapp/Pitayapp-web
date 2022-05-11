@@ -19,7 +19,6 @@ const ToggleMenu = () => {
         <h2 class="toggle-title">Menú</h2>
       </button>
 
-
     </div>
     <div class="nav-icons">
       <RouterLink class="router-link" to="/"><button><img class="nav-icon" src="../assets/svg/home-iconn.svg"
@@ -41,6 +40,7 @@ const ToggleMenu = () => {
       <RouterLink class="profile-link" to="/profile"><button><img class="profile-icon" src="../assets/svg/user-icon.svg"
             alt=""></button>
       </RouterLink>
+      <div class="pitayapp-logo"><img src="../assets/img/pitayapp-white-iso.png" alt="" class="loguito"></div>
     </div>
   </aside>
 
@@ -263,6 +263,10 @@ const ToggleMenu = () => {
 
         }
 
+        .pitayapp-logo {
+          display: none;
+        }
+
         .profile-link {
           display: none;
         }
@@ -306,6 +310,19 @@ const ToggleMenu = () => {
           }
         }
 
+        .pitayapp-logo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .loguito {
+            width: 5rem;
+            height: 5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+          }
+
+        }
       }
     }
   }
