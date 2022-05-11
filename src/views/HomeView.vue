@@ -19,21 +19,27 @@ export default {
       categories: [{
         title: "Categoría 1",
         // image: "imagen 1"
+        // url: "url 1"
       }, {
         title: "Categoría 2",
         // image: "imagen 2"
+        // url: "url 2"
       }, {
         title: "Categoría 3",
         // image: "imagen 3"
+        // url: "url 3"
       }, {
         title: "Categoría 4",
         // image: "imagen 4"
+        // url: "url 4"
       }, {
         title: "Categoría 5",
         // image: "imagen 5"
+        // url: "url 5"
       }, {
         title: "Categoría 6",
         // image: "imagen 6"
+        // url: "url 6"
       }
       ]
     };
