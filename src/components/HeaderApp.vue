@@ -85,13 +85,13 @@
           background-color: transparent;
           width: 8rem;
           height: 4rem;
-          margin-right: 0.4rem;
+          margin-right: 1.2rem;
 
           svg {
-            width: 2.8rem;
-            height: 2.6rem;
+            width: 2.5rem;
+            height: 2.5rem;
             cursor: pointer;
-            margin-right: 8px;
+            margin-right: 20px;
           }
         }
 
