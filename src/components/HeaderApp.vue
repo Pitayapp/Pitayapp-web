@@ -32,7 +32,7 @@
 </template>
 
 <style lang="scss" scoped>
-@media (min-width: 400px) {
+@media (min-width: 300px) {
   header {
     display: none;
   }
@@ -55,7 +55,7 @@
       .logo {
         display: flex;
         background-color: transparent;
-        margin-left: 9%;
+        margin-left: 8%;
 
         .pitayapp-img-logo {
           background-color: transparent;
