@@ -1863,93 +1863,48 @@ let dessert = [
     vegan: true,
     vegetarian: true,
     healthy: true,
-    summer: false,
+    summer: true,
     winter: true,
-    fall: false,
+    fall: true,
     spring: true,
     category: [entrant, lunch, dinner],
     ingredients : [
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Leche de almendra"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharadas de mus de cacahuetes salados"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Jarabe de agave"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharadita de agar-agar"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Vaina de vainilla"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Chocolate de cobertura negro vegano"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharaditas de cacao en polvo (unos 30 g)"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Azúcar"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cacahuetes con sal"
-      }
+    {
+    quantity:"400 ml",
+    name: "Leche de almendras"
+    },
+    {
+    quantity:"4 cucharadas",
+    name: "Mus de cacahuetes salados"
+    },
+    {
+    quantity:"50 ml",
+    name: "Jarabe de agave"
+    },
+    {
+    quantity:"60 gr",
+    name: "Mantequilla vegana"
+    },
+    {
+    quantity:"1 vaina",
+    name: "Vainilla"
+    },
+    {
+    quantity:"90 gr",
+    name: "Chocolate negro vegano"
+    },
+    {
+    quantity:"3 cucharaditas",
+    name: "Cacao en polvo"
+    },
+    {
+    quantity:"13 gr",
+    name: "Azúcar"
+    },
+    {
+    quantity:"30 gr",
+    name: "Cacahuetes con sal"
+    },                                                     },
     ]
   }  ,
   {
@@ -1961,39 +1916,24 @@ let dessert = [
     vegan: true,
     vegetarian: true,
     healthy: true,
-    summer: false,
-    winter: true,
+    summer: true,
+    winter: false,
     fall: false,
     spring: true,
     category: [entrant, lunch, dinner],
     ingredients : [
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Azúcar"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Manojos de menta"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "El zumo de 1/2 limón"
-      }
+    {
+    quantity:"150 gr",
+    name: "Azúcar"
+    },
+    {
+    quantity:"2 manojos",
+    name: "Menta"
+    },
+    {
+    quantity:"1/2",
+    name: "Limón"
+    },
     ]
   }
   ,
@@ -2012,87 +1952,43 @@ let dessert = [
     spring: true,
     category: [entrant, lunch, dinner],
     ingredients : [
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Mantequilla vegana"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Azúcar de caña"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharadas de almidón de arruruz"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Sémola"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Leche de almendra"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Harina"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharaditas de levadura en polvo"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Frambuesas"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Mantequilla vegana, para untar."
-      }
+
+{
+    quantity:"60 gr",
+    name: "Mantequilla vegana"
+    },
+    {
+    quantity:"125 gr",
+    name: "Azúcar de caña"
+    },
+    {
+    quantity:"2 cucharadas",
+    name: "Almidón"
+    },
+    {
+    quantity:"150 gr",
+    name: "Sémola"
+    },
+    {
+    quantity:"250 gr",
+    name: "Leche de almendras"
+    },
+    {
+    quantity:"150 gr",
+    name: "Harina"
+    },
+    {
+    quantity:"4 cucharadas pequeñas",
+    name: "Levadura en polvo"
+    },
+    {
+    quantity:"500 gr",
+    name: "Frambuesas"
+    },
+    {
+    quantity:"Mantequilla vegana, para untar",
+    name: "Aceite de oliva"
+     },
     ]
   }
   ,
@@ -2105,75 +2001,45 @@ let dessert = [
     vegan: true,
     vegetarian: true,
     healthy: true,
-    summer: false,
-    winter: true,
+    summer: true,
+    winter: false,
     fall: false,
     spring: true,
     category: [entrant, lunch, dinner],
     ingredients : [
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Plátanos maduros grandes (unos 800 g)"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharada de zumo de limón"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Mus de anacardos"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Jarabe de agave de aceite de oliva"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Leche de coco"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Vaina de vainilla"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cacao en polvo orgánico de tomillo fresco"
+
+       {
+               quantity:"3 unidades",
+               name: "plátanos maduros"
+           },
+
+       {
+               quantity:"1 cucharada",
+               name: "zumo de limón"
+           },
+        {
+                quantity:"200 g",
+                name: "mus de anacardos"
+            },
+
+        {
+                quantity:"50 ml",
+                name: "jarabe de agave"
+            },
+        {
+                quantity:"50 ml",
+                name: "leche de coco"
+            },
+       {
+               quantity:"1 vaina",
+               name: "Vainilla"
+           },
+           {
+                   quantity:"50 gr",
+                   name: "Cacao en polvo orgánico"
+               },
       }
+
     ]
   }
 ]
