@@ -168,7 +168,7 @@ let recipes = [
     spring: true,
 
     category: [
-      smoothie
+      "smoothie"
       ],
 
       ingredients : [
@@ -218,7 +218,7 @@ let recipes = [
   spring: true,
 
   category: [
-    smoothie
+    "smoothie"
     ],
 
     ingredients : [
@@ -299,7 +299,7 @@ let recipes = [
   spring: true,
 
   category: [
-    smoothie
+    "smoothie"
     ],
 
     ingredients : [
@@ -336,8 +336,8 @@ let recipes = [
   spring: true,
 
   category: [
-    entrant,
-    soup,
+    "entrant",
+    "soup",
     ],
 
     ingredients : [
@@ -388,8 +388,8 @@ let recipes = [
   spring: true,
 
   category: [
-    entrant,
-    soup,
+    "entrant",
+    "soup",
     ],
 
     ingredients : [
@@ -461,8 +461,8 @@ let recipes = [
   spring: true,
 
   category: [
-    entrant,
-    soup,
+    "entrant",
+    "soup",
     ],
 
     ingredients : [
@@ -534,8 +534,8 @@ let recipes = [
   spring: true,
 
   category: [
-    entrant,
-    soup,
+    "entrant",
+    "soup",
     ],
 
     ingredients : [
@@ -593,58 +593,52 @@ let recipes = [
   spring: true,
 
   category: [
-    entrant,
-    soup,
+    "entrant",
+    "soup",
     ],
 
     ingredients : [
       {
-          quantity:"500gr",
-          name: "Espárragos verdes"
+        quantity:"500gr",
+        name: "Espárragos verdes"
       },
 
       {
         quantity:"4 cucharadas",
         name: "Aceite de oliva"
-    },
-
-      {
-          quantity:"1-2 dientes",
-          name: "Ajo"
       },
-
+      {
+        quantity:"1-2 dientes",
+        name: "Ajo"
+      },
       {
         quantity:"2 cucharadas",
         name: "Mus de almendra"
-    },
-
-    {
+      },
+      {
       quantity:"1 ramita",
       name: "Tomillo"
-    },
-
-    {
+      },
+      {
       quantity:"Una pizca",
       name: "Sal"
-    },
-
-    {
+      },
+      {
       quantity:"500ml",
       name: "Caldo de verduras"
-    },
-
-    {
+      },
+      {
       quantity:"1 pizca",
       name: "Pimienta"
-    },
-
-    {
+      },
+      {
       quantity:"125ml",
       name: "Vino blanco"
-    },
-
+      },
     ]
 },
+
+
 
 ]
 
@@ -654,83 +648,6 @@ let recipes = [
 
 
 //Veganas - IRENE
-
-let veganas = {
-  id: "xxxx",
-  title: "Croquetas de tofu ahumado",
-  image: "src/croquetas_tofu.jpg",
-  readyInMinutes: "45",
-  steps: "Saltear las cebollas con aceite durante 12 minutos, sin tapar y a fuego lento. Añadir el mijo y rehogarlo con las cebollas durante 2-3 mimutos. Añadir tres partes de agua, laurel y sal y cocer 20 minutos a fuego lento, con tapa. Retirar el laurel y hacer puré. Añadir leche de arroz hasta obtener una consistencia como de puré de patatas. Añadir el tofu y el pereji y mezclar hasta obtener una masa compacta. Dejar enfriar unos minutos, hacer las croquetas y rebozarlas con harina blanca. Calentar el aceite y freírlas hasta que se doren por ambos lados. Secarlas con papel de cocina absorbente y servir inmediatamente. ",
-  vegan: true,
-  vegetarian: true,
-  healthy: true,
-  summer: false,
-  winter: true,
-  fall: false,
-  spring: true,
-
-  category: [
-    entrant,
-    lunch,
-    dinner
-    ],
-
-    ingredients : [
-      {
-          quantity:"",
-          name: "Tofu ahumado triturado"
-      },
-
-      {
-        measures: {
-            metric: {
-                amount: 2,
-                unitLong: "",
-            },
-        },
-        name: "Cebolla"
-    },
-
-      {
-          measures: {
-              metric: {
-                  amount: 1/3,
-                  unitShort: "taza",
-              },
-          },
-          name: "Mijo"
-      },
-
-      {
-        measures: {
-            metric: {
-                amount: 100,
-                unitShort: grs,
-            },
-        },
-        name: "oil"
-      },
-
-      {
-        measures: {
-            metric: {
-                amount: 1,
-            },
-        },
-        name: "garlic"
-      },
-
-      {
-        measures: {
-            metric: {
-                amount: 10,
-                unitShort: grs,
-            },
-        },
-        name: "salt"
-      }
-    ]
-}
 
 
 //noe
@@ -750,88 +667,55 @@ let salad = [
       winter: true,
       fall: false,
       spring: true,
-      category: [entrant, lunch, dinner],
+      category: [
+        "entrant", 
+        "lunch", 
+        "dinner"
+      ],
       ingredients : [
         {
-          measures: {
-            metric: {
-              amount: ,
-              unitLong: "",
-            },
-          },
+          quantity:"375 ml",
           name: "Leche de soja"
-        },{
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+        },
+        {
+          quantity:"",
           name: "Sal"
-        },{
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+        },
+        {
+          quantity:"",
           name: "Nuez moscada rallada"
-        },{
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+        },
+        {
+          quantity:"160 gr",
           name: "Sémola"
-        },{
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
-          name: "tomates carnosos"
-        },{
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
-          name: "pepino"
-        },{
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
-          name: "cucharadas de vinagre de vino blanco"
-        },{
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
-          name: "cucharadas de aceite de oliva"
-        },{
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+        },
+        {
+          quantity:"6",
+          name: "Tomates carnosos"
+        },
+        {
+          quantity:"1",
+          name: "Pepino"
+        },
+        {
+          quantity:"1-2 cucharadas",
+          name: "Vinagre de vino blanco"
+        },
+        {
+          quantity:"6 cucharadas",
+          name: "Aceite de oliva"
+        },
+        {
+          quantity:"",
           name: "Pimienta"
-        },{
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
-          name: "Azúcar, al gusto"
+        },
+        {
+          quantity:"",
+          name: "Azúcar"
+        },
+        {
+          quantity:"3 cucharadas",
+          name: "Menta picada"
         },
       ]
     },
@@ -848,96 +732,50 @@ let salad = [
       winter: true,
       fall: false,
       spring: true,
-      category: [entrant, lunch, dinner],
+      category: [
+        "entrant", 
+        "lunch", 
+        "dinner"
+      ],
       ingredients : [
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+          quantity:"50 gr",
           name: "Pistachos"
         },
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+          quantity:"2",
           name: "Pomelos rosas"
         },
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+          quantity:"2",
           name: "Aguacates"
         },
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+          quantity:"1",
           name: "Guindilla roja fresca"
         },
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+          quantity:"1",
           name: "Chalote"
         },
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
-          name: "Cucharadas de vinagre de vino blanco"
-        },
+          quantity:"2 cucharadas",
+          name: "Vinagre de vino blanco"
+        },             
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+          quantity:"",
           name: "Sal"
         },
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+          quantity:"",
           name: "Pimienta"
         },
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
-          name: "Cucharadas de aceite de girasol"
+          quantity:"2 cucharadas",
+          name: "Aceite de girasol"
         },
         {
-          measures: {
-            metric: {
-              amount: 0,
-              unitLong: "",
-            },
-          },
+          quantity:"100 gr",
           name: "Brotes de alfalfa"
         }
       ]
@@ -955,142 +793,67 @@ let salad = [
     winter: true,
     fall: false,
     spring: true,
-    category: [entrant, lunch, dinner],
+    category: [
+        "entrant", 
+        "lunch", 
+        "dinner"
+      ],
     ingredients : [
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"3",
         name: "Pimientos verdes"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"2",
         name: "Berenjenas"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharada de vinagre de fruta"
+        quantity:"1 cucharada",
+        name: "Vinagre de fruta"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"",
         name: "Sal"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"150 ml",
         name: "Aceite vegetal"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"1/2",
         name: "Limón confitado a la sal"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"150 gr",
         name: "Aceitunas verdes deshuesadas"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharadas de aceite de oliva"
+        quantity:"2 cucharadas",
+        name: "Aceite de oliva"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"",
         name: "El zumo de 1 limón"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"",
         name: "Pimienta"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharada de perejil recién picado"
+        quantity:"1 cucharada",
+        name: "Perejil recién picado"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Para los limones confitados a la sal"
+        quantity:"2 kg",
+        name: "Limones de cultivo"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Limones de cultivo biológico"
-      },
-      {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"500 gr",
         name: "Sal marina gorda"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Aceite, para cubrir"
+        quantity:"",
+        name: "Aceite"
       }
 
     ]
@@ -1108,78 +871,40 @@ let salad = [
     winter: true,
     fall: false,
     spring: true,
-    category: [entrant, lunch, dinner],
+    category: [
+      "entrant", "lunch", "dinner"
+    ],
     ingredients : [
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Pepinos"
+        quantity:"3",
+        name: "Pepino"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"100 gr",
         name: "Cacahuetes con sal"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"1",
         name: "Cebolla"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"3",
         name: "Dientes de ajo"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharadas de aceite de cacahuete"
+        quantity:"2 cucharadaS",
+        name: "Aceite de cacahuete"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"",
         name: "Salsa de soja"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"",
         name: "Sal"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"",
         name: "Pimienta"
       }
     ]
@@ -1200,89 +925,47 @@ let salad = [
     category: [entrant, lunch, dinner],
     ingredients : [
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Calabacines (unos 800 g)"
+        quantity:"4",
+        name: "Calabacines"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"",
         name: "Sal"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"",
         name: "Pimienta"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharadas de aceite de oliva"
+        quantity:"10 cucharadas",
+        name: "Aceite de oliva"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"4",
         name: "Tomates"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"2",
         name: "Cebolletas"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Manojo de tomillo fresco"
+        quantity:"1 manojo",
+        name: "Tomillo fresco"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"100 g",
         name: "Anacardos"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"1",
         name: "Achicoria"
+      },
+      {
+        quantity:"4 cucharadas",
+        name: "Vinagre balsámico"
       }
     ]
-  }
-  ,
+  },
   {
     id: "xxxx",
     title: "Ensalada de arroz salvaje con albaricoques",
@@ -1296,79 +979,43 @@ let salad = [
     winter: true,
     fall: false,
     spring: true,
-    category: [entrant, lunch, dinner],
+    category: [
+      "entrant", 
+      "lunch", 
+      "dinner"
+    ],
     ingredients : [
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"75 g",
         name: "Arroz salvaje"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"1/2",
         name: "Manzana mediana"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"1/2",
         name: "Pimiento verde"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"1/2",
         name: "Rama de apio"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
+        quantity:"59 g",
         name: "Orejones de albaricoque"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharadas de salsa de soja"
+        quantity:"2 cucharadas",
+        name: "Salsa de soja"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharaditas de azúcar"
+        quantity:"2 cucharadas",
+        name: "Azúcar"
       },
       {
-        measures: {
-          metric: {
-            amount: 0,
-            unitLong: "",
-          },
-        },
-        name: "Cucharaditas de vinagre de fruta"
+        quantity:"2 cucharadas",
+        name: "Vinagre de fruta"
       }
     ]
   }
@@ -1381,8 +1028,7 @@ let dessert = [
     title: "Manzanas caramelizadas",
     image: "",
     readyInMinutes: "20 minutes",
-    steps: "1 Precaliente el horno a 220°C. Forre la bandeja con papel vegetal. Pique bien los orejones y méz- clelos con la mantequilla, el mazapán y la avellana. 2 Pele las manzanas y frótelas enseguida con el zumo de limón. Quíteles el corazón con un des- corazonador. Agrande un poco los agujeros y relléne- los con la mezcla de mazapán y avellana. Mezcle el azúcar moreno con la canela y reboce las manzanas con esta mezcla. 3 Ponga las manzanas en la bandeja y hornéelas unos 20 minutos, hasta que estén tiernas y ca- ramelizadas. Monte la nata con el azúcar avainillado y repártala en cuencos de postre. Ponga las manza- nas encima y sírvalas enseguida.
-",
+    steps: "1 Precaliente el horno a 220°C. Forre la bandeja con papel vegetal. Pique bien los orejones y méz- clelos con la mantequilla, el mazapán y la avellana. 2 Pele las manzanas y frótelas enseguida con el zumo de limón. Quíteles el corazón con un des- corazonador. Agrande un poco los agujeros y relléne- los con la mezcla de mazapán y avellana. Mezcle el azúcar moreno con la canela y reboce las manzanas con esta mezcla. 3 Ponga las manzanas en la bandeja y hornéelas unos 20 minutos, hasta que estén tiernas y ca- ramelizadas. Monte la nata con el azúcar avainillado y repártala en cuencos de postre. Ponga las manzanas encima y sírvalas enseguida.",
     vegan: true,
     vegetarian: true,
     healthy: true,
@@ -1397,53 +1043,45 @@ let dessert = [
 
       ingredients : [
         {
-            quantity:"50 gr",
-            name: "orejones de albaricoque"
+          quantity:"50 gr",
+          name: "Orejones de albaricoque"
+        },
+        {
+        quantity:"50 gr",
+        name: "mantequilla vegana"
         },
         {
           quantity:"50 gr",
-          name: "mantequilla vegana"
-      },
-
-        {
-            quantity:"50 gr",
-            name: "mazapan"
+          name: "mazapan"
         },
-
         {
           quantity:"50 gr",
-          name: "avellana molida"
-      },
-
-      {
-        quantity:"4 unidades",
-        name: "manzanas ácidas"
-      },
-
-      {
-        quantity:"1 cucharada",
-        name: "zumo de limón"
-      },
-
-      {
-         quantity:"6 cucharadas",
-         name: "azúcar moreno"
-      },
-
-       {
-      quantity:"1/2 cucharada",
-      name: "canela"
-      },
-
-      {
-      quantity:"200 ml",
-      name: "nata vegana"
-      },
-
-      {
-      quantity:"1 sobre",
-      name: "azúcar avainillado"
-      },
+          name: "Avellana molida"
+        },
+        {
+          quantity:"4 unidades",
+          name: "Manzanas ácidas"
+        },
+        {
+          quantity:"1 cucharada",
+          name: "Zumo de limón"
+        },
+        {
+          quantity:"6 cucharadas",
+          name: "azúcar moreno"
+        },
+        {
+          quantity:"1/2 cucharada",
+          name: "Canela"
+        },
+        {
+          quantity:"200 ml",
+          name: "Nata vegana"
+        },
+        {
+        quantity:"1 sobre",
+        name: "Azúcar avainillado"
+        },
       ]
 },
   {
