@@ -731,3 +731,1041 @@ let veganas = {
       }
     ]
 }
+
+
+//noe
+
+
+let salad = [
+    {
+      id: "xxxx",
+      title: "Ensalada de cuscús",
+      image: "",
+      readyInMinutes: "15",
+      steps: "1 Para preparar el cuscús, ponga a hervir la leche con 250 ml de agua, sal y 1 pizca de nuez moscada. Retire la cazuela del fuego, eche la sémola y deje que repose unos 15 minutos. Deje que se enfríey remuévalo bien. 2 Lave los tomates, límpielos y córtelos en rodajas. Lave el pepino, pártalo por la mitad, quítele las semillas con una cuchara y córtelo también en rodajas. Prepare un aliño mezclando el vinagre con el aceite, sal, pimienta y azúcar al gusto. 3 En una fuente, mezcle el cuscús con el tomate, el pepino y el aderezo Sirva la ensalada adornada con la menta.",
+      vegan: true,
+      vegetarian: true,
+      healthy: true,
+      summer: false,
+      winter: true,
+      fall: false,
+      spring: true,
+      category: [entrant, lunch, dinner],
+      ingredients : [
+        {
+          measures: {
+            metric: {
+              amount: ,
+              unitLong: "",
+            },
+          },
+          name: "Leche de soja"
+        },{
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Sal"
+        },{
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Nuez moscada rallada"
+        },{
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Sémola"
+        },{
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "tomates carnosos"
+        },{
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "pepino"
+        },{
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "cucharadas de vinagre de vino blanco"
+        },{
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "cucharadas de aceite de oliva"
+        },{
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Pimienta"
+        },{
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Azúcar, al gusto"
+        },
+      ]
+    },
+    {
+      id: "xxxx",
+      title: "Ensalada de pomelo con aguacate",
+      image: "",
+      readyInMinutes: "30",
+      steps: "1 . Tueste los pistachos en una sartén y piquelos. Pele los pomelos y córtelos en gajos finos, recogiendo el jugo que suelten. Parta los aguacates por la mitad, pélelos, deshuéselos y trocéelos. 2 . Lave la guindilla, pártala por la mitad, despepítela y piquela. Pele el chalote y píquelo también. 3 . Prepare un aliño mezclando el vinagre con el jugo del pomelo, sal, pimienta y el aceite. Incorpore la guindilla y el chalote. Lave los brotes de alfalfa y sacúdalos para secarlos. Mezcle todos los ingredientes de la ensalada, excepto el pistacho, con el aliño. Repártala en cuencos individuales y sírvala con los pistachos por encima.",
+      vegan: true,
+      vegetarian: true,
+      healthy: true,
+      summer: false,
+      winter: true,
+      fall: false,
+      spring: true,
+      category: [entrant, lunch, dinner],
+      ingredients : [
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Pistachos"
+        },
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Pomelos rosas"
+        },
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Aguacates"
+        },
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Guindilla roja fresca"
+        },
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Chalote"
+        },
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Cucharadas de vinagre de vino blanco"
+        },
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Sal"
+        },
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Pimienta"
+        },
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Cucharadas de aceite de girasol"
+        },
+        {
+          measures: {
+            metric: {
+              amount: 0,
+              unitLong: "",
+            },
+          },
+          name: "Brotes de alfalfa"
+        }
+      ]
+    },
+  {
+    id: "xxxx",
+    title: "Ensalada de hortalizas con limones a la sal",
+    image: "",
+    readyInMinutes: "40",
+    steps: "1 . Si prepara usted mismo los limones a la sal, lave los limones. Hágales cinco cortes longitudinales acada uno y rellénelos con sal. Ponga los limones en una fuente de cristal refractaria honda y rocíelos con agua hirviendo. Cúbralos con aceite y déjelos reposar 3 semanas. 2 . Precaliente el gratinador del horno. Limpie los pimientos, pártalos por la mitad, quíteles las semillas, lávelos y séquelos. Áselos bajo el gratinador hasta que la piel empiece a quemarse y le salgan ampollas. Métalos en una bolsa para congelar y déjelos enfriar dentro. Después, pélelos y trocéelos. Limpie las berenjenas, lávelas y córtelas en dados de 1 cm. 3 . Mezcle el vinagre con 1/2 cucharadita de sal.Pase la berenjena por esta mezcla y fríala en el aceite vegetal bien caliente. Retírela de la sartén y déjela escurrir sobre papel de cocina. Pele el medio limón confitado, lave la piel, séquela y píquela.",
+    vegan: true,
+    vegetarian: true,
+    healthy: true,
+    summer: false,
+    winter: true,
+    fall: false,
+    spring: true,
+    category: [entrant, lunch, dinner],
+    ingredients : [
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Pimientos verdes"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Berenjenas"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharada de vinagre de fruta"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Sal"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Aceite vegetal"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Limón confitado a la sal"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Aceitunas verdes deshuesadas"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharadas de aceite de oliva"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "El zumo de 1 limón"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Pimienta"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharada de perejil recién picado"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Para los limones confitados a la sal"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Limones de cultivo biológico"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Sal marina gorda"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Aceite, para cubrir"
+      }
+
+    ]
+  },
+  {
+    id: "xxxx",
+    title: "Ensalada de pepino con cacahuetes",
+    image: "",
+    readyInMinutes: "25",
+    steps: "1 . Pele los pepinos, quíteles las semillas y rállelos. Maje los cacahuetes en el mortero y mézclelos con el pepino. Pele la cebolla, píquela bien y agréguela a la ensalada de pepino y cacahuete. 2 . Pele el ajo, píquelo bien y sofríalo en el aceite de cacahuete hasta que esté bien dorado. Espárzalo por encima de la ensalada y termine de aderezarla con salsa de soja, sal y pimienta.",
+    vegan: true,
+    vegetarian: true,
+    healthy: true,
+    summer: false,
+    winter: true,
+    fall: false,
+    spring: true,
+    category: [entrant, lunch, dinner],
+    ingredients : [
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Pepinos"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cacahuetes con sal"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cebolla"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Dientes de ajo"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharadas de aceite de cacahuete"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Salsa de soja"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Sal"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Pimienta"
+      }
+    ]
+  }  ,
+  {
+    id: "xxxx",
+    title: "Ensalada de calabacín con anacardos",
+    image: "",
+    readyInMinutes: "30",
+    steps: "1 . Lave los calabacines, séquelos, limpielos y córtelos en rodajas finas. Salpimiéntelas y sofríalas en 3 cucharadas del aceite bien caliente. Retírelas de la sartén y déjelas escurrir sobre papel de cocina. 2 . Lave los tomates, quíteles la parte central dura, escáldelos, pélelos, pártalos en cuartos, despepítelos y píquelos. Lave las cebolletas, séquelas, límpielas y trocéelas. Lave el tomillo, séquelo, arránquele las hojitas, reserve algunas y pique el resto. 3 . Tueste los anacardos en una sartén. Lave la achicoria, limpiela, centrifúguela y reparta las hojas entre los platos. Ponga encima el calabacín, el tomate y la cebolleta. Prepare una vinagreta con el tomillo picado, el resto del aceite, el vinagre, sal y pimienta, y repártala sobre la ensalada. Esparza los anacardos por encima y sírvala adornada con las hojitas de tomillo reservadas. Puede acompañar la ensalada con pan de ajo.",
+    vegan: true,
+    vegetarian: true,
+    healthy: true,
+    summer: false,
+    winter: true,
+    fall: false,
+    spring: true,
+    category: [entrant, lunch, dinner],
+    ingredients : [
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Calabacines (unos 800 g)"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Sal"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Pimienta"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharadas de aceite de oliva"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Tomates"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cebolletas"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Manojo de tomillo fresco"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Anacardos"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Achicoria"
+      }
+    ]
+  }
+  ,
+  {
+    id: "xxxx",
+    title: "Ensalada de arroz salvaje con albaricoques",
+    image: "",
+    readyInMinutes: "20",
+    steps: "1 . Cueza el arroz siguiendo las instrucciones del envase. A continuación, páselo a un plato grande y déjelo enfriar unos 12 minutos, removiéndolo de vez en cuando. 2 . Mientras tanto, lave la manzana, el pimiento y el apio, séquelos con papel de cocina y córtelos en daditos. Corte los orejones también en dados. Pase las hortalizas y la fruta a una fuente. 3 . En un cuenco, elabore un aliño con la salsa de soja, el azúcar y el vinagre. Añada 2 cucharadas de agua y remuévalo hasta que el azúcar se disuelva. 4 . Mezcle el arroz y el aliño con la verdura y la fruta de la fuente, y remuévalo todo bien. Por último, esparza los cacahuetes tostados por encima de la ensalada y sírvala.",
+    vegan: true,
+    vegetarian: true,
+    healthy: true,
+    summer: false,
+    winter: true,
+    fall: false,
+    spring: true,
+    category: [entrant, lunch, dinner],
+    ingredients : [
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Arroz salvaje"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Manzana mediana"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Pimiento verde"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Rama de apio"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Orejones de albaricoque"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharadas de salsa de soja"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharaditas de azúcar"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharaditas de vinagre de fruta"
+      }
+    ]
+  }
+];
+
+
+let dessert = [
+{
+    id: "xxxx",
+    title: "Manzanas caramelizadas",
+    image: "",
+    readyInMinutes: "20 minutes",
+    steps: "1 Precaliente el horno a 220°C. Forre la bandeja con papel vegetal. Pique bien los orejones y méz- clelos con la mantequilla, el mazapán y la avellana. 2 Pele las manzanas y frótelas enseguida con el zumo de limón. Quíteles el corazón con un des- corazonador. Agrande un poco los agujeros y relléne- los con la mezcla de mazapán y avellana. Mezcle el azúcar moreno con la canela y reboce las manzanas con esta mezcla. 3 Ponga las manzanas en la bandeja y hornéelas unos 20 minutos, hasta que estén tiernas y ca- ramelizadas. Monte la nata con el azúcar avainillado y repártala en cuencos de postre. Ponga las manza- nas encima y sírvalas enseguida.
+",
+    vegan: true,
+    vegetarian: true,
+    healthy: true,
+    summer: false,
+    winter: true,
+    fall: true,
+    spring: false,
+
+    category: [
+      desserts
+      ],
+
+      ingredients : [
+        {
+            quantity:"50 gr",
+            name: "orejones de albaricoque"
+        },
+        {
+          quantity:"50 gr",
+          name: "mantequilla vegana"
+      },
+
+        {
+            quantity:"50 gr",
+            name: "mazapan"
+        },
+
+        {
+          quantity:"50 gr",
+          name: "avellana molida"
+      },
+
+      {
+        quantity:"4 unidades",
+        name: "manzanas ácidas"
+      },
+
+      {
+        quantity:"1 cucharada",
+        name: "zumo de limón"
+      },
+
+      {
+         quantity:"6 cucharadas",
+         name: "azúcar moreno"
+      },
+
+       {
+      quantity:"1/2 cucharada",
+      name: "canela"
+      },
+
+      {
+      quantity:"200 ml",
+      name: "nata vegana"
+      },
+
+      {
+      quantity:"1 sobre",
+      name: "azúcar avainillado"
+      },
+      ]
+},
+  {
+    id: "xxxx",
+    title: "Panna cotta de cacahuete con salsa de chocolate",
+    image: "",
+    readyInMinutes: "35",
+    steps: "1 . Ponga la leche de almendra en una cazuela y mézclela con el mus de cacahuete, el jarabe de agave y el agar-agar. Corte la vaina de vainilla por la mitad a lo largo y raspe la pulpa. Eche las semillas y la vaina en la cazuela y deje que hierva. Deje cocer la leche a fuego lento 1 minuto para que el agar-agar haga cuajar la mezcla. 2 . Enjuaque moldes individuales con agua fría. Saque la vaina de vainilla de la panna cotta, re- parta la mezcla en los moldes y déjelos en el frigori- fico, tapados, unas 4 horas. 3 . Para preparar la salsa de chocolate, pique el chocolate. Ponga a hervir 100 ml de agua, eche el cacao y el azúcar y deje que vuelva a hervir. A con- tinuación, eche el chocolate, deje que se funda y dé- jelo enfriar un poco. Trocee los cacahuetes. 4 . Disponga la salsa de chocolate en los platos de forma decorativa, vuelque la panna cotta en el centro y esparza los cacahuetes por encima.",
+    vegan: true,
+    vegetarian: true,
+    healthy: true,
+    summer: false,
+    winter: true,
+    fall: false,
+    spring: true,
+    category: [entrant, lunch, dinner],
+    ingredients : [
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Leche de almendra"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharadas de mus de cacahuetes salados"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Jarabe de agave"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharadita de agar-agar"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Vaina de vainilla"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Chocolate de cobertura negro vegano"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharaditas de cacao en polvo (unos 30 g)"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Azúcar"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cacahuetes con sal"
+      }
+    ]
+  }  ,
+  {
+    id: "xxxx",
+    title: "Sorbete de limón",
+    image: "",
+    readyInMinutes: "25 minutos, más 1 hora de enfriado en el congelador",
+    steps: "1 . En un cazo. disuelva el azúcar en 400 ml de agua, llévelo a ebullición sin dejar de remover y luego deje que se enfríe. Lave la menta, sacúdala para se- carla y arranque las hojitas. 2 . Cubra el jarabe de azúcar completamente con las hojas de menta. Déjelo reposar 24 horas, luego páselo por un chino e incorpore el zumo de limón. 3 . Deje la mezcla en el congelador 4 o 5 horas, re- moviéndola de vez en cuando. Distribuya el sor- bete en cuencos de postre con un sacabolas.",
+    vegan: true,
+    vegetarian: true,
+    healthy: true,
+    summer: false,
+    winter: true,
+    fall: false,
+    spring: true,
+    category: [entrant, lunch, dinner],
+    ingredients : [
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Azúcar"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Manojos de menta"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "El zumo de 1/2 limón"
+      }
+    ]
+  }
+  ,
+  {
+    id: "xxxx",
+    title: "Clafoutis de frambuesa",
+    image: "",
+    readyInMinutes: "1 hora",
+    steps: "1 .Precaliente el horno a 180°C. Bata la mantequilla con el azúcar, el almidón de arruruz y la sémola hasta que esté espumosa. Vierta la leche de almendra y remueva bien. Mezcle la harina con la levadura e in- corpórela. 2 . Unte con mantequilla una fuente refractaria , llana. Disponga en ella las frambuesas, vierta la mezcla por encima y alise la superficie. Hornee el cla- foutis unos 45 minutos.",
+    vegan: true,
+    vegetarian: true,
+    healthy: true,
+    summer: false,
+    winter: true,
+    fall: false,
+    spring: true,
+    category: [entrant, lunch, dinner],
+    ingredients : [
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Mantequilla vegana"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Azúcar de caña"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharadas de almidón de arruruz"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Sémola"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Leche de almendra"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Harina"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharaditas de levadura en polvo"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Frambuesas"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Mantequilla vegana, para untar."
+      }
+    ]
+  }
+  ,
+  {
+    id: "xxxx",
+    title: "Helado de plátano y chocolate",
+    image: "",
+    readyInMinutes: "4 horas y 30 min",
+    steps: "1 . Pele los plátanos y tritúrelos con el zumo de limón, el mus de anacardos, el jarabe de agave y la leche de coco. Abra la vaina de vainilla por la mitad a lo largo, raspe la pulpa e incorpore las semillas. 2 . Deje reposar la mezcla en el congelador. Re- muévala con un tenedor cada media hora para que los cristales de hielo se mantengan pequeños. Cuando empiece a espesarse, sáquela del congela- dor y divídala en dos partes; en una de ellas agregue el cacao. Vuelva a juntar las dos partes, mezclándolas ligeramente con un tenedor con un movimiento en- volvente para obtener el efecto veteado del mármol. Vuelva a dejar el helado en el congelador. Para ser- virlo, deje que se descongele un poco y haga bolas con un sacabolas.",
+    vegan: true,
+    vegetarian: true,
+    healthy: true,
+    summer: false,
+    winter: true,
+    fall: false,
+    spring: true,
+    category: [entrant, lunch, dinner],
+    ingredients : [
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Plátanos maduros grandes (unos 800 g)"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cucharada de zumo de limón"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Mus de anacardos"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Jarabe de agave de aceite de oliva"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Leche de coco"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Vaina de vainilla"
+      },
+      {
+        measures: {
+          metric: {
+            amount: 0,
+            unitLong: "",
+          },
+        },
+        name: "Cacao en polvo orgánico de tomillo fresco"
+      }
+    ]
+  }
+]
