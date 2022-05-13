@@ -39,7 +39,6 @@ import HeaderApp from '@/components/HeaderApp.vue'
   padding: 0;
 
 
-
   #app {
     width: 100%;
     height: 100%;
@@ -52,6 +51,11 @@ import HeaderApp from '@/components/HeaderApp.vue'
     .router-view {
       margin-top: 2.5rem;
       margin-left: 10rem;
+
+      @media (max-width: 800px) {
+        margin-top: 0;
+        margin-left: 0;
+      }
     }
   }
 
