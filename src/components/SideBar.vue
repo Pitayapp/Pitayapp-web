@@ -48,9 +48,8 @@ const ToggleMenu = () => {
               fill="#282828" />
           </svg></button>
       </RouterLink>
-
-
     </div>
+
     <div class="pitayapp-logo"><img src="../assets/img/pitayapp-white-iso.png" alt="" class="loguito"></div>
   </aside>
 
@@ -70,7 +69,6 @@ const ToggleMenu = () => {
     border-radius: 20px 20px 0 0;
 
     .top-elements {
-
       .menu-icon {
         display: none;
 
@@ -85,7 +83,6 @@ const ToggleMenu = () => {
         }
       }
 
-
     }
 
     .nav-icons {
@@ -97,7 +94,6 @@ const ToggleMenu = () => {
       margin-top: 0;
       width: 100%;
       transition: 0.3s ease-in-out;
-
 
       .router-link {
         background-color: transparent;
@@ -119,7 +115,6 @@ const ToggleMenu = () => {
           display: none;
         }
 
-
         button {
           background-color: transparent;
           outline: none;
@@ -127,7 +122,6 @@ const ToggleMenu = () => {
           justify-content: center;
           margin-top: 1.5rem;
           margin-bottom: 1.5rem;
-
 
           .view-icon {
             background-color: transparent;
@@ -200,14 +194,12 @@ const ToggleMenu = () => {
       box-shadow: none;
       border-radius: 0;
 
-
       .top-elements {
         display: flex;
         flex-direction: column;
         background-color: var(--primary);
         justify-content: center;
         transition: 0.3s ease-in-out;
-
 
         .menu-icon {
           background-color: var(--primary);
@@ -230,7 +222,6 @@ const ToggleMenu = () => {
           }
         }
 
-
       }
 
       .nav-icons {
@@ -242,7 +233,6 @@ const ToggleMenu = () => {
         margin-top: 1rem;
         width: 100%;
         transition: 0.3s ease-in-out;
-
 
         .router-link {
           background-color: transparent;
@@ -266,7 +256,6 @@ const ToggleMenu = () => {
             display: none;
           }
 
-
           button {
             background-color: transparent;
             outline: none;
@@ -274,7 +263,6 @@ const ToggleMenu = () => {
             justify-content: center;
             margin-top: 1.5rem;
             margin-bottom: 1.5rem;
-
 
             .view-icon {
               background-color: transparent;
@@ -284,7 +272,6 @@ const ToggleMenu = () => {
             }
 
           }
-
 
         }
 
@@ -338,7 +325,6 @@ const ToggleMenu = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-
 
           .loguito {
             width: 5rem;

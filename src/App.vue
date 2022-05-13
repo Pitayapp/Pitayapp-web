@@ -39,7 +39,6 @@ import HeaderApp from '@/components/HeaderApp.vue'
   padding: 0;
 
 
-
   #app {
     width: 100%;
     height: 100%;
