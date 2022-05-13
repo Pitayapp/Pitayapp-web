@@ -94,6 +94,7 @@ body {
   .home-view {
     width: 100%;
     height: 100%;
+    margin-bottom: 6rem;
 
     & .container {
       display: flex;
@@ -276,6 +277,14 @@ body {
 
         }
       }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    & .home-view {
+      display: none;
     }
   }
 }
