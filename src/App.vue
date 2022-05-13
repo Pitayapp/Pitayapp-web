@@ -1,119 +1,59 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
+/* import { RouterLink, RouterView } from 'vue-router' */
+import SideBar from '@/components/SideBar.vue'
+import HeaderApp from '@/components/HeaderApp.vue'
 </script>
 
 <template>
+
+  <SideBar />
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+    <HeaderApp />
   </header>
+  <main>
+    <RouterView class="router-view" />
+  </main>
+  <!-- <div id="nav">
+    <RouterLink to="/">Home</RouterLink> |
+    <RouterLink to="/discover">Discover</RouterLink>
+    <RouterLink to="/upload">Upload</RouterLink>
+    <RouterLink to="/collections">Collections</RouterLink>
+  </div> -->
 
-  <RouterView />
+
 </template>
 
-<style>
-@import '@/assets/base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+<style lang="scss">
+:root {
+  --primary: #F9458E;
+  --secondary: #FFF;
+  --cursor-color: rgb(221, 220, 220, 0.2);
+  --sidebar-width: 310px;
 }
 
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
+* {
+  font-family: 'Inter', sans-serif;
   background-color: transparent;
-}
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
 
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    width: 100%;
+    height: 100%;
+
+    /*  main {
+      flex: 1 1 0;
+      padding: 2rem;
+    } */
+
+    .router-view {
+      margin-top: 2.5rem;
+      margin-left: 10rem;
+    }
   }
 
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
 </style>
