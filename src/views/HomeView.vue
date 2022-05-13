@@ -145,6 +145,7 @@ body {
             height: 1.5rem;
             border-radius: 15px;
             border: 0;
+            background-color: white;
           }
 
           & input::placeholder {
