@@ -120,7 +120,7 @@ const ToggleMenu = () => {
           outline: none;
           border: none;
           justify-content: center;
-          margin-top: 1.5rem;
+          margin-top: 0.8rem;
           margin-bottom: 1.5rem;
 
           .view-icon {
@@ -157,7 +157,7 @@ const ToggleMenu = () => {
           outline: none;
           border: none;
           justify-content: center;
-          margin-top: 1.5rem;
+          margin-top: 1rem;
           margin-bottom: 1.5rem;
 
         }
