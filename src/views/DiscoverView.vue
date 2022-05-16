@@ -17,11 +17,12 @@
       </div>
       <div class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt="" class="discover-img">Pastas
       </div>
-      <div class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt="" class="discover-img2">veganas
+      <div class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt="" class="discover-img2">Veganas
       </div>
-      <div class="cattegories2 six"><img src="../assets/img/vegan-burger.png" alt="" class="discover-img2">
+      <div class="cattegories3 six"><img src="../assets/img/vegan-burger.png" alt="" class="discover-img3">
         <div class="fastfood-text">
-          <p class="title">Vegan Fast Food</p>
+          <h3>Vegan Fast Food</h3>
+          <p>¡Prepara tus recetas favoritas y disfruta los viernes por la noche!</p>
         </div>
       </div>
       <div class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png" alt="" class="discover-img2">
@@ -44,8 +45,6 @@
     padding: 0;
     margin: 0;
     height: 55rem;
-
-
 
     .top-discover {
       display: flex;
@@ -77,6 +76,8 @@
         height: 8rem;
       }
 
+
+
       .cattegories {
         align-self: center;
         background-color: var(--secondary);
@@ -89,11 +90,67 @@
         font-size: 2rem;
         font-weight: 700;
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-
-
       }
 
       .cattegories2 {
+        background-color: var(--secondary);
+        border-radius: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+        .discover-img2 {
+          width: 14rem;
+          height: 14rem;
+        }
+      }
+
+      .cattegories3 {
+        background-color: var(--secondary);
+        border-radius: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 2rem;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 15%;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+        .discover-img3 {
+          width: 14rem;
+          height: 14rem;
+        }
+
+        .fastfood-text {
+
+          display: flex;
+          flex-direction: column;
+          margin-left: 30px;
+
+          h3 {
+            font-size: 2rem;
+            font-weight: 700;
+          }
+
+          p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #656565;
+            margin-top: 10px;
+          }
+        }
+
+      }
+
+      .cattegories3 {
         background-color: var(--secondary);
         border-radius: 20px;
         height: 100%;
