@@ -1,5 +1,5 @@
 <template>
-  <main class="discover-view">
+  <div class="discover-view">
     <div class="top-discover">
       <div class="section-title">
         <h1>Descubre</h1>
@@ -10,80 +10,57 @@
       </div>
     </div>
     <div class="grid-discover">
-      <div class="cattegories one">Smoothies</div>
-      <div class="cattegories two">Postres</div>
-      <div class="cattegories three">cremas y sopas</div>
-      <div class="cattegories four">pastas</div>
-      <div class="cattegories2 five">veganas</div>
-      <div class="cattegories2 six">vegan fast food</div>
-      <div class="cattegories2 seven">vegetarianas</div>
+      <div class="cattegories one"><img src="../assets/img/smoothies.png" alt="" class="discover-img"> Smoothies</div>
+      <div class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt="" class="discover-img"> Postres
+      </div>
+      <div class="cattegories three"><img src="../assets/img/sopa-veg.png" alt="" class="discover-img">Cremas y sopas
+      </div>
+      <div class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt="" class="discover-img">Pastas
+      </div>
+      <div class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt="" class="discover-img2">veganas
+      </div>
+      <div class="cattegories2 six"><img src="../assets/img/vegan-burger.png" alt="" class="discover-img2">
+        <div class="fastfood-text">
+          <p class="title">Vegan Fast Food</p>
+        </div>
+      </div>
+      <div class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png" alt="" class="discover-img2">
+        vegetarianas</div>
     </div>
 
 
-  </main>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 @media (min-width: 300px) {
   main {
-    height: 100%;
-    width: 100%;
-
-    .grid-discover {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
-      background-color: blue;
-      height: 100%;
-      width: 100%;
-
-      .cattegories {
-        background-color: var(--secondary);
-        border-radius: 20px;
-        height: 5rem;
-      }
-
-      .one {
-        grid-area: 1 / 1 / 2 / 3;
-      }
-
-      .two {
-        grid-area: 1 / 3 / 2 / 5;
-      }
-
-      .three {
-        grid-area: 2 / 1 / 3 / 3;
-      }
-
-      .four {
-        grid-area: 2 / 3 / 3 / 5;
-      }
-
-      .five {
-        grid-area: 3 / 1 / 4 / 2;
-      }
-
-      .six {
-        grid-area: 3 / 2 / 4 / 4;
-      }
-
-      .seven {
-        grid-area: 3 / 4 / 4 / 5;
-      }
-    }
-
+    background-color: none;
   }
 }
 
 @media (min-width: 800px) {
-  main {
-    background-color: blue;
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100%;
+  .discover-view {
+    padding: 0;
+    margin: 0;
+    height: 55rem;
 
+
+
+    .top-discover {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .discover-browser {
+        border-radius: 10px;
+        margin-right: 5%;
+
+        input {
+          width: 6rem;
+        }
+      }
+    }
 
     .grid-discover {
       display: grid;
@@ -91,20 +68,27 @@
       grid-template-rows: repeat(4, 1fr);
       grid-column-gap: 30px;
       grid-row-gap: 30px;
-      height: 100%;
-      background-color: green;
-      padding: 4rem;
+      margin: 2rem;
+      width: 93%;
+      height: 90%;
 
+      .discover-img {
+        width: 8rem;
+        height: 8rem;
+      }
 
       .cattegories {
         align-self: center;
         background-color: var(--secondary);
         border-radius: 20px;
-        height: 8rem;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        height: 100%;
+        font-size: 2rem;
+        font-weight: 700;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
 
       }
@@ -112,11 +96,14 @@
       .cattegories2 {
         background-color: var(--secondary);
         border-radius: 20px;
-        height: 20rem;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 2rem;
+        font-weight: 700;
         cursor: pointer;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
       }
 
       .one {

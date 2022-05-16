@@ -42,6 +42,8 @@ import HeaderApp from '@/components/HeaderApp.vue'
     width: 100%;
     height: 100%;
 
+
+
     /*  main {
       flex: 1 1 0;
       /*       padding: 2rem;
@@ -49,7 +51,8 @@ import HeaderApp from '@/components/HeaderApp.vue'
 
 
     .router-view {
-      padding: 2.5rem 0 0 10rem;
+      padding: 1.5rem 0 0 10rem;
+
 
       @media (max-width: 800px) {
         padding: 0;
