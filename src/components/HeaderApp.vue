@@ -15,7 +15,7 @@ const uploadView = ref({}) */
       </div>
       <div class="header-icons">
         <div class="left-svgs">
-          <RouterLink to="/upoad"><svg width="70" height="70" viewBox="0 0 70 70" fill="none"
+          <RouterLink to="/upload"><svg width="70" height="70" viewBox="0 0 70 70" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M34.5181 34.5181H21.9108M34.5181 21.9109V34.5181V21.9109ZM34.5181 34.5181V47.1254V34.5181ZM34.5181 34.5181H47.1253H34.5181Z"
