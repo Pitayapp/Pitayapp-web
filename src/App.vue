@@ -20,7 +20,6 @@ import HeaderApp from '@/components/HeaderApp.vue'
     <RouterLink to="/collections">Collections</RouterLink>
   </div> -->
 
-
 </template>
 
 <style lang="scss">
@@ -45,19 +44,17 @@ import HeaderApp from '@/components/HeaderApp.vue'
 
     /*  main {
       flex: 1 1 0;
-      padding: 2rem;
-    } */
+      /*       padding: 2rem;
+ */
+
 
     .router-view {
-      margin-top: 2.5rem;
-      margin-left: 10rem;
+      padding: 2.5rem 0 0 10rem;
 
       @media (max-width: 800px) {
-        margin-top: 0;
-        margin-left: 0;
+        padding: 0;
       }
     }
   }
-
 }
 </style>
