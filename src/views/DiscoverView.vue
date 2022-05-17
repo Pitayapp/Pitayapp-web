@@ -28,15 +28,52 @@
       <div class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png" alt="" class="discover-img2">
         vegetarianas</div>
     </div>
-
-
   </div>
 </template>
 
 <style lang="scss" scoped>
 @media (min-width: 300px) {
-  main {
-    background-color: none;
+  .discover-view {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+
+    .grid-discover {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    }
+
+    .one {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .two {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .three {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .four {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .five {
+      grid-area: 3 / 1 / 5 / 3;
+    }
+
+    .six {
+      grid-area: 5 / 1 / 7 / 2;
+    }
+
+    .seven {
+      grid-area: 5 / 2 / 7 / 3;
+    }
   }
 }
 
@@ -44,12 +81,18 @@
   .discover-view {
     padding: 0;
     margin: 0;
-    height: 55rem;
+    height: 90%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
 
     .top-discover {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 93%;
 
       .discover-browser {
         border-radius: 10px;
@@ -64,17 +107,12 @@
     .grid-discover {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 10%);
       grid-column-gap: 30px;
       grid-row-gap: 30px;
       margin: 2rem;
       width: 93%;
       height: 90%;
-
-      .discover-img {
-        width: 8rem;
-        height: 8rem;
-      }
 
 
 
@@ -90,6 +128,11 @@
         font-size: 2rem;
         font-weight: 700;
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+        .discover-img {
+          width: 8rem;
+          height: 8rem;
+        }
       }
 
       .cattegories2 {
