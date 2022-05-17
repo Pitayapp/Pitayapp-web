@@ -45,6 +45,10 @@ import HeaderApp from '@/components/HeaderApp.vue'
       width: 100vw;
       height: 92vh;
 
+      @media (max-width: 800px) {
+        height: 140vh; //This allows to do vertical scroll in mobile version
+      }
+
       /*  main {
       flex: 1 1 0;
       /*       padding: 2rem;
@@ -53,6 +57,9 @@ import HeaderApp from '@/components/HeaderApp.vue'
         width: 100vw;
         height: 90%;
 
+        @media (max-width: 800px) {
+          height: 100vh;
+        }
 
         .router-view {
           /* margin-top: 2.5rem;
