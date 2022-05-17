@@ -35,46 +35,48 @@ export default {
           <button>Buscar</button>
         </div>
       </div>
-      <div class="most-popular">
-        <div class="most-popular-text">
-          <h2>Más populares</h2>
-          <a href="">Ver más</a>
-        </div>
-        <!-- Esto hay que meterlo en un componente aparte. Crear un componente con la imagen
+      <div class="content">
+        <div class="most-popular">
+          <div class="most-popular-text">
+            <h2>Más populares</h2>
+            <a href="">Ver más</a>
+          </div>
+          <!-- Esto hay que meterlo en un componente aparte. Crear un componente con la imagen
         el título y el autor de la receta y llamarlo 3 veces en HomeView -->
-        <div class="recipe-list">
-          <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
-            <h4 class="title">{{ recipe.title }}</h4>
-            <p>{{ recipe.author }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="bottom-container">
-        <div class="categories">
-          <div class="categorie-container week">
-            <div class="transparent">
-              <h3 class="title">Recetas de la semana</h3>
+          <div class="recipe-list">
+            <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
+              <h4 class="title">{{ recipe.title }}</h4>
+              <p>{{ recipe.author }}</p>
             </div>
           </div>
         </div>
-        <div class="categories">
-          <div class="categorie-container family">
-            <div class="transparent">
-              <h3 class="title">Para cenar en familia</h3>
+        <div class="bottom-container">
+          <div class="categories">
+            <div class="categorie-container week">
+              <div class="transparent">
+                <h3 class="title">Recetas de la semana</h3>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="categories">
-          <div class="categorie-container diet">
-            <div class="transparent">
-              <h3 class="title">Comenzando la dieta</h3>
+          <div class="categories">
+            <div class="categorie-container family">
+              <div class="transparent">
+                <h3 class="title">Para cenar en familia</h3>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="categories">
-          <div class="categorie-container children">
-            <div class="transparent">
-              <h3 class="title">Para los más peques</h3>
+          <div class="categories">
+            <div class="categorie-container diet">
+              <div class="transparent">
+                <h3 class="title">Comenzando la dieta</h3>
+              </div>
+            </div>
+          </div>
+          <div class="categories">
+            <div class="categorie-container children">
+              <div class="transparent">
+                <h3 class="title">Para los más peques</h3>
+              </div>
             </div>
           </div>
         </div>
@@ -92,8 +94,8 @@ body {
   height: 100vh;
 
   .home-view {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     margin-bottom: 6rem;
 
     & .container {
@@ -283,8 +285,102 @@ body {
 
 @media (min-width: 800px) {
   body {
+    width: 100vw;
+    height: 100vh;
+
     & .home-view {
-      display: none;
+      margin-bottom: 0;
+      box-sizing: border-box;
+
+      & .container {
+        height: 100%;
+        width: 100%;
+
+        & .top-container {
+          background-color: transparent;
+          color: black;
+          height: 5%;
+          border-radius: 0;
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+          justify-content: center;
+
+          & .hello {
+
+            & p {
+              font-size: 1.6rem;
+            }
+
+            & img {
+              display: none;
+            }
+          }
+
+          & .searcher {
+            display: none;
+          }
+        }
+
+        & .content {
+          height: 100%;
+          width: 100%;
+          margin-top: 0;
+
+          .most-popular {
+            width: 50%;
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2.5%;
+
+            & .most-popular-text {
+              margin-top: 0;
+              font-size: 0.8rem;
+            }
+
+            & .recipe-list {
+              width: 100%;
+              display: grid;
+              grid-template-columns: 33% 33% 33%;
+
+
+              & .popular-recipes {
+                height: 90%;
+                width: 80%;
+              }
+            }
+          }
+
+          .bottom-container {
+            height: 50%;
+            width: 50%;
+            margin-top: 2.5%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 50%;
+
+            .categories {
+              width: 100%;
+              height: 100%;
+
+              & .categorie-container {
+                width: 95%;
+                height: 75%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+                border-radius: 15px;
+                /* background: rgba(151, 151, 151, 0.57); */
+                background-position: center;
+                background-size: 100%;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

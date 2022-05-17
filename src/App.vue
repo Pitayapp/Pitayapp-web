@@ -37,24 +37,35 @@ import HeaderApp from '@/components/HeaderApp.vue'
   margin: 0;
   padding: 0;
 
+  body {
+    width: 100vw;
+    height: 100vh;
 
-  #app {
-    width: 100%;
-    height: 100%;
+    #app {
+      width: 100vw;
+      height: 92vh;
 
-    /*  main {
+      /*  main {
       flex: 1 1 0;
       /*       padding: 2rem;
  */
+      main {
+        width: 100vw;
+        height: 90%;
 
 
-    .router-view {
-      margin-top: 2.5rem;
-      margin-left: 10rem;
+        .router-view {
+          /* margin-top: 2.5rem;
+      margin-left: 10rem; */
+          padding: 1.5rem 0 0 10rem;
+          box-sizing: border-box;
+          width: 100vw;
+          height: 100%;
 
-      @media (max-width: 800px) {
-        margin-top: 0;
-        margin-left: 0;
+          @media (max-width: 800px) {
+            padding: 0;
+          }
+        }
       }
     }
   }
