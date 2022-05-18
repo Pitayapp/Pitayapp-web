@@ -13,12 +13,6 @@ import HeaderApp from '@/components/HeaderApp.vue'
   <main>
     <RouterView class="router-view" />
   </main>
-  <!-- <div id="nav">
-    <RouterLink to="/">Home</RouterLink> |
-    <RouterLink to="/discover">Discover</RouterLink>
-    <RouterLink to="/upload">Upload</RouterLink>
-    <RouterLink to="/collections">Collections</RouterLink>
-  </div> -->
 
 </template>
 
@@ -49,10 +43,6 @@ import HeaderApp from '@/components/HeaderApp.vue'
         height: 140vh; //This allows to do vertical scroll in mobile version
       }
 
-      /*  main {
-      flex: 1 1 0;
-      /*       padding: 2rem;
- */
       main {
         width: 100vw;
         height: 90%;
@@ -62,8 +52,6 @@ import HeaderApp from '@/components/HeaderApp.vue'
         }
 
         .router-view {
-          /* margin-top: 2.5rem;
-      margin-left: 10rem; */
           padding: 1.5rem 0 0 10rem;
           box-sizing: border-box;
           width: 100vw;
