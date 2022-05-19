@@ -93,6 +93,7 @@
       justify-content: space-between;
       align-items: center;
       width: 93%;
+      height: 5%;
 
       .discover-browser {
         border-radius: 10px;
@@ -107,12 +108,12 @@
     .grid-discover {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(4, 10%);
+      grid-template-rows: repeat(4, 20%);
       grid-column-gap: 30px;
       grid-row-gap: 30px;
       margin: 2rem;
       width: 93%;
-      height: 90%;
+      height: 100%;
 
 
 
@@ -130,8 +131,8 @@
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
         .discover-img {
-          width: 8rem;
-          height: 8rem;
+          width: 7rem;
+          height: 7rem;
         }
       }
 
@@ -149,8 +150,8 @@
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
         .discover-img2 {
-          width: 14rem;
-          height: 14rem;
+          width: 12rem;
+          height: 12rem;
         }
       }
 
@@ -164,12 +165,12 @@
         font-size: 2rem;
         font-weight: 700;
         cursor: pointer;
-        padding: 15%;
+        padding: 10%;
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
         .discover-img3 {
-          width: 14rem;
-          height: 14rem;
+          width: 12rem;
+          height: 12rem;
         }
 
         .fastfood-text {
@@ -184,26 +185,13 @@
           }
 
           p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 300;
             color: #656565;
             margin-top: 10px;
           }
         }
 
-      }
-
-      .cattegories3 {
-        background-color: var(--secondary);
-        border-radius: 20px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        font-weight: 700;
-        cursor: pointer;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
       }
 
       .one {
