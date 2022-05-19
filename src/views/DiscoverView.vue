@@ -36,15 +36,126 @@
   .discover-view {
     padding: 0;
     margin: 0;
+    margin-top: 2rem;
     box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
 
     .grid-discover {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(6, 1fr);
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+
+    .top-discover {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      width: 100%;
+      height: 5%;
+      margin-bottom: 2rem;
+
+      .discover-browser {
+        border-radius: 10px;
+        margin-right: 5%;
+
+        input {
+          width: 6rem;
+        }
+      }
+    }
+
+    .grid-discover {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      margin: 1.5rem;
+      width: 90%;
+      height: 70%;
+
+
+
+      .cattegories {
+        align-self: center;
+        background-color: var(--secondary);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        height: 80%;
+        font-size: 1rem;
+        font-weight: 700;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+        .discover-img {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+
+      .cattegories2 {
+        background-color: var(--secondary);
+        border-radius: 20px;
+        height: 120%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+        .discover-img2 {
+          width: 8rem;
+          height: 8rem;
+        }
+      }
+
+      .cattegories3 {
+        background-color: var(--secondary);
+        border-radius: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        cursor: pointer;
+        padding: 10%;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+        .discover-img3 {
+          width: 8rem;
+          height: 8rem;
+        }
+
+        .fastfood-text {
+
+          display: flex;
+          flex-direction: column;
+          margin-left: 30px;
+
+          h3 {
+            font-size: 1rem;
+            font-weight: 700;
+          }
+
+          p {
+            font-size: 0.7rem;
+            font-weight: 300;
+            color: #656565;
+            margin-top: 10px;
+          }
+        }
+
+      }
     }
 
     .one {
@@ -64,11 +175,12 @@
     }
 
     .five {
-      grid-area: 3 / 1 / 5 / 3;
+      grid-area: 5 / 1 / 7 / 2;
     }
 
     .six {
-      grid-area: 5 / 1 / 7 / 2;
+
+      grid-area: 3 / 1 / 5 / 3;
     }
 
     .seven {
@@ -83,6 +195,7 @@
     margin: 0;
     height: 90%;
     width: 100%;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -92,6 +205,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-direction: row;
       width: 93%;
       height: 5%;
 
