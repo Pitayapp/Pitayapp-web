@@ -1,6 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
+
+// Firebase
+import Firebase from 'firebase';
+import config from '/main.js';
+let app = Firebase.initializeApp(config);
+let db = app.database();
+let recipes = db.ref('recipes');
 </script>
 
 <template>
@@ -9,7 +16,6 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
