@@ -4,6 +4,8 @@ import { RouterLink } from 'vue-router'
 
 const uploadView = ref({}) */
 
+
+
 </script>
 
 <template>
@@ -30,7 +32,9 @@ const uploadView = ref({}) */
               fill="#F9458E" stroke-width="6" />
           </svg>
         </div>
-        <div class="user-button"><img src="../assets/img/user-image.png" alt="" class="pitayapp-user"></div>
+        <div class="user-button"><button class="toggle-profile" @click="toggle"><img src="../assets/img/user-image.png"
+              alt="" class="pitayapp-user"></button>
+        </div>
       </div>
     </div>
   </header>
