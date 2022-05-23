@@ -7,14 +7,6 @@ import { getFirestore, setDoc, doc} from 'firebase/firestore/lite';
 import 'dotenv/config'
 import * as fs from 'fs'; //file system -movies json-
 
-// const firebaseConfig = {
-//   apiKey: import.meta.env.VITE_API_KEY,
-//   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-//   projectId: import.meta.env.VITE_PROJECT_ID,
-//   storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-//   messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-//   appId: import.meta.env.VITE_APP_ID
-// };
 
 const firebaseConfig = {
   apiKey: process.env['API_KEY'] || 'API_KEY_VACIA',
@@ -53,3 +45,36 @@ fs.readFile("./tools/recipes.json", "utf8", (err, response) => {
   }
 
 });
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCoQsUSujAxn2wZbrj812d8LRMuPvqKD9A",
+  authDomain: "test-pitayapp.firebaseapp.com",
+  projectId: "test-pitayapp",
+  storageBucket: "test-pitayapp.appspot.com",
+  messagingSenderId: "899191902557",
+  appId: "1:899191902557:web:9cdf268e2ee25c6f4358b4"
+};
+
+// Initialize Firebase
+firebase.initializeApp(config);
+const db = firebase.firestore();
+const selection = db.collection('usuarios');
+
+new Vue({
+  el: '#main',
+  data: {
+    name: null,
+    age: null,
+    users: []
+  },
+  mounted(){
+    this.users=[]
+    collection.get()
+    .then( (r)) => r.docs.map( (item)) => this.users.push({id:item.id, data:item.data()});
+  }
+})
