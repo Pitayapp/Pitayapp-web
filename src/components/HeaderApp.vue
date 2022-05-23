@@ -2,28 +2,27 @@
 import { RouterLink } from 'vue-router'
 import DropdownComp from '@/components/DropdownComp.vue'
 export default {
-  name: 'DropDownComp',
+  name: 'DdComp',
   components: {
     DropdownComp
   },
   data() {
     return {
-      user: [
+      dropdownmenu: [
         {
           title: 'Configuración',
-          link: '#'
+          link: '@/views/ProfileView.vue'
         },
         {
           title: 'Mis recetas',
-          link: '#'
         },
         {
           title: 'Mis Colecciones',
-          link: '#'
+          link: '@/views/CollectionsView.vue'
         },
         {
           title: 'Cerrar Sesión',
-          link: '#'
+
         }
       ]
     }
@@ -62,9 +61,8 @@ export default {
               fill="#F9458E" stroke-width="6" />
           </svg>
         </div>
-        <DropdownComp title="ah" :items="DropdownComp"><button class="toggle-prof">
-            <!--<img
-              src="../assets/img/user-image.png" alt="" class="pitayapp-user"> -->
+        <DropdownComp title="DdComp" :items="dropdownmenu" class="dropdown-header"><button class="toggle-prof">
+            <img src="../assets/img/user-image.png" alt="" class="pitayapp-user">
           </button>
         </DropdownComp>
       </div>
@@ -136,17 +134,21 @@ export default {
           }
         }
 
-        .user-button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 4rem;
-          height: 4rem;
+        .dropdown-header.active {
+          background-color: white;
 
-          .pitayapp-user {
+          .toggle-prof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+
+            /*           .pitayapp-user {
             width: 3.5rem;
             height: 3.5rem;
             cursor: pointer;
+          } */
           }
         }
       }
