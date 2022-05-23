@@ -14,7 +14,6 @@
     "vue": "^3.2.33",
     "vue-router": "^4.0.14",
     "dotenv": "^16.0.0",
-    "firebase": "^9.6.11",
     "@supabase/supabase-js": "^1.35.2",
     "color": "^4.2.3"
   },
