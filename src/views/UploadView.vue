@@ -4,32 +4,20 @@ export default {
 
   data() {
     return {
-      username: {},
+      username: "Antonio",
       /* Las recetas más populares hay que meterlas en un componente aparte */
-      categories: [
+      mostPopular: [
         {
-          name: "Vegana",
+          title: "Receta 1",
+          author: "Autor 1",
         },
         {
-          name: "Smoothie",
+          title: "Receta 2",
+          author: "Autor 2",
         },
         {
-          name: "Cremas y sopas",
-        },
-        {
-          name: "Pastas",
-        },
-        {
-          name: "Postres",
-        },
-        {
-          name: "Cremas y sopas",
-        },
-        {
-          name: "Vegan fast food",
-        },
-        {
-          name: "Vegetariana",
+          title: "Receta 3",
+          author: "Autor 3",
         },
       ],
     };
@@ -51,15 +39,6 @@ export default {
           placeholder="    Nombre de tu receta"
           class="name-input-bar"
         />
-      </div>
-      <div class="categories">
-        <ul>
-          <li>Vegan</li>
-          <li>Desert</li>
-          <li>Smoothie</li>
-          <li></li>
-          <li></li>
-        </ul>
       </div>
     </div>
   </main>
