@@ -14,4 +14,20 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(config);
+const db = firebase.firestore();
+const selection = db.collection('usuarios');
+
+new Vue({
+  el: '#main',
+  data: {
+    name: null,
+    age: null,
+    users: []
+  },
+  mounted(){
+    this.users=[]
+    collection.get()
+    .then( (r)) => r.docs.map( (item)) => this.users.push({id:item.id, data:item.data()});
+  }
+})
