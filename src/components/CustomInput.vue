@@ -16,7 +16,7 @@ export default {
 div {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  max-width: 90vw;
 
   label {
     font-weight: bold;

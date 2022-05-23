@@ -2,6 +2,8 @@
 import CustomInput from '@/components/CustomInput.vue'
 import ToggleButton from '@/components/ToggleButton.vue'
 
+let idInterests = 0;
+
 export default {
   components: {
     CustomInput,
@@ -9,94 +11,417 @@ export default {
   },
   data() {
     return {
-      name: 'Nombre',
-      nameText: 'Noelia',
-      lastName: 'Apellidos',
-      lastNameText: 'Plasencia',
-      user: 'Usuario',
-      userText: 'tastyfancy79',
-      email: 'Email',
-      emailText: 'tastyfancy79@gmail.com',
+      name: 'Noelia',
+      lastName: 'Plasencia',
+      username: 'tastyfancy79',
+      interests: [
+        {id: idInterests++, message: 'Vegana'},
+        {id: idInterests++, message: 'Saludable'},
+        {id: idInterests++, message: 'Comida Rápida'},
+        {id: idInterests++, message: 'Tortilla'},
+      ]
+    }
+  },
+  methods: {
+    onFileSelected(event) {
+      console.log(event)
     }
   }
 }
 </script>
 
 <template>
-  <main class="collections-view">
+  <main>
     <h1>Editar perfil</h1>
-    <div class="userInformationContainer">
-      <CustomInput :title="name" :text="nameText"/>
-      <CustomInput :title="lastName" :text="lastNameText"/>
-      <CustomInput :title="user" :text="userText"/>
-      <CustomInput :title="email" :text="emailText"/>
-    </div>
-    <div class="buttons-submit">
-      <button>Guardar cambios</button>
-      <p>+ Subir nueva receta</p>
-    </div>
-    <div class="configuration">
-      <h1>Configuración</h1>
-      <div class="checkbox-button">
-        <label>Permitir notificaciones</label>
-        <ToggleButton/>
-      </div>
+    <div class="main-container">
+      <section class="column-left">
+        <div class="box">
+          <img src="/src/assets/img/user-image.png" class="pitayapp-user">
+          <div>
+            <input type="file" @change="onFileSelected">
+            <p>Sube una foto de perfil</p>
+          </div>
+        </div>
+        <div class="information">
+          <label>{{ name }} {{ lastName }}</label>
+          <p>{{ username }}</p>
+        </div>
+        <div class="information">
+          <label>Usuario desde</label>
+          <p>18/05/2021</p>
+        </div>
+        <p class="reset-password">Cambiar contraseña</p>
+        <div class="interests">
+          <p>Intereses</p>
+          <div>
+            <label v-for="item in interests" :key="item.id">
+              {{ item.message }}
+            </label>
+            <button>Añadir más</button>
+          </div>
+        </div>
+      </section>
+      <section class="column-right">
+        <div class="userInformationContainer">
+          <CustomInput v-model="name" title="Nombre" text="Noelia"/>
+          <CustomInput v-model="lastName" title="Apellido" text="Plasencia"/>
+          <CustomInput v-model="username" title="Usuario" text="tastyfancy79"/>
+          <CustomInput title="Email" text="tastyfancy79@gmail.com"/>
+        </div>
+        <div class="buttons-submit">
+          <button>Guardar cambios</button>
+          <RouterLink class="router-link" to="/upload">
+            <p>+ Subir nueva receta</p>
+          </RouterLink>
+        </div>
+        <div class="configuration">
+          <h1>Configuración</h1>
+          <div class="checkbox-button">
+            <label>Permitir notificaciones</label>
+            <ToggleButton/>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 </template>
 
 <style lang="scss" scoped>
-.userInformationContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-gap: 20px;
-  max-width: fit-content;
-  margin-bottom: 20px;
-}
 
-.buttons-submit {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 50px;
-
-  button {
-    background: #F9458E;
-    border-radius: 30px;
-    border-color: transparent;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #FFFFFF;
-    width: 200px;
-    height: 40px;
-
-    &:hover {
-      background: #b83268;
-      cursor: pointer;
-    }
+@media (min-width: 300px) {
+  header {
+    display: none;
   }
 
-  p {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #F9458E;
+  .main-container {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    &:hover {
-      color: #b83268;
-      cursor: pointer;
+    .column-left {
+      max-width: 80vw;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: 300px;
+        height: 275px;
+        background: white;
+        border: gray dashed;
+        margin-bottom: 30px;
+        padding: 15px;
+
+
+        img {
+          width: 70%;
+          padding: 5%;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .information {
+        margin-bottom: 20px;
+
+        label {
+          font-size: 1rem;
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: grey;
+        }
+      }
+
+      .reset-password {
+        margin-bottom: 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #F9458E;
+
+        &:hover {
+          color: #b83268;
+          cursor: pointer;
+        }
+      }
+
+      .interests {
+        max-width: 80vw;
+
+        p {
+          margin-bottom: 20px;
+          font-size: 1rem;
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+        div {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        label {
+          margin: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 30px;
+          padding: 10px;
+          width: fit-content;
+          height: 30px;
+          background: #F9458E;
+          color: #FFFFFF;
+        }
+
+        button {
+          margin: 5px;
+          display: flex;
+          align-items: center;
+          border-radius: 30px;
+          padding: 10px;
+          width: fit-content;
+          height: 30px;
+          background: whitesmoke;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .buttons-submit {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 50px 0;
+
+      button {
+        background: #F9458E;
+        border-radius: 30px;
+        border-color: transparent;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #FFFFFF;
+        width: 200px;
+        height: 40px;
+
+        &:hover {
+          background: #b83268;
+          cursor: pointer;
+        }
+      }
+
+      .router-link {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #F9458E;
+        text-decoration: none;
+
+        &:hover {
+          color: #b83268;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .checkbox-button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+
+      label {
+        font-size: 1.2rem;
+      }
     }
   }
 }
 
-.checkbox-button{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px;
+@media (min-width: 800px) {
 
-  label {
-    font-size: 1.2rem;
+  main {
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      align-items: inherit;
+
+      .column-left {
+        .box {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 300px;
+          height: 275px;
+          background: white;
+          border: gray dashed;
+          margin-bottom: 30px;
+          padding: 15px;
+
+
+          img {
+            width: 70%;
+            padding: 5%;
+          }
+
+          div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        .information {
+          margin-bottom: 20px;
+
+          label {
+            font-size: 1rem;
+            font-weight: bold;
+          }
+
+          p {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: grey;
+          }
+        }
+
+        .reset-password {
+          margin-bottom: 20px;
+          font-size: 1rem;
+          font-weight: bold;
+          color: #F9458E;
+
+          &:hover {
+            color: #b83268;
+            cursor: pointer;
+          }
+        }
+
+        .interests {
+          max-width: 300px;
+
+          p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+          }
+
+          div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          label {
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            padding: 10px;
+            width: fit-content;
+            height: 30px;
+            background: #F9458E;
+            color: #FFFFFF;
+          }
+
+          button {
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            border-radius: 30px;
+            padding: 10px;
+            width: fit-content;
+            height: 30px;
+            background: whitesmoke;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .column-right {
+        max-width: 60vw;
+        width: 100%;
+        margin: 0 10%;
+
+        .userInformationContainer {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+          grid-gap: 20px;
+          max-width: 800px;
+          margin-bottom: 20px;
+        }
+
+        .buttons-submit {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          margin-bottom: 50px;
+
+          button {
+            background: #F9458E;
+            border-radius: 30px;
+            border-color: transparent;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            width: 200px;
+            height: 40px;
+
+            &:hover {
+              background: #b83268;
+              cursor: pointer;
+            }
+          }
+
+          .router-link {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #F9458E;
+            text-decoration: none;
+
+            &:hover {
+              color: #b83268;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .checkbox-button {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin: 10px;
+
+          label {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
   }
 }
 
