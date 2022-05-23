@@ -1,10 +1,40 @@
-<script setup>
+<script>
 import { RouterLink } from 'vue-router'
-/* import { ref } from 'vue'
+import DropdownComp from '@/components/DropdownComp.vue'
+export default {
+  name: 'DropDownComp',
+  components: {
+    DropdownComp
+  },
+  data() {
+    return {
+      user: [
+        {
+          title: 'Configuración',
+          link: '#'
+        },
+        {
+          title: 'Mis recetas',
+          link: '#'
+        },
+        {
+          title: 'Mis Colecciones',
+          link: '#'
+        },
+        {
+          title: 'Cerrar Sesión',
+          link: '#'
+        }
+      ]
+    }
+  },
+  methods: {
+  },
+  props: { ...RouterLink.props }
+}
+// import { ref } from 'vue'
 
-const uploadView = ref({}) */
-
-
+/* const uploadView = ref({}) */
 
 </script>
 
@@ -32,9 +62,11 @@ const uploadView = ref({}) */
               fill="#F9458E" stroke-width="6" />
           </svg>
         </div>
-        <div class="user-button"><button class="toggle-profile" @click="toggle"><img src="../assets/img/user-image.png"
-              alt="" class="pitayapp-user"></button>
-        </div>
+        <DropdownComp title="ah" :items="DropdownComp"><button class="toggle-prof">
+            <!--<img
+              src="../assets/img/user-image.png" alt="" class="pitayapp-user"> -->
+          </button>
+        </DropdownComp>
       </div>
     </div>
   </header>
