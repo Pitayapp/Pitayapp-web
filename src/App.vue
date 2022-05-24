@@ -1,12 +1,11 @@
 <script setup>
 /* import { RouterLink, RouterView } from 'vue-router' */
-import SideBar from '@/components/SideBar.vue'
-import HeaderApp from '@/components/HeaderApp.vue'
-import { Vue } from 'pinia/node_modules/vue-demi';
+import SideBar from "@/components/SideBar.vue";
+import HeaderApp from "@/components/HeaderApp.vue";
+import { Vue } from "pinia/node_modules/vue-demi";
 </script>
 
 <template>
-
   <SideBar />
   <header>
     <HeaderApp />
@@ -14,19 +13,18 @@ import { Vue } from 'pinia/node_modules/vue-demi';
   <main>
     <RouterView class="router-view" />
   </main>
-
 </template>
 
 <style lang="scss">
 :root {
-  --primary: #F9458E;
-  --secondary: #FFF;
+  --primary: #f9458e;
+  --secondary: #fff;
   --cursor-color: rgb(221, 220, 220, 0.2);
   --sidebar-width: 310px;
 }
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: transparent;
   box-sizing: border-box;
   margin: 0;
@@ -41,7 +39,7 @@ import { Vue } from 'pinia/node_modules/vue-demi';
       height: 92vh;
 
       @media (max-width: 800px) {
-        height: 140vh; //This allows to do vertical scroll in mobile version
+        // height: 140vh; //This allows to do vertical scroll in mobile version
       }
 
       main {
