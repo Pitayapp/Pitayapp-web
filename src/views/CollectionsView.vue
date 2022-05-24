@@ -1,6 +1,221 @@
+<script>
+
+</script>
+
 <template>
   <main class="collections-view">
-    <h1>Vista Colecciones</h1>
-    <p>Aquí mirarás tus recetas fav</p>
+    <div class="container">
+    <div class="top-container">
+      <h1 class="title">Recetas guardadas</h1>
+        <div class="searcher">
+          <input type="text" placeholder="  Busca una receta" class="searcher-bar">
+          <button>Buscar</button>
+        </div>
+    </div>
+      <div class="collections">
+        <div class="collection 1"></div>
+        <div class="collection 2"></div>
+        <div class="collection 3"></div>
+        <div class="collection 4"></div>
+        <div class="collection 5"></div>
+        <div class="collection 6"></div>
+        <div class="collection 7"></div>
+        <div class="collection 8"></div>
+      </div>
+    </div>
   </main>
 </template>
+
+
+
+<style lang="scss" scoped>
+@media (min-width: 300px) {
+
+main {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+
+  .collections-view {
+    width: 100vw;
+    height: 100vh;
+
+    .container {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 20% 80%;
+
+      .top-container {
+        width: 80%;
+        height: 100%;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 2rem;
+
+        & .title {
+          height: auto;
+          width: auto;
+          font-weight: bold;
+          font-size: 1.2rem;
+          margin-bottom: 2rem;
+        }
+        & .searcher {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          background-color: transparent;
+
+          .searcher-bar {
+            width: 12rem;
+            height: 1.5rem;
+            border-radius: 15px;
+            border: 0;
+            background-color: white;
+          }
+
+          & input::placeholder {
+            font-size: 0.8rem;
+
+          }
+
+          & button {
+            width: 3.5rem;
+            height: 1.5rem;
+            color: #FFFFFF;
+            border: 0;
+            border-radius: 15px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.8rem;
+            background-color: #F9458E;
+            cursor: pointer;
+          }
+        }
+      }
+      .collections {
+        display: grid;
+        grid-template-columns: repeat( auto-fill, minmax(min(50%,15rem), 1fr) );
+        transition: 0.3 ease-in-out;
+        box-sizing: border-box;
+        //grid-row-gap: 2rem;
+        //grid-column-gap: 2rem;
+        //grid-gap: 20px;
+        place-items: center;
+
+        .collection {
+          background-color: #F9458E;
+          height: 80%;
+          width: 80%;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}
+}
+
+@media (min-width: 800px) {
+main {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+
+  .collections-view {
+    width: 100vw;
+    height: 100vh;
+
+    .container {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 20% 80%;
+
+      .top-container {
+        width: 80%;
+        height: 100%;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 2rem;
+
+        & .title {
+          height: auto;
+          width: auto;
+          font-weight: bold;
+          font-size: 3.2rem;
+          margin-bottom: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        & .searcher {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          background-color: transparent;
+
+          .searcher-bar {
+            width: 13rem;
+            height: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 1em;
+            border: 0;
+            background-color: white;
+          }
+
+          & input::placeholder {
+            font-size: 0.8rem;
+          }
+
+          & button {
+            width: 3.5rem;
+            height: 1.5rem;
+            color: #FFFFFF;
+            border: 0;
+            border-radius: 15px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.8rem;
+            background-color: #F9458E;
+            cursor: pointer;
+          }
+        }
+      }
+      .collections {
+        display: grid;
+        grid-template-columns: repeat( auto-fill, minmax(min(50%,15rem), 1fr) );
+        transition: 0.3 ease-in-out;
+        box-sizing: border-box;
+        //grid-row-gap: 2rem;
+        //grid-column-gap: 2rem;
+        //grid-gap: 20px;
+        place-items: center;
+
+        .collection {
+          background-color: #F9458E;
+          height: 80%;
+          width: 80%;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}
+}
+
+</style>
+
+
+
