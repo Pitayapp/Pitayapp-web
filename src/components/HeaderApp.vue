@@ -120,6 +120,8 @@ const isOpen = () => {
           justify-content: center;
           width: 4rem;
           height: 4rem;
+          outline: none;
+          border: none;
 
           .pitayapp-user {
             width: 3.5rem;
@@ -141,8 +143,7 @@ const isOpen = () => {
           box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
           -webkit-box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
           min-width: 0rem;
-          height: calc(0px + 3rem);
-          padding: 1rem;
+          transition: 0.2s ease-out;
 
           .router-link {
             display: none;
@@ -151,14 +152,12 @@ const isOpen = () => {
             font-weight: 500;
           }
 
-          .router-link:hover {
-            color: var(--primary);
-            transition: 0.5s all;
-          }
+
         }
 
-        .best-dropdown:hover {
+        .best-dropdown {
           background-color: transparent;
+          transition: 0.3s ease-out;
 
           &.toggle-prof {
             display: flex;
@@ -166,6 +165,9 @@ const isOpen = () => {
             justify-content: center;
             width: 4rem;
             height: 4rem;
+            outline: none;
+            border: none;
+
 
             .pitayapp-user {
               width: 3.5rem;
@@ -189,12 +191,20 @@ const isOpen = () => {
             width: 12rem;
             height: 10rem;
             padding: 1rem;
+            transition: 0.3s ease-out;
 
             .router-link {
               display: block;
               color: #282828;
               text-decoration: none;
               font-weight: 500;
+
+
+            }
+
+            .router-link:hover {
+              color: var(--primary);
+              transition: 0.3s ease-out;
             }
 
           }
