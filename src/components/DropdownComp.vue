@@ -1,7 +1,7 @@
-<script>
+<!-- <script>
 export default {
   name: 'servicesA',
-  props: ['title', 'items'],
+  props: ['name', 'items'],
   data() {
     return {
       isOpen: false
@@ -17,9 +17,8 @@ export default {
         {{ title }}
       </a>
       <transition name="fade" appear>
-        <!-- <img src="../assets/img/user-image.png" alt="" class="pitayapp-user"> -->
         <div class="sub-menu" v-if="isOpen">
-          <div v-for="{ item, i } in items" :key="i" class="dropdowm-item"><a :href="item.link">{{ item.title }}</a>
+          <div v-for="{ item, i } in items" :key="i" class="dropdowm-item"><a :href="item.link">{{ item.name }}</a>
           </div>
         </div>
       </transition>
@@ -77,7 +76,14 @@ export default {
       .fade-leave-to {
         opacity: 0;
       }
+
+      & .isOpen {
+        background-color: red;
+      }
     }
+
+
   }
 }
 </style>
+ -->

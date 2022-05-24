@@ -1,42 +1,3 @@
-<script>
-import { RouterLink } from 'vue-router'
-import DropdownComp from '@/components/DropdownComp.vue'
-export default {
-  name: 'DdComp',
-  components: {
-    DropdownComp
-  },
-  data() {
-    return {
-      dropdownmenu: [
-        {
-          title: 'Configuración',
-          link: '@/views/ProfileView.vue'
-        },
-        {
-          title: 'Mis recetas',
-        },
-        {
-          title: 'Mis Colecciones',
-          link: '@/views/CollectionsView.vue'
-        },
-        {
-          title: 'Cerrar Sesión',
-
-        }
-      ]
-    }
-  },
-  methods: {
-  },
-  props: { ...RouterLink.props }
-}
-// import { ref } from 'vue'
-
-/* const uploadView = ref({}) */
-
-</script>
-
 <template>
   <header>
     <div class="container">
@@ -61,14 +22,32 @@ export default {
               fill="#F9458E" stroke-width="6" />
           </svg>
         </div>
-        <DropdownComp title="DdComp" :items="dropdownmenu" class="dropdown-header"><button class="toggle-prof">
+        <div :class="`${best_dropdown ? 'best-dropdown' : ''}`"><button class="toggle-prof" v-on:click="isOpen">
             <img src="../assets/img/user-image.png" alt="" class="pitayapp-user">
           </button>
-        </DropdownComp>
+          <div class="dropdown-content" id="myDropdown">
+            <RouterLink class="router-link" to="/profile">Configuración </RouterLink>
+            <RouterLink class="router-link" to="/collections">Mis Colecciones </RouterLink>
+            <a href="#" class="router-link">Cerrar Sesión</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 </template>
+
+<script setup>
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+
+const best_dropdown = ref(localStorage.getItem("best_dropwdown") === "true")
+const isOpen = () => {
+  best_dropdown.value = !best_dropdown.value
+  localStorage.setItem("best_dropdown", best_dropdown.value)
+}
+
+
+</script>
 
 <style lang="scss" scoped>
 @media (min-width: 300px) {
@@ -134,21 +113,90 @@ export default {
           }
         }
 
-        .dropdown-header.active {
-          background-color: white;
+        .toggle-prof {
 
-          .toggle-prof {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 4rem;
+          height: 4rem;
+
+          .pitayapp-user {
+            width: 3.5rem;
+            height: 3.5rem;
+            cursor: pointer;
+          }
+        }
+
+        .dropdown-content {
+          display: none;
+          position: fixed;
+          right: 5rem;
+          margin-top: 0.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: flex-start;
+          background-color: white;
+          box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
+          -webkit-box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
+          min-width: 0rem;
+          height: calc(0px + 3rem);
+          padding: 1rem;
+
+          .router-link {
+            display: none;
+            color: #282828;
+            text-decoration: none;
+            font-weight: 500;
+          }
+
+          .router-link:hover {
+            color: var(--primary);
+            transition: 0.5s all;
+          }
+        }
+
+        .best-dropdown:hover {
+          background-color: transparent;
+
+          &.toggle-prof {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 4rem;
             height: 4rem;
 
-            /*           .pitayapp-user {
-            width: 3.5rem;
-            height: 3.5rem;
-            cursor: pointer;
-          } */
+            .pitayapp-user {
+              width: 3.5rem;
+              height: 3.5rem;
+              cursor: pointer;
+            }
+          }
+
+          .dropdown-content {
+            display: block;
+            position: fixed;
+            right: 5rem;
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            background-color: white;
+            box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
+            width: 12rem;
+            height: 10rem;
+            padding: 1rem;
+
+            .router-link {
+              display: block;
+              color: #282828;
+              text-decoration: none;
+              font-weight: 500;
+            }
+
           }
         }
       }
