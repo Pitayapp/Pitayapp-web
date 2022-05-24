@@ -4,12 +4,30 @@ import DiscoverView from '@/views/DiscoverView.vue'
 import UploadView from '@/views/UploadView.vue'
 import CollectionsView from '@/views/CollectionsView.vue'
 import ProfileView from '@/views/ProfileView.vue'
+import LogIn from '@/views/LogIn.vue'
+import Register from '@/views/RegisterUser.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      redirect: {
+        name: "login"
+      }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LogIn
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomeView
     },
@@ -32,7 +50,7 @@ const router = createRouter({
       component: CollectionsView
       /* component: () => import('../views/CollectionsView.vue') */
     },
-        {
+    {
       path: '/profile',
       name: 'profile',
       component: ProfileView
