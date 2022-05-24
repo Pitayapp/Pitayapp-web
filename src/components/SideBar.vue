@@ -21,27 +21,24 @@ const ToggleMenu = () => {
 
     </div>
     <div class="nav-icons">
-      <RouterLink class="router-link" to="/"><button><img class="view-icon" src="../assets/svg/home-iconn.svg"
-            alt=""></button>
+      <RouterLink to="/"><button><img class="view-icon" src="../assets/svg/home-iconn.svg" alt=""></button>
         <h2>Home</h2>
       </RouterLink>
-      <RouterLink class="router-link" to="/discover"><button><img class="view-icon"
-            src="../assets/svg/discover-iconn.svg" alt="">
+      <RouterLink to="/discover"><button><img class="view-icon" src="../assets/svg/discover-iconn.svg" alt="">
           <div class="svg"></div>
         </button>
         <h2>Discover</h2>
       </RouterLink>
-      <RouterLink class="router-link" to="/upload"><button><img class="view-icon" src="../assets/svg/upload-iconn.svg"
-            alt="">
+      <RouterLink to="/upload"><button><img class="view-icon" src="../assets/svg/upload-iconn.svg" alt="">
         </button>
         <h2>Upload</h2>
       </RouterLink>
-      <RouterLink class="router-link" to="/collections"><button><img class="view-icon"
-            src="../assets/svg/collections-iconn.svg" alt=""></button>
+      <RouterLink to="/collections"><button><img class="view-icon" src="../assets/svg/collections-iconn.svg"
+            alt=""></button>
         <h2>Collections</h2>
       </RouterLink>
-      <RouterLink class="router-link" to="/profile"><button><img class="view-icon not-desktop"
-            src="../assets/svg/user-icon2.svg" alt=""></button>
+      <RouterLink to="/profile"><button><img class="view-icon not-desktop" src="../assets/svg/user-icon2.svg"
+            alt=""></button>
       </RouterLink>
     </div>
 
@@ -91,7 +88,7 @@ const ToggleMenu = () => {
       height: 100%;
       transition: 0.3s ease-in-out;
 
-      .router-link {
+      a {
         background-color: transparent;
         text-decoration: none;
         display: flex;
@@ -100,12 +97,18 @@ const ToggleMenu = () => {
         width: 100%;
         transition: 0.3s ease-in-out;
 
-        &:hover {
+
+        .active {
+          filter: brightness(0) saturate(100%) invert(43%) sepia(64%) saturate(2217%) hue-rotate(308deg) brightness(95%) contrast(105%);
+          background-color: red;
+        }
+
+        /*         &:hover {
           background-color: var(--cursor-color);
           transition: 0.3s all;
           z-index: 1;
           width: 100%
-        }
+        } */
 
         h2 {
           display: none;
@@ -117,13 +120,16 @@ const ToggleMenu = () => {
           border: none;
           justify-content: center;
 
+
+
           .view-icon {
             background-color: transparent;
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 2rem;
+            height: 2rem;
             transition: 0.2s ease-out;
             margin-top: 0.5rem;
             filter: brightness(0) saturate(100%) invert(13%) sepia(61%) saturate(20%) hue-rotate(38deg) brightness(102%) contrast(96%);
+
           }
         }
       }
@@ -198,7 +204,7 @@ const ToggleMenu = () => {
         width: 100%;
         transition: 0.3s ease-in-out;
 
-        .router-link {
+        a {
           background-color: transparent;
           text-decoration: none;
           display: flex;
@@ -207,12 +213,17 @@ const ToggleMenu = () => {
           width: 100%;
           transition: 0.3s ease-in-out;
 
-          &:hover {
+          .active {
+            filter: brightness(0) saturate(100%) invert(48%) sepia(29%) saturate(7317%) hue-rotate(310deg) brightness(98%) contrast(99%);
+            background-color: red;
+          }
+
+          /*           &:hover {
             background-color: var(--cursor-color);
             transition: 0.3s all;
             z-index: 1;
             width: 100%
-          }
+          } */
 
           h2 {
             background-color: transparent;
@@ -233,6 +244,8 @@ const ToggleMenu = () => {
               width: 3rem;
               transition: 0.2s ease-out;
               filter: none;
+
+
             }
 
             & .not-desktop {
