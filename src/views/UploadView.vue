@@ -97,6 +97,25 @@ export default {
             <button>Añadir</button>
           </div>
         </div>
+        <div class="time">
+          <h4>Tiempo de preparación</h4>
+          <div class="time-set">
+            <input type="text" placeholder="   10'" />
+          </div>
+        </div>
+        <div class="preparation">
+          <h4>Preparación</h4>
+          <div class="steps-preparation">
+            <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
+            <textarea
+              v-model="preparationSteps"
+              placeholder=" Escribe aquí tu receta"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="upload">
+        <button class="upload-button">Subir receta</button>
       </div>
     </div>
   </main>
@@ -184,7 +203,7 @@ body {
         & .input-file {
           opacity: 0; /* invisible but it's there! */
           width: 100%;
-          height: 200px;
+          height: 150px;
           position: absolute;
           cursor: pointer;
         }
@@ -193,8 +212,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
 
         & img {
           max-width: 100%;
@@ -203,6 +222,8 @@ body {
       }
       & p {
         margin-bottom: 2rem;
+        margin-left: 1rem;
+        font-size: 1rem;
       }
     }
 
@@ -217,6 +238,7 @@ body {
         display: flex;
         justify-content: space-around;
         margin-top: 0.5rem;
+        margin-left: 0rem;
 
         & input {
           width: 60%;
@@ -226,8 +248,9 @@ body {
           align-items: center;
           background-color: white;
           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-          border-radius: 30px;
+          border-radius: 20px;
           border: none;
+          font-size: 0.8rem;
         }
 
         & button {
@@ -235,10 +258,75 @@ body {
           color: white;
           width: 6rem;
           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-          border-radius: 15px;
+          border-radius: 30px;
           border: none;
           height: 2rem;
         }
+      }
+    }
+    & .time {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      & .time-set {
+        & input {
+          width: 30%;
+          height: 2rem;
+          display: flex;
+          align-items: center;
+          background-color: white;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+          border-radius: 30px;
+          border: none;
+        }
+      }
+    }
+    & .preparation {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & .steps-preparation {
+        & textarea {
+          display: flex;
+          flex-direction: column;
+          margin-top: 1rem;
+          width: 100%;
+          height: 10rem;
+          background-color: white;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+          border-radius: 15px;
+          border: none;
+          justify-content: start;
+          align-items: start;
+        }
+        & textarea::placeholder {
+          font-size: 0.8rem;
+          text-align: start;
+          padding: 8px;
+        }
+      }
+    }
+    & .upload {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      align-items: center;
+
+      & button {
+        background-color: #f9458e;
+        color: white;
+        width: 10rem;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+        border-radius: 30px;
+        border: none;
+        height: 3rem;
+        font-size: 1.5rem;
       }
     }
   }
