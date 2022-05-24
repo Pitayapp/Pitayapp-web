@@ -14,12 +14,6 @@ export default {
       name: 'Noelia',
       lastName: 'Plasencia',
       username: 'tastyfancy79',
-      interests: [
-        {id: idInterests++, message: 'Vegana'},
-        {id: idInterests++, message: 'Saludable'},
-        {id: idInterests++, message: 'Comida Rápida'},
-        {id: idInterests++, message: 'Tortilla'},
-      ]
     }
   },
   methods: {
@@ -51,15 +45,6 @@ export default {
           <p>18/05/2021</p>
         </div>
         <p class="reset-password">Cambiar contraseña</p>
-        <div class="interests">
-          <p>Intereses</p>
-          <div>
-            <label v-for="item in interests" :key="item.id">
-              {{ item.message }}
-            </label>
-            <button>Añadir más</button>
-          </div>
-        </div>
       </section>
       <section class="column-right">
         <div class="userInformationContainer">
@@ -160,47 +145,6 @@ export default {
         }
       }
 
-      .interests {
-        max-width: 80vw;
-
-        p {
-          margin-bottom: 20px;
-          font-size: 1rem;
-          font-weight: bold;
-          text-decoration: none;
-        }
-
-        div {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        label {
-          margin: 5px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 30px;
-          padding: 10px;
-          width: fit-content;
-          height: 30px;
-          background: #F9458E;
-          color: #FFFFFF;
-        }
-
-        button {
-          margin: 5px;
-          display: flex;
-          align-items: center;
-          border-radius: 30px;
-          padding: 10px;
-          width: fit-content;
-          height: 30px;
-          background: whitesmoke;
-          cursor: pointer;
-        }
-      }
     }
 
     .buttons-submit {
@@ -314,48 +258,6 @@ export default {
 
           &:hover {
             color: #b83268;
-            cursor: pointer;
-          }
-        }
-
-        .interests {
-          max-width: 300px;
-
-          p {
-            margin-bottom: 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-          }
-
-          div {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-          }
-
-          label {
-            margin: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 30px;
-            padding: 10px;
-            width: fit-content;
-            height: 30px;
-            background: #F9458E;
-            color: #FFFFFF;
-          }
-
-          button {
-            margin: 5px;
-            display: flex;
-            align-items: center;
-            border-radius: 30px;
-            padding: 10px;
-            width: fit-content;
-            height: 30px;
-            background: whitesmoke;
             cursor: pointer;
           }
         }

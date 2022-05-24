@@ -144,7 +144,7 @@ const ToggleMenu = () => {
     display: flex;
 
     aside {
-      position: absolute;
+      position: fixed;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
