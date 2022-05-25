@@ -39,7 +39,7 @@ import { Vue } from "pinia/node_modules/vue-demi";
       height: 92vh;
 
       @media (max-width: 800px) {
-        // height: 140vh; //This allows to do vertical scroll in mobile version
+        height: 120vh; //This allows to do vertical scroll in mobile version
       }
 
       main {

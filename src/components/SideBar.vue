@@ -1,53 +1,71 @@
 <script setup>
-import { RouterLink } from 'vue-router'
-import { ref } from 'vue'
+import { RouterLink } from "vue-router";
+import { ref } from "vue";
 
-
-const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
+const is_expanded = ref(localStorage.getItem("is_expanded") === "true");
 const ToggleMenu = () => {
-  is_expanded.value = !is_expanded.value
-  localStorage.setItem("is_expanded", is_expanded.value)
-}
+  is_expanded.value = !is_expanded.value;
+  localStorage.setItem("is_expanded", is_expanded.value);
+};
 </script>
 
 <template>
   <aside :class="`${is_expanded ? 'is-expanded' : ''}`">
-
     <div class="top-elements">
       <button class="menu-icon" @click="ToggleMenu">
-        <img src="../assets/svg/menu-icon.svg" alt="" class="menu">
+        <img src="../assets/svg/menu-icon.svg" alt="" class="menu" />
         <h2 class="toggle-title">Menú</h2>
       </button>
-
     </div>
     <div class="nav-icons">
-      <RouterLink class="router-link" to="/"><button><img class="view-icon" src="../assets/svg/home-iconn.svg"
-            alt=""></button>
+      <RouterLink class="router-link" to="/"
+        ><button>
+          <img class="view-icon" src="../assets/svg/home-iconn.svg" alt="" />
+        </button>
         <h2>Home</h2>
       </RouterLink>
-      <RouterLink class="router-link" to="/discover"><button><img class="view-icon"
-            src="../assets/svg/discover-iconn.svg" alt="">
+      <RouterLink class="router-link" to="/discover"
+        ><button>
+          <img
+            class="view-icon"
+            src="../assets/svg/discover-iconn.svg"
+            alt=""
+          />
           <div class="svg"></div>
         </button>
         <h2>Discover</h2>
       </RouterLink>
-      <RouterLink class="router-link" to="/upload"><button><img class="view-icon" src="../assets/svg/upload-iconn.svg"
-            alt="">
+      <RouterLink class="router-link" to="/upload"
+        ><button>
+          <img class="view-icon" src="../assets/svg/upload-iconn.svg" alt="" />
         </button>
         <h2>Upload</h2>
       </RouterLink>
-      <RouterLink class="router-link" to="/collections"><button><img class="view-icon"
-            src="../assets/svg/collections-iconn.svg" alt=""></button>
+      <RouterLink class="router-link" to="/collections"
+        ><button>
+          <img
+            class="view-icon"
+            src="../assets/svg/collections-iconn.svg"
+            alt=""
+          />
+        </button>
         <h2>Collections</h2>
       </RouterLink>
-      <RouterLink class="router-link" to="/profile"><button><img class="view-icon not-desktop"
-            src="../assets/svg/user-icon2.svg" alt=""></button>
+      <RouterLink class="router-link" to="/profile"
+        ><button>
+          <img
+            class="view-icon not-desktop"
+            src="../assets/svg/user-icon2.svg"
+            alt=""
+          />
+        </button>
       </RouterLink>
     </div>
 
-    <div class="pitayapp-logo"><img src="../assets/img/pitayapp-white-iso.png" alt="" class="loguito"></div>
+    <div class="pitayapp-logo">
+      <img src="../assets/img/pitayapp-white-iso.png" alt="" class="loguito" />
+    </div>
   </aside>
-
 </template>
 
 <style lang="scss" scoped>
@@ -68,7 +86,6 @@ const ToggleMenu = () => {
         display: none;
 
         .menu {
-
           cursor: pointer;
         }
 
@@ -77,7 +94,6 @@ const ToggleMenu = () => {
           background-color: transparent;
         }
       }
-
     }
 
     .nav-icons {
@@ -104,7 +120,7 @@ const ToggleMenu = () => {
           background-color: var(--cursor-color);
           transition: 0.3s all;
           z-index: 1;
-          width: 100%
+          width: 100%;
         }
 
         h2 {
@@ -117,14 +133,14 @@ const ToggleMenu = () => {
           border: none;
           justify-content: center;
 
-
           .view-icon {
             background-color: transparent;
             width: 2.5rem;
             height: 2.5rem;
             transition: 0.2s ease-out;
             margin-top: 0.5rem;
-            filter: brightness(0) saturate(100%) invert(13%) sepia(61%) saturate(20%) hue-rotate(38deg) brightness(102%) contrast(96%);
+            filter: brightness(0) saturate(100%) invert(13%) sepia(61%)
+              saturate(20%) hue-rotate(38deg) brightness(102%) contrast(96%);
           }
         }
       }
@@ -134,7 +150,6 @@ const ToggleMenu = () => {
       .loguito {
         display: none;
       }
-
     }
   }
 }
@@ -186,7 +201,6 @@ const ToggleMenu = () => {
             background-color: transparent;
           }
         }
-
       }
 
       .nav-icons {
@@ -212,7 +226,7 @@ const ToggleMenu = () => {
             background-color: var(--cursor-color);
             transition: 0.3s all;
             z-index: 1;
-            width: 100%
+            width: 100%;
           }
 
           h2 {
@@ -239,9 +253,7 @@ const ToggleMenu = () => {
             & .not-desktop {
               display: none;
             }
-
           }
-
         }
 
         .pitayapp-logo {
@@ -275,11 +287,9 @@ const ToggleMenu = () => {
           width: 100%;
           justify-content: flex-start;
 
-
           .nav-icons {
             background-color: transparent;
             margin-right: 1rem;
-
           }
 
           h2 {
