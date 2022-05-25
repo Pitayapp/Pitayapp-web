@@ -2,6 +2,7 @@
 import SearcherBar from '@/components/SearcherBar.vue'
 </script>
 
+
 <template>
   <main class="discover-view">
     <div class="container">
@@ -11,16 +12,14 @@ import SearcherBar from '@/components/SearcherBar.vue'
 
           <SearcherBar class="searcher-comp" />
         </div>
-        <!--       <div class="discover-browser">
-        <input type="input">
-        <button class="search-button">Buscar</button>
-      </div> -->
       </div>
       <div class="grid-discover">
-        <div class="cattegories one"><img src="../assets/img/smoothies.png" alt="" class="discover-img"> Smoothies</div>
+        <div class="cattegories one"><img src="../assets/img/smoothies.png" alt="" class="discover-img"> Smoothies
+        </div>
         <div class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt="" class="discover-img"> Postres
         </div>
-        <div class="cattegories three"><img src="../assets/img/sopa-veg.png" alt="" class="discover-img">Cremas y sopas
+        <div class="cattegories three"><img src="../assets/img/sopa-veg.png" alt="" class="discover-img">Cremas y
+          sopas
         </div>
         <div class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt="" class="discover-img">Pastas
         </div>
@@ -47,6 +46,7 @@ import SearcherBar from '@/components/SearcherBar.vue'
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
+    transition: 0.5s ease-in-out;
 
     .discover-view {
 
@@ -104,15 +104,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
               }
             }
           }
-
-          /*  .discover-browser {
-        border-radius: 10px;
-        margin-right: 5%;
-
-        input {
-          width: 6rem;
-        }
-      } */
         }
 
         .grid-discover {
@@ -244,6 +235,7 @@ import SearcherBar from '@/components/SearcherBar.vue'
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    transition: 0.5s ease-in-out;
 
     .discover-view {
       padding: 0;

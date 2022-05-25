@@ -45,7 +45,12 @@ import HeaderApp from '@/components/HeaderApp.vue'
       height: 92vh;
 
       @media (max-width: 800px) {
+
         // height: 0vh; //This allows to do vertical scroll in mobile version
+        a.active.router-link-exact-active {
+          filter: brightness(0) saturate(100%) invert(48%) sepia(29%) saturate(7317%) hue-rotate(310deg) brightness(98%) contrast(99%);
+
+        }
       }
 
       main {

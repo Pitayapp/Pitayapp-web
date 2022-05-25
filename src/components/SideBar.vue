@@ -88,7 +88,7 @@ const ToggleMenu = () => {
       height: 100%;
       transition: 0.3s ease-in-out;
 
-      a {
+      & a {
         background-color: transparent;
         text-decoration: none;
         display: flex;
@@ -103,12 +103,12 @@ const ToggleMenu = () => {
           background-color: red;
         }
 
-        /*         &:hover {
+        &:hover {
           background-color: var(--cursor-color);
           transition: 0.3s all;
           z-index: 1;
           width: 100%
-        } */
+        }
 
         h2 {
           display: none;
@@ -204,7 +204,7 @@ const ToggleMenu = () => {
         width: 100%;
         transition: 0.3s ease-in-out;
 
-        a {
+        & a {
           background-color: transparent;
           text-decoration: none;
           display: flex;
@@ -213,19 +213,22 @@ const ToggleMenu = () => {
           width: 100%;
           transition: 0.3s ease-in-out;
 
-          .active {
-            filter: brightness(0) saturate(100%) invert(48%) sepia(29%) saturate(7317%) hue-rotate(310deg) brightness(98%) contrast(99%);
-            background-color: red;
+          &.active.router-link-exact-active {
+
+            background-color: var(--cursor-color);
+            border-radius: 10px;
+
           }
 
-          /*           &:hover {
-            background-color: var(--cursor-color);
-            transition: 0.3s all;
+          &:hover {
             z-index: 1;
-            width: 100%
-          } */
+            width: 100%;
+            border-radius: 10px;
+            filter: brightness(0) saturate(100%) invert(26%) sepia(84%) saturate(1739%) hue-rotate(310deg) brightness(89%) contrast(94%);
 
-          h2 {
+          }
+
+          & h2 {
             background-color: transparent;
             text-decoration: none;
             display: none;
@@ -283,10 +286,9 @@ const ToggleMenu = () => {
           }
         }
 
-        .router-link {
+        a {
           width: 100%;
           justify-content: flex-start;
-
 
           .nav-icons {
             background-color: transparent;
@@ -294,7 +296,7 @@ const ToggleMenu = () => {
 
           }
 
-          h2 {
+          & h2 {
             background-color: transparent;
             color: var(--secondary);
             font-size: 1.5rem;
