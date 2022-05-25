@@ -1,343 +1,416 @@
+<script setup>
+import SearcherBar from '@/components/SearcherBar.vue'
+</script>
+
 <template>
-  <div class="discover-view">
-    <div class="top-discover">
-      <div class="section-title">
-        <h1>Descubre</h1>
-      </div>
-      <div class="discover-browser">
+  <main class="discover-view">
+    <div class="container">
+      <div class="top-discover">
+        <div class="section-title">
+          <h1>Descubre</h1>
+
+          <SearcherBar class="searcher-comp" />
+        </div>
+        <!--       <div class="discover-browser">
         <input type="input">
         <button class="search-button">Buscar</button>
+      </div> -->
       </div>
-    </div>
-    <div class="grid-discover">
-      <div class="cattegories one"><img src="../assets/img/smoothies.png" alt="" class="discover-img"> Smoothies</div>
-      <div class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt="" class="discover-img"> Postres
-      </div>
-      <div class="cattegories three"><img src="../assets/img/sopa-veg.png" alt="" class="discover-img">Cremas y sopas
-      </div>
-      <div class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt="" class="discover-img">Pastas
-      </div>
-      <div class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt="" class="discover-img2">Veganas
-      </div>
-      <div class="cattegories3 six"><img src="../assets/img/vegan-burger.png" alt="" class="discover-img3">
-        <div class="fastfood-text">
-          <h3>Vegan Fast Food</h3>
-          <p>¡Prepara tus recetas favoritas y disfruta los viernes por la noche!</p>
+      <div class="grid-discover">
+        <div class="cattegories one"><img src="../assets/img/smoothies.png" alt="" class="discover-img"> Smoothies</div>
+        <div class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt="" class="discover-img"> Postres
         </div>
+        <div class="cattegories three"><img src="../assets/img/sopa-veg.png" alt="" class="discover-img">Cremas y sopas
+        </div>
+        <div class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt="" class="discover-img">Pastas
+        </div>
+        <div class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt="" class="discover-img2">Veganas
+        </div>
+        <div class="cattegories3 six"><img src="../assets/img/vegan-burger.png" alt="" class="discover-img3">
+          <div class="fastfood-text">
+            <h3>Vegan Fast Food</h3>
+            <p>¡Prepara tus recetas favoritas y disfruta los viernes por la noche!</p>
+          </div>
+        </div>
+        <div class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png" alt="" class="discover-img2">
+          vegetarianas</div>
       </div>
-      <div class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png" alt="" class="discover-img2">
-        vegetarianas</div>
     </div>
-  </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
 @media (min-width: 300px) {
-  .discover-view {
-    padding: 0;
+  body {
     margin: 0;
-    margin-top: 2rem;
+    padding: 0;
     box-sizing: border-box;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+
+    .discover-view {
+      /* padding: 0;
+      margin: 0;
+      margin-top: none;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+      width: 100vw; */
+
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
 
 
-    .grid-discover {
+      & .container {
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        width: 100vw;
+
+        /*     .grid-discover {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(6, 1fr);
       grid-column-gap: 10px;
       grid-row-gap: 10px;
-    }
+    } */
 
-    .top-discover {
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: center;
-      width: 100%;
-      height: 5%;
-      margin-bottom: 2rem;
+        .top-discover {
+          background-color: #F9458E;
+          color: white;
+          width: 100%;
+          height: 15%;
+          border-radius: 0 0 15px 15px;
+          display: flex;
+          flex-direction: column;
+          padding: 5% 12% 5% 12%;
+          box-sizing: border-box;
+          justify-content: space-evenly;
 
-      .discover-browser {
+          & .section-title {
+            height: 80%;
+            width: 100%;
+            margin-top: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            h1 {
+              background-color: transparent;
+              height: auto;
+              width: auto;
+              font-weight: bold;
+              font-size: 1.2rem;
+              margin-bottom: 0.5rem;
+            }
+
+
+            & .searcher-comp {
+              width: 100%;
+              height: 100%;
+
+
+              & .searcher {
+                & button {
+                  background-color: var(--primary);
+                }
+              }
+            }
+          }
+
+          /*  .discover-browser {
         border-radius: 10px;
         margin-right: 5%;
 
         input {
           width: 6rem;
         }
-      }
-    }
-
-    .grid-discover {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 20px;
-      margin: 1.5rem;
-      width: 90%;
-      height: 70%;
-
-
-
-      .cattegories {
-        align-self: center;
-        background-color: var(--secondary);
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        height: 80%;
-        font-size: 1rem;
-        font-weight: 700;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-
-        .discover-img {
-          width: 3rem;
-          height: 3rem;
-        }
-      }
-
-      .cattegories2 {
-        background-color: var(--secondary);
-        border-radius: 20px;
-        height: 120%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        font-weight: 700;
-        cursor: pointer;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-
-        .discover-img2 {
-          width: 8rem;
-          height: 8rem;
-        }
-      }
-
-      .cattegories3 {
-        background-color: var(--secondary);
-        border-radius: 20px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        cursor: pointer;
-        padding: 10%;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-
-        .discover-img3 {
-          width: 8rem;
-          height: 8rem;
+      } */
         }
 
-        .fastfood-text {
+        .grid-discover {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(4, 1fr);
+          grid-column-gap: 20px;
+          grid-row-gap: 20px;
+          box-sizing: border-box;
+          padding: 1rem;
+          width: 100%;
+          height: 80%;
 
-          display: flex;
-          flex-direction: column;
-          margin-left: 30px;
 
-          h3 {
+
+          .cattegories {
+            align-self: center;
+            background-color: var(--secondary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            height: 80%;
             font-size: 1rem;
             font-weight: 700;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+            .discover-img {
+              width: 3rem;
+              height: 3rem;
+            }
           }
 
-          p {
-            font-size: 0.7rem;
-            font-weight: 300;
-            color: #656565;
-            margin-top: 10px;
+          .cattegories2 {
+            background-color: var(--secondary);
+            border-radius: 20px;
+            height: 120%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+            .discover-img2 {
+              width: 8rem;
+              height: 8rem;
+            }
+          }
+
+          .cattegories3 {
+            background-color: var(--secondary);
+            border-radius: 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            cursor: pointer;
+            padding: 10%;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+            .discover-img3 {
+              width: 8rem;
+              height: 8rem;
+            }
+
+            .fastfood-text {
+
+              display: flex;
+              flex-direction: column;
+              margin-left: 30px;
+
+              h3 {
+                font-size: 1rem;
+                font-weight: 700;
+              }
+
+              p {
+                font-size: 0.7rem;
+                font-weight: 300;
+                color: #656565;
+                margin-top: 10px;
+              }
+            }
+
           }
         }
 
+        .one {
+          grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .two {
+          grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .three {
+          grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .four {
+          grid-area: 2 / 2 / 3 / 3;
+        }
+
+        .five {
+          grid-area: 5 / 1 / 7 / 2;
+        }
+
+        .six {
+
+          grid-area: 3 / 1 / 5 / 3;
+        }
+
+        .seven {
+          grid-area: 5 / 2 / 7 / 3;
+        }
       }
-    }
-
-    .one {
-      grid-area: 1 / 1 / 2 / 2;
-    }
-
-    .two {
-      grid-area: 1 / 2 / 2 / 3;
-    }
-
-    .three {
-      grid-area: 2 / 1 / 3 / 2;
-    }
-
-    .four {
-      grid-area: 2 / 2 / 3 / 3;
-    }
-
-    .five {
-      grid-area: 5 / 1 / 7 / 2;
-    }
-
-    .six {
-
-      grid-area: 3 / 1 / 5 / 3;
-    }
-
-    .seven {
-      grid-area: 5 / 2 / 7 / 3;
     }
   }
 }
 
 @media (min-width: 800px) {
-  .discover-view {
-    padding: 0;
+  body {
     margin: 0;
-    height: 90%;
-    width: 100%;
+    padding: 0;
     box-sizing: border-box;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+
+    .discover-view {
+      padding: 0;
+      margin: 0;
+      height: 90%;
+      width: 100%;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
 
 
-    .top-discover {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
-      width: 93%;
-      height: 5%;
-
-      .discover-browser {
-        border-radius: 10px;
-        margin-right: 5%;
-
-        input {
-          width: 6rem;
-        }
-      }
-    }
-
-    .grid-discover {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(4, 20%);
-      grid-column-gap: 30px;
-      grid-row-gap: 30px;
-      margin: 2rem;
-      width: 93%;
-      height: 100%;
-
-
-
-      .cattegories {
-        align-self: center;
-        background-color: var(--secondary);
-        border-radius: 20px;
+      .top-discover {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        height: 100%;
-        font-size: 2rem;
-        font-weight: 700;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+        flex-direction: row;
+        width: 93%;
+        height: 5%;
 
-        .discover-img {
-          width: 7rem;
-          height: 7rem;
+        .discover-browser {
+          border-radius: 10px;
+          margin-right: 5%;
+
+          input {
+            width: 6rem;
+          }
         }
       }
 
-      .cattegories2 {
-        background-color: var(--secondary);
-        border-radius: 20px;
+      .grid-discover {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 20%);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        margin: 2rem;
+        width: 93%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        font-weight: 700;
-        cursor: pointer;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
-        .discover-img2 {
-          width: 12rem;
-          height: 12rem;
-        }
-      }
 
-      .cattegories3 {
-        background-color: var(--secondary);
-        border-radius: 20px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        font-size: 2rem;
-        font-weight: 700;
-        cursor: pointer;
-        padding: 10%;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
-        .discover-img3 {
-          width: 12rem;
-          height: 12rem;
+        .cattegories {
+          align-self: center;
+          background-color: var(--secondary);
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          height: 100%;
+          font-size: 2rem;
+          font-weight: 700;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+          .discover-img {
+            width: 7rem;
+            height: 7rem;
+          }
         }
 
-        .fastfood-text {
-
+        .cattegories2 {
+          background-color: var(--secondary);
+          border-radius: 20px;
+          height: 100%;
           display: flex;
           flex-direction: column;
-          margin-left: 30px;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          font-weight: 700;
+          cursor: pointer;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
-          h3 {
-            font-size: 2rem;
-            font-weight: 700;
-          }
-
-          p {
-            font-size: 1.4rem;
-            font-weight: 300;
-            color: #656565;
-            margin-top: 10px;
+          .discover-img2 {
+            width: 12rem;
+            height: 12rem;
           }
         }
 
+        .cattegories3 {
+          background-color: var(--secondary);
+          border-radius: 20px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          font-size: 2rem;
+          font-weight: 700;
+          cursor: pointer;
+          padding: 10%;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+          .discover-img3 {
+            width: 12rem;
+            height: 12rem;
+          }
+
+          .fastfood-text {
+
+            display: flex;
+            flex-direction: column;
+            margin-left: 30px;
+
+            h3 {
+              font-size: 2rem;
+              font-weight: 700;
+            }
+
+            p {
+              font-size: 1.4rem;
+              font-weight: 300;
+              color: #656565;
+              margin-top: 10px;
+            }
+          }
+
+        }
+
+        .one {
+          grid-area: 1 / 1 / 2 / 3;
+        }
+
+        .two {
+          grid-area: 1 / 3 / 2 / 5;
+        }
+
+        .three {
+          grid-area: 2 / 1 / 3 / 3;
+        }
+
+        .four {
+          grid-area: 2 / 3 / 3 / 5;
+        }
+
+        .five {
+          grid-area: 3 / 1 / 5 / 2;
+
+        }
+
+        .six {
+          grid-area: 3 / 2 / 5 / 4;
+        }
+
+        .seven {
+          grid-area: 3 / 4 / 5 / 5;
+        }
       }
 
-      .one {
-        grid-area: 1 / 1 / 2 / 3;
-      }
-
-      .two {
-        grid-area: 1 / 3 / 2 / 5;
-      }
-
-      .three {
-        grid-area: 2 / 1 / 3 / 3;
-      }
-
-      .four {
-        grid-area: 2 / 3 / 3 / 5;
-      }
-
-      .five {
-        grid-area: 3 / 1 / 5 / 2;
-
-      }
-
-      .six {
-        grid-area: 3 / 2 / 5 / 4;
-      }
-
-      .seven {
-        grid-area: 3 / 4 / 5 / 5;
-      }
     }
-
   }
 }
 </style>
