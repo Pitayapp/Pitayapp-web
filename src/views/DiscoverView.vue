@@ -49,15 +49,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
     height: 100vh;
 
     .discover-view {
-      /* padding: 0;
-      margin: 0;
-      margin-top: none;
-      box-sizing: border-box;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      height: 100%;
-      width: 100vw; */
 
       width: 100vw;
       height: 100vh;
@@ -69,14 +60,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
         flex-direction: column;
         height: 90vh;
         width: 100vw;
-
-        /*     .grid-discover {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(6, 1fr);
-      grid-column-gap: 10px;
-      grid-row-gap: 10px;
-    } */
 
         .top-discover {
           background-color: #F9458E;
@@ -272,144 +255,182 @@ import SearcherBar from '@/components/SearcherBar.vue'
       justify-content: center;
       align-items: flex-start;
 
-
-      .top-discover {
+      & .container {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-        width: 93%;
-        height: 5%;
-
-        .discover-browser {
-          border-radius: 10px;
-          margin-right: 5%;
-
-          input {
-            width: 6rem;
-          }
-        }
-      }
-
-      .grid-discover {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, 20%);
-        grid-column-gap: 30px;
-        grid-row-gap: 30px;
-        margin: 2rem;
-        width: 93%;
+        flex-direction: column;
         height: 100%;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 0;
 
 
-
-        .cattegories {
-          align-self: center;
-          background-color: var(--secondary);
-          border-radius: 20px;
+        .top-discover {
           display: flex;
+          justify-content: space-between;
           align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          height: 100%;
-          font-size: 2rem;
-          font-weight: 700;
-          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+          flex-direction: row;
+          padding: 0;
+          color: #282828;
+          width: 100%;
+          height: 5%;
+          background-color: transparent;
 
-          .discover-img {
-            width: 7rem;
-            height: 7rem;
+          & .section-title {
+            height: 80%;
+            width: 100%;
+            margin-top: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            background-color: transparent;
+
+            h1 {
+              background-color: transparent;
+              height: auto;
+              width: auto;
+              font-weight: bold;
+              font-size: 1.2rem;
+              margin-bottom: 0.5rem;
+            }
+
+
+            & .searcher-comp {
+              width: 100%;
+              height: 100%;
+
+
+              & .searcher {
+                & button {
+                  background-color: var(--primary);
+                }
+              }
+            }
+
           }
         }
 
-        .cattegories2 {
-          background-color: var(--secondary);
-          border-radius: 20px;
+        .grid-discover {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(4, 20%);
+          grid-column-gap: 30px;
+          grid-row-gap: 30px;
+          /* margin: 2rem; */
+          width: 93%;
           height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          font-size: 2rem;
-          font-weight: 700;
-          cursor: pointer;
-          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
-          .discover-img2 {
-            width: 12rem;
-            height: 12rem;
-          }
-        }
 
-        .cattegories3 {
-          background-color: var(--secondary);
-          border-radius: 20px;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
-          font-size: 2rem;
-          font-weight: 700;
-          cursor: pointer;
-          padding: 10%;
-          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
-          .discover-img3 {
-            width: 12rem;
-            height: 12rem;
+          .cattegories {
+            align-self: center;
+            background-color: var(--secondary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            height: 100%;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+            .discover-img {
+              width: 7rem;
+              height: 7rem;
+            }
           }
 
-          .fastfood-text {
-
+          .cattegories2 {
+            background-color: var(--secondary);
+            border-radius: 20px;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            margin-left: 30px;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
-            h3 {
-              font-size: 2rem;
-              font-weight: 700;
-            }
-
-            p {
-              font-size: 1.4rem;
-              font-weight: 300;
-              color: #656565;
-              margin-top: 10px;
+            .discover-img2 {
+              width: 12rem;
+              height: 12rem;
             }
           }
 
+          .cattegories3 {
+            background-color: var(--secondary);
+            border-radius: 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 2rem;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 10%;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+
+            .discover-img3 {
+              width: 12rem;
+              height: 12rem;
+            }
+
+            .fastfood-text {
+
+              display: flex;
+              flex-direction: column;
+              margin-left: 30px;
+
+              h3 {
+                font-size: 2rem;
+                font-weight: 700;
+              }
+
+              p {
+                font-size: 1.4rem;
+                font-weight: 300;
+                color: #656565;
+                margin-top: 10px;
+              }
+            }
+
+          }
+
+          .one {
+            grid-area: 1 / 1 / 2 / 3;
+          }
+
+          .two {
+            grid-area: 1 / 3 / 2 / 5;
+          }
+
+          .three {
+            grid-area: 2 / 1 / 3 / 3;
+          }
+
+          .four {
+            grid-area: 2 / 3 / 3 / 5;
+          }
+
+          .five {
+            grid-area: 3 / 1 / 5 / 2;
+
+          }
+
+          .six {
+            grid-area: 3 / 2 / 5 / 4;
+          }
+
+          .seven {
+            grid-area: 3 / 4 / 5 / 5;
+          }
         }
 
-        .one {
-          grid-area: 1 / 1 / 2 / 3;
-        }
-
-        .two {
-          grid-area: 1 / 3 / 2 / 5;
-        }
-
-        .three {
-          grid-area: 2 / 1 / 3 / 3;
-        }
-
-        .four {
-          grid-area: 2 / 3 / 3 / 5;
-        }
-
-        .five {
-          grid-area: 3 / 1 / 5 / 2;
-
-        }
-
-        .six {
-          grid-area: 3 / 2 / 5 / 4;
-        }
-
-        .seven {
-          grid-area: 3 / 4 / 5 / 5;
-        }
       }
-
     }
   }
 }
