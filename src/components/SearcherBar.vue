@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .searcher {
   display: flex;
   justify-content: space-between;
@@ -17,11 +17,12 @@
   background-color: transparent;
 
   .searcher-bar {
-    width: 12rem;
-    height: 1.5rem;
+    width: 73%;
+    height: 100%;
     border-radius: 15px;
     border: 0;
     background-color: white;
+    text-indent: 20px;
   }
 
   & input::placeholder {
@@ -30,8 +31,8 @@
   }
 
   & button {
-    width: 3.5rem;
-    height: 1.5rem;
+    width: 20%;
+    height: 100%;
     background: #FFFFFF;
     border: 0;
     border-radius: 15px;
@@ -46,28 +47,12 @@
 
 @media (min-width: 800px) {
   .searcher {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-
     .searcher-bar {
-      width: 73%;
-      height: 100%;
-      border-radius: 15px;
-      border: 0;
-      background-color: white;
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-      text-indent: 20px;
-    }
-
-    & input::placeholder {
-      font-size: 0.8rem;
     }
 
     & button {
-      width: 20%;
-      height: 100%;
+
       background: var(--primary);
       border: 0;
       border-radius: 15px;

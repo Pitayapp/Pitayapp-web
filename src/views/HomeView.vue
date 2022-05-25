@@ -35,10 +35,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
           <img src="../assets/svg/bell.svg" alt="">
         </div>
         <SearcherBar class="searcher-comp mobile" />
-        <!-- <div class="searcher">
-          <input type="text" placeholder="  Busca una receta" class="searcher-bar">
-          <button>Buscar</button>
-        </div> -->
       </div>
       <div class="content">
         <div class="left-container">
@@ -88,7 +84,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
           </div>
         </div>
         <div class="right-container">
-          <!-- <div class="desktop-searcher">Aquí va el buscador</div> -->
           <SearcherBar class="searcher-comp desktop" />
           <div class="your-recipes">
             <p>Tus Recetas</p>
@@ -159,39 +154,10 @@ body {
           }
         }
 
-        /* .searcher {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: transparent;
+        .mobile {
+          height: 1.5rem;
+        }
 
-          .searcher-bar {
-            width: 12rem;
-            height: 1.5rem;
-            border-radius: 15px;
-            border: 0;
-            background-color: white;
-          }
-
-          & input::placeholder {
-            font-size: 0.8rem;
-
-          }
-
-          & button {
-            width: 3.5rem;
-            height: 1.5rem;
-            background: #FFFFFF;
-            border: 0;
-            border-radius: 15px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 0.8rem;
-            color: #F9458E;
-            cursor: pointer;
-          }
-        } */
       }
 
       & .right-container {
@@ -423,18 +389,6 @@ body {
             grid-row-gap: 3%;
             align-content: end;
             justify-items: center;
-            /* display: flex;
-            flex-direction: column;
-            justify-content: end;
-            align-items: center; */
-
-            /*             & .desktop-searcher {
-              width: 60%;
-              background-color: blue;
-              color: white;
-              font-weight: bold;
-              text-align: center;
-            } */
 
             & .searcher-comp {
               width: 60%;

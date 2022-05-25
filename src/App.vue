@@ -11,7 +11,11 @@ import HeaderApp from '@/components/HeaderApp.vue'
     <HeaderApp />
   </header>
   <main>
-    <RouterView class="router-view" />
+    <RouterView class="router-view" v-slot="{ Component }">
+      <Transition name="route" mode="out-in">
+        <Component :is="Component"></Component>
+      </Transition>
+    </RouterView>
   </main>
 
 </template>
@@ -30,6 +34,7 @@ import HeaderApp from '@/components/HeaderApp.vue'
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: 0.5s ease-out;
 
   body {
     width: 100vw;
@@ -58,6 +63,26 @@ import HeaderApp from '@/components/HeaderApp.vue'
       }
     }
   }
+}
+
+// route transitions
+
+.route-center-from {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.route-enter-active {
+  transition: all 0.3s ease-in;
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.route-leave-active {
+  transition: all 0.3s ease-out;
 }
 </style>
 
