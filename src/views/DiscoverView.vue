@@ -242,13 +242,13 @@ import SearcherBar from '@/components/SearcherBar.vue'
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
     .discover-view {
       padding: 0;
       margin: 0;
-      height: 90%;
+      height: 100%;
       width: 100%;
       box-sizing: border-box;
       flex-direction: column;
@@ -259,7 +259,7 @@ import SearcherBar from '@/components/SearcherBar.vue'
         display: flex;
         flex-direction: column;
         height: 100%;
-        width: 100%;
+        width: 95%;
         align-items: flex-start;
         justify-content: center;
         margin: 0;
@@ -273,32 +273,35 @@ import SearcherBar from '@/components/SearcherBar.vue'
           padding: 0;
           color: #282828;
           width: 100%;
-          height: 5%;
+          height: 8%;
           background-color: transparent;
 
           & .section-title {
-            height: 80%;
-            width: 100%;
+            height: 100%;
+            width: 95%;
             margin-top: 0;
             display: flex;
             flex-direction: row;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
             background-color: transparent;
 
             h1 {
               background-color: transparent;
-              height: auto;
-              width: auto;
+              height: 80%;
+              width: 100%;
               font-weight: bold;
-              font-size: 1.2rem;
+              font-size: 2rem;
               margin-bottom: 0.5rem;
+              display: flex;
+              align-items: center;
+              margin-bottom: 0;
             }
 
 
             & .searcher-comp {
               width: 100%;
-              height: 100%;
+              height: 70%;
 
 
               & .searcher {
@@ -317,9 +320,9 @@ import SearcherBar from '@/components/SearcherBar.vue'
           grid-template-rows: repeat(4, 20%);
           grid-column-gap: 30px;
           grid-row-gap: 30px;
-          /* margin: 2rem; */
-          width: 93%;
-          height: 100%;
+          margin: 1rem;
+          width: 95%;
+          height: 90%;
 
 
 
