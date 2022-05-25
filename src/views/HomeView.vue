@@ -34,7 +34,7 @@ import SearcherBar from '@/components/SearcherBar.vue'
           <p>👋 Hola {{ username }}!</p>
           <img src="../assets/svg/bell.svg" alt="">
         </div>
-        <SearcherBar class="searcher-comp" />
+        <SearcherBar class="searcher-comp mobile" />
         <!-- <div class="searcher">
           <input type="text" placeholder="  Busca una receta" class="searcher-bar">
           <button>Buscar</button>
@@ -89,7 +89,7 @@ import SearcherBar from '@/components/SearcherBar.vue'
         </div>
         <div class="right-container">
           <!-- <div class="desktop-searcher">Aquí va el buscador</div> -->
-          <SearcherBar class="searcher-comp" />
+          <SearcherBar class="searcher-comp desktop" />
           <div class="your-recipes">
             <p>Tus Recetas</p>
             <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
@@ -343,9 +343,11 @@ body {
             }
           }
 
-          & .searcher {
+          & .mobile {
             display: none;
           }
+
+
         }
 
         & .content {
@@ -417,7 +419,7 @@ body {
             width: 100%;
             height: 90%;
             display: grid;
-            grid-template-rows: 5% 70% 7%;
+            grid-template-rows: 7% 70% 7%;
             grid-row-gap: 3%;
             align-content: end;
             justify-items: center;
@@ -426,12 +428,18 @@ body {
             justify-content: end;
             align-items: center; */
 
-            & .desktop-searcher {
+            /*             & .desktop-searcher {
               width: 60%;
               background-color: blue;
               color: white;
               font-weight: bold;
               text-align: center;
+            } */
+
+            & .searcher-comp {
+              width: 60%;
+
+
             }
 
             & .your-recipes {

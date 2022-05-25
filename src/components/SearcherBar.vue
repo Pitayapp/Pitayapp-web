@@ -4,7 +4,7 @@
 
 <template>
   <div class="searcher">
-    <input type="text" placeholder="  Busca una receta" class="searcher-bar">
+    <input type="text" placeholder="Busca una receta" class="searcher-bar">
     <button>Buscar</button>
   </div>
 </template>
@@ -52,23 +52,22 @@
     background-color: transparent;
 
     .searcher-bar {
-      width: 12rem;
-      height: 1.5rem;
+      width: 73%;
+      height: 100%;
       border-radius: 15px;
       border: 0;
       background-color: white;
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+      text-indent: 20px;
     }
 
     & input::placeholder {
       font-size: 0.8rem;
-
-
     }
 
     & button {
-      width: 3.5rem;
-      height: 1.5rem;
+      width: 20%;
+      height: 100%;
       background: var(--primary);
       border: 0;
       border-radius: 15px;
