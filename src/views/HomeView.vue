@@ -22,6 +22,10 @@ export default {
 }
 </script>
 
+<script setup>
+import SearcherBar from '@/components/SearcherBar.vue'
+</script>
+
 <template>
   <main class="home-view">
     <div class="container">
@@ -30,10 +34,11 @@ export default {
           <p>👋 Hola {{ username }}!</p>
           <img src="../assets/svg/bell.svg" alt="">
         </div>
-        <div class="searcher">
+        <SearcherBar class="searcher-comp" />
+        <!-- <div class="searcher">
           <input type="text" placeholder="  Busca una receta" class="searcher-bar">
           <button>Buscar</button>
-        </div>
+        </div> -->
       </div>
       <div class="content">
         <div class="left-container">
@@ -83,7 +88,8 @@ export default {
           </div>
         </div>
         <div class="right-container">
-          <div class="desktop-searcher">Aquí va el buscador</div>
+          <!-- <div class="desktop-searcher">Aquí va el buscador</div> -->
+          <SearcherBar class="searcher-comp" />
           <div class="your-recipes">
             <p>Tus Recetas</p>
             <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
@@ -153,7 +159,7 @@ body {
           }
         }
 
-        & .searcher {
+        /* .searcher {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -185,7 +191,7 @@ body {
             color: #F9458E;
             cursor: pointer;
           }
-        }
+        } */
       }
 
       & .right-container {
