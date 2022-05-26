@@ -243,7 +243,7 @@ body {
 
       .bottom-container {
         height: 47%;
-        margin: 1rem 0 2rem 0;
+        margin: 1rem 0 6rem 0;
 
         .categories {
           width: 100%;
@@ -370,6 +370,7 @@ body {
                 width: 100%;
                 display: grid;
                 grid-template-columns: 33% 33% 33%;
+                place-items: center;
 
 
                 & .popular-recipes {
