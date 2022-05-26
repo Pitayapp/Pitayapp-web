@@ -485,7 +485,8 @@ body {
 
       & .desktop-container {
         margin-top: 6rem;
-        width: 100%;
+        margin-left: 1.5rem;
+        width: 90%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -553,6 +554,46 @@ body {
             height: 3rem;
             font-size: 1.5rem;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1200px) {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+
+    .upload-view {
+      width: 100vw;
+      height: 100vh;
+      margin-bottom: 20rem;
+      & .top-container {
+        width: 95%;
+        padding: 5% 5% 5% 5%;
+        justify-content: flex-start;
+        gap: 1.5rem;
+      }
+      & .desktop-container {
+        margin-top: 6rem;
+        margin-left: 2rem;
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        & .upload-image {
+          width: 20rem;
+          height: 20rem;
+
+          // height: 23rem;
+          // width: 23rem;
         }
       }
     }
