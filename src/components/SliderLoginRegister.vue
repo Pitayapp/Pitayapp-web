@@ -43,7 +43,7 @@
     </swiper>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     @mixin backgrounds($image, $bgSize, $bgPosition, $bgRepeat) {
         background-image: $image;

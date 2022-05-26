@@ -117,8 +117,6 @@ body {
     & .container {
       display: flex;
       flex-direction: column;
-      height: 100%;
-      width: 100%;
 
       & .top-container {
         background-color: #F9458E;
