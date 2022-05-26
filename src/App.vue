@@ -26,7 +26,7 @@ import HeaderApp from '@/components/HeaderApp.vue'
   --secondary: #FFF;
   --cursor-color: rgb(221, 220, 220, 0.2);
   --sidebar-width: 310px;
-  --dope: #d32d6f;
+  --dope: rgb(221, 220, 220, 0.1);
 }
 
 * {

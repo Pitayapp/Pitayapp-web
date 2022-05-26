@@ -224,7 +224,7 @@ const ToggleMenu = () => {
             z-index: 1;
             width: 100%;
             border-radius: 10px;
-            filter: brightness(0) saturate(100%) invert(26%) sepia(84%) saturate(1739%) hue-rotate(310deg) brightness(89%) contrast(94%);
+            background-color: var(--dope);
 
           }
 
