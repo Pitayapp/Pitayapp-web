@@ -1,12 +1,11 @@
 <script setup>
 /* import { RouterLink, RouterView } from 'vue-router' */
-import SideBar from '@/components/SideBar.vue'
-import HeaderApp from '@/components/HeaderApp.vue'
-import { Vue } from 'pinia/node_modules/vue-demi';
+import SideBar from "@/components/SideBar.vue";
+import HeaderApp from "@/components/HeaderApp.vue";
+// import { Vue } from "pinia/node_modules/vue-demi";
 </script>
 
 <template>
-
   <SideBar />
   <header>
     <HeaderApp />
@@ -18,20 +17,19 @@ import { Vue } from 'pinia/node_modules/vue-demi';
       </Transition>
     </RouterView>
   </main>
-
 </template>
 
 <style lang="scss">
 :root {
-  --primary: #F9458E;
-  --secondary: #FFF;
+  --primary: #f9458e;
+  --secondary: #fff;
   --cursor-color: rgb(221, 220, 220, 0.2);
   --sidebar-width: 310px;
   --dope: rgb(221, 220, 220, 0.1);
 }
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: transparent;
   box-sizing: border-box;
   margin: 0;
@@ -47,11 +45,10 @@ import { Vue } from 'pinia/node_modules/vue-demi';
       height: 92vh;
 
       @media (max-width: 800px) {
-
         // height: 0vh; //This allows to do vertical scroll in mobile version
         a.active.router-link-exact-active {
-          filter: brightness(0) saturate(100%) invert(48%) sepia(29%) saturate(7317%) hue-rotate(310deg) brightness(98%) contrast(99%);
-
+          filter: brightness(0) saturate(100%) invert(48%) sepia(29%)
+            saturate(7317%) hue-rotate(310deg) brightness(98%) contrast(99%);
         }
       }
 
@@ -64,7 +61,6 @@ import { Vue } from 'pinia/node_modules/vue-demi';
 
           @media (max-width: 800px) {
             padding: 0;
-
           }
         }
       }
