@@ -587,13 +587,9 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-
         & .upload-image {
           width: 20rem;
           height: 20rem;
-
-          // height: 23rem;
-          // width: 23rem;
         }
       }
     }
