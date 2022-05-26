@@ -2,7 +2,6 @@
 /* import { RouterLink, RouterView } from 'vue-router' */
 import SideBar from '@/components/SideBar.vue'
 import HeaderApp from '@/components/HeaderApp.vue'
-import { Vue } from 'pinia/node_modules/vue-demi';
 </script>
 
 <template>
