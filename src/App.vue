@@ -2,7 +2,6 @@
 /* import { RouterLink, RouterView } from 'vue-router' */
 import SideBar from '@/components/SideBar.vue'
 import HeaderApp from '@/components/HeaderApp.vue'
-import { Vue } from 'pinia/node_modules/vue-demi';
 </script>
 
 <template>
@@ -57,7 +56,7 @@ import { Vue } from 'pinia/node_modules/vue-demi';
 
       main {
         width: 100vw;
-        height: 90%;
+        height: 95%;
 
         .router-view {
           padding: 1.5rem 0 0 10rem;
