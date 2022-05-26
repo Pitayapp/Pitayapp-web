@@ -56,7 +56,7 @@ import HeaderApp from '@/components/HeaderApp.vue'
 
       main {
         width: 100vw;
-        height: 90%;
+        height: 95%;
 
         .router-view {
           padding: 1.5rem 0 0 10rem;
