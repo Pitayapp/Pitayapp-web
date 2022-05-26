@@ -31,7 +31,7 @@ import SearcherBar from '@/components/SearcherBar.vue'
     <div class="container">
       <div class="top-container">
         <div class="hello">
-          <p>👋 Hola {{ username }}!</p>
+          <p>✌ Hola {{ username }}!</p>
           <img src="../assets/svg/bell.svg" alt="">
         </div>
         <SearcherBar class="searcher-comp mobile" />
@@ -87,8 +87,10 @@ import SearcherBar from '@/components/SearcherBar.vue'
           <SearcherBar class="searcher-comp desktop" />
           <div class="your-recipes">
             <p>Tus Recetas</p>
-            <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
-              <h4 class="title">{{ recipe.title }}</h4>
+            <div class="user-recipes">
+              <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
+                <h4 class="title">{{ recipe.title }}</h4>
+              </div>
             </div>
           </div>
           <div class="buttons">
@@ -215,7 +217,7 @@ body {
 
       .bottom-container {
         height: 47%;
-        margin: 1rem 0 2rem 0;
+        margin: 1rem 0 6rem 0;
 
         .categories {
           width: 100%;
@@ -344,6 +346,7 @@ body {
                 width: 100%;
                 display: grid;
                 grid-template-columns: 33% 33% 33%;
+                place-items: center;
 
 
                 & .popular-recipes {
@@ -356,7 +359,7 @@ body {
             .bottom-container {
               height: 50%;
               width: 100%;
-              margin-top: 2.5%;
+              margin: 2.5% 0 0 0;
               display: grid;
               grid-template-columns: 50% 50%;
               grid-template-rows: 50% 50%;
@@ -392,33 +395,38 @@ body {
 
             & .searcher-comp {
               width: 60%;
-
-
             }
 
             & .your-recipes {
               width: 60%;
               box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
               border-radius: 15px;
-              padding: 2rem;
+              padding: 1rem;
               box-sizing: border-box;
 
               & p {
-                font-size: 2rem;
+                font-size: 1.5rem;
                 font-weight: bold;
               }
 
-              & .popular-recipes {
-                margin: 2rem;
-                height: 20%;
-                width: 90%;
-                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-                border-radius: 15px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
+              & .user-recipes {
+                height: 80%;
+                display: grid;
+                grid-template-rows: 30% 30% 30%;
+                grid-row-gap: 8%;
 
+                & .popular-recipes {
+                  margin: 1rem;
+                  height: 100%;
+                  width: 90%;
+                  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+                  border-radius: 15px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  cursor: pointer;
+
+                }
               }
             }
 
