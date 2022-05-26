@@ -22,6 +22,10 @@ export default {
 }
 </script>
 
+<script setup>
+import SearcherBar from '@/components/SearcherBar.vue'
+</script>
+
 <template>
   <main class="home-view">
     <div class="container">
@@ -30,10 +34,7 @@ export default {
           <p>👋 Hola {{ username }}!</p>
           <img src="../assets/svg/bell.svg" alt="">
         </div>
-        <div class="searcher">
-          <input type="text" placeholder="  Busca una receta" class="searcher-bar">
-          <button>Buscar</button>
-        </div>
+        <SearcherBar class="searcher-comp mobile" />
       </div>
       <div class="content">
         <div class="left-container">
@@ -83,7 +84,7 @@ export default {
           </div>
         </div>
         <div class="right-container">
-          <div class="desktop-searcher">Aquí va el buscador</div>
+          <SearcherBar class="searcher-comp desktop" />
           <div class="your-recipes">
             <p>Tus Recetas</p>
             <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
@@ -153,39 +154,10 @@ body {
           }
         }
 
-        & .searcher {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: transparent;
-
-          .searcher-bar {
-            width: 12rem;
-            height: 1.5rem;
-            border-radius: 15px;
-            border: 0;
-            background-color: white;
-          }
-
-          & input::placeholder {
-            font-size: 0.8rem;
-
-          }
-
-          & button {
-            width: 3.5rem;
-            height: 1.5rem;
-            background: #FFFFFF;
-            border: 0;
-            border-radius: 15px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 0.8rem;
-            color: #F9458E;
-            cursor: pointer;
-          }
+        .mobile {
+          height: 1.5rem;
         }
+
       }
 
       & .right-container {
@@ -337,9 +309,11 @@ body {
             }
           }
 
-          & .searcher {
+          & .mobile {
             display: none;
           }
+
+
         }
 
         & .content {
@@ -411,21 +385,15 @@ body {
             width: 100%;
             height: 90%;
             display: grid;
-            grid-template-rows: 5% 70% 7%;
+            grid-template-rows: 7% 70% 7%;
             grid-row-gap: 3%;
             align-content: end;
             justify-items: center;
-            /* display: flex;
-            flex-direction: column;
-            justify-content: end;
-            align-items: center; */
 
-            & .desktop-searcher {
+            & .searcher-comp {
               width: 60%;
-              background-color: blue;
-              color: white;
-              font-weight: bold;
-              text-align: center;
+
+
             }
 
             & .your-recipes {
