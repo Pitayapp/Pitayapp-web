@@ -1,11 +1,3 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-/* import { ref } from 'vue'
-
-const uploadView = ref({}) */
-
-</script>
-
 <template>
   <header>
     <div class="container">
@@ -15,7 +7,7 @@ const uploadView = ref({}) */
       </div>
       <div class="header-icons">
         <div class="left-svgs">
-          <RouterLink to="/upoad"><svg width="70" height="70" viewBox="0 0 70 70" fill="none"
+          <RouterLink to="/upload"><svg width="70" height="70" viewBox="0 0 70 70" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M34.5181 34.5181H21.9108M34.5181 21.9109V34.5181V21.9109ZM34.5181 34.5181V47.1254V34.5181ZM34.5181 34.5181H47.1253H34.5181Z"
@@ -30,11 +22,35 @@ const uploadView = ref({}) */
               fill="#F9458E" stroke-width="6" />
           </svg>
         </div>
-        <div class="user-button"><img src="../assets/img/user-image.png" alt="" class="pitayapp-user"></div>
+        <div :class="`${best_dropdown ? 'best-dropdown' : ''}`"><button class="toggle-prof" v-on:click="isOpen">
+            <img src="../assets/img/user-image.png" alt="" class="pitayapp-user">
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <RouterLink class="router-link" to="/profile"><img src="../assets/svg/config-icon.svg" alt=""
+                class="icon-dd">Configuración </RouterLink>
+            <RouterLink class="router-link" to="/collections"><img src="../assets/svg/bcollection-icon.svg" alt=""
+                class="icon-dd">Mis Colecciones </RouterLink>
+            <a href="#" class="router-link"><img src="../assets/svg/logout-icon.svg" alt="" class="icon-dd">Cerrar
+              Sesión</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 </template>
+
+<script setup>
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+
+const best_dropdown = ref(localStorage.getItem("best_dropwdown") === "true")
+const isOpen = () => {
+  best_dropdown.value = !best_dropdown.value
+  localStorage.setItem("best_dropdown", best_dropdown.value)
+}
+
+
+</script>
 
 <style lang="scss" scoped>
 @media (min-width: 300px) {
@@ -100,17 +116,115 @@ const uploadView = ref({}) */
           }
         }
 
-        .user-button {
+        .toggle-prof {
+
           display: flex;
           align-items: center;
           justify-content: center;
           width: 4rem;
           height: 4rem;
+          outline: none;
+          border: none;
 
           .pitayapp-user {
             width: 3.5rem;
             height: 3.5rem;
             cursor: pointer;
+          }
+        }
+
+        .dropdown-content {
+          display: none;
+          position: fixed;
+          right: 5rem;
+          margin-top: 0.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: flex-start;
+          background-color: white;
+          box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
+          -webkit-box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
+          min-width: 0rem;
+          transition: 0.2s ease-out;
+
+          .router-link {
+            display: none;
+            color: #282828;
+            text-decoration: none;
+            font-weight: 500;
+          }
+
+
+        }
+
+        & .best-dropdown {
+          background-color: transparent;
+          transition: 0.3s ease-out;
+
+          .toggle-prof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            outline: none;
+            border: none;
+
+
+            .pitayapp-user {
+              width: 3.5rem;
+              height: 3.5rem;
+              cursor: pointer;
+            }
+          }
+
+          .dropdown-content {
+            display: block;
+            position: fixed;
+            right: 5rem;
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            background-color: white;
+            box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
+            width: 14rem;
+            height: 12rem;
+            padding: 1rem;
+            transition: 0.3s ease-out;
+
+            .router-link {
+              display: block;
+              color: #282828;
+              text-decoration: none;
+              font-weight: 500;
+              margin-left: 1rem;
+              display: flex;
+              align-items: center;
+              flex-direction: row;
+
+              .icon-dd {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 0.6rem;
+
+              }
+
+            }
+
+            .router-link:hover {
+              color: var(--primary);
+              transition: 0.1s ease-out;
+
+              .icon-dd {
+                filter: brightness(0) saturate(100%) invert(48%) sepia(29%) saturate(7317%) hue-rotate(310deg) brightness(98%) contrast(99%);
+                transition: 0.1s ease-out;
+              }
+            }
+
           }
         }
       }

@@ -12,7 +12,11 @@ import { Vue } from 'pinia/node_modules/vue-demi';
     <HeaderApp />
   </header>
   <main>
-    <RouterView class="router-view" />
+    <RouterView class="router-view" v-slot="{ Component }">
+      <Transition name="route" mode="out-in">
+        <Component :is="Component"></Component>
+      </Transition>
+    </RouterView>
   </main>
 
 </template>
@@ -23,6 +27,7 @@ import { Vue } from 'pinia/node_modules/vue-demi';
   --secondary: #FFF;
   --cursor-color: rgb(221, 220, 220, 0.2);
   --sidebar-width: 310px;
+  --dope: rgb(221, 220, 220, 0.1);
 }
 
 * {
@@ -31,6 +36,7 @@ import { Vue } from 'pinia/node_modules/vue-demi';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: 0.5s ease-out;
 
   body {
     width: 100vw;
@@ -41,29 +47,49 @@ import { Vue } from 'pinia/node_modules/vue-demi';
       height: 92vh;
 
       @media (max-width: 800px) {
-        height: 140vh; //This allows to do vertical scroll in mobile version
+
+        // height: 0vh; //This allows to do vertical scroll in mobile version
+        a.active.router-link-exact-active {
+          filter: brightness(0) saturate(100%) invert(48%) sepia(29%) saturate(7317%) hue-rotate(310deg) brightness(98%) contrast(99%);
+
+        }
       }
 
       main {
         width: 100vw;
         height: 90%;
 
-        @media (max-width: 800px) {
-          height: 100vh;
-        }
-
         .router-view {
           padding: 1.5rem 0 0 10rem;
-          box-sizing: border-box;
-          width: 100vw;
-          height: 100%;
 
           @media (max-width: 800px) {
             padding: 0;
+
           }
         }
       }
     }
   }
 }
+
+// route transitions
+
+.route-center-from {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.route-enter-active {
+  transition: all 0.3s ease-in;
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.route-leave-active {
+  transition: all 0.3s ease-out;
+}
 </style>
+
