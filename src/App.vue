@@ -1,17 +1,22 @@
 <script setup>
-/* import { RouterLink, RouterView } from 'vue-router' */
-/* import SideBar from '@/components/SideBar.vue'
-import HeaderApp from '@/components/HeaderApp.vue' */
+import { /*RouterLink,*/ RouterView, /*useRoute*/ } from 'vue-router'
+import SideBar from '@/components/SideBar.vue'
+import HeaderApp from '@/components/HeaderApp.vue'
+
+/* const route = useRoute();
+const path = route.path; */
+
 </script>
 
 <template>
-
-  <SideBar />
+  <!-- {{path}} -->
+  <!-- {{path != `/` || path != `/login` || path != `/register`}} v-show="path == `/home` && path == `/discover` && path == `/register`" v-if="false" -->
+  <SideBar v-if="$route.meta.requiresSideBar"/>
   <header>
-    <HeaderApp />
+    <HeaderApp v-if="$route.meta.requiresHeader"/>
   </header>
   <main>
-    <RouterView class="router-view" />
+    <RouterView />
   </main>
 
 </template>
@@ -40,14 +45,16 @@ import HeaderApp from '@/components/HeaderApp.vue' */
     #app {
       width: 100vw;
       height: 100vh;
+      margin: 0;
+      padding: 0;
 
-      @media (max-width: 800px) {
-        height: 140vh; //This allows to do vertical scroll in mobile version
-      }
+      /* @media (max-width: 800px) {
+        //height: 140vh; //This allows to do vertical scroll in mobile version
+      } */
 
       main {
         width: 100vw;
-        height: 100vh;
+        height: 100%;
 
         @media (max-width: 800px) {
           height: 100vh;
@@ -55,9 +62,9 @@ import HeaderApp from '@/components/HeaderApp.vue' */
 
         .router-view {
           /* padding: 1.5rem 0 0 10rem; */
-          box-sizing: border-box;
+          /* box-sizing: border-box;
           width: 100vw;
-          height: 100%;
+          height: 100%; */
 
           @media (max-width: 800px) {
             padding: 0;

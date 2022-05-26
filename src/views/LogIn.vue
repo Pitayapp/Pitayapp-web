@@ -27,7 +27,7 @@
                 <div class="title">
                     <h2>Pitayapp</h2>
                 </div>
-                <form>
+                <form @submit.prevent="sendLogin">
                     <div class="alterMethods">
                         <RouterLink id="login" to="/login">Iniciar Sesión</RouterLink>
                         <RouterLink id="register" to="/register">Regístrate</RouterLink>
@@ -36,10 +36,10 @@
                     <input type="text" placeholder="Contraseña" v-model="password">
                     <a @click="forgot">¿Olvidaste tu contraseña?</a>
                     <div class="accessMethods">
-                        <a id="access" @click="login"><p>Acceder</p></a>
-                        <a id="accessGoogle" @click="google"><p>Iniciar sesión con Google</p><Icon icon="ant-design:google-outlined" /></a>
+                        <a id="access"><p>Acceder</p></a>
                     </div>
                 </form>
+                <a id="accessGoogle" @click="google"><p>Iniciar sesión con Google</p><Icon icon="ant-design:google-outlined" /></a>
                 <RouterView></RouterView>
             </article>
             <FooterLoginRegister/>
@@ -92,7 +92,7 @@
                     color: rgb(249, 69, 142);
                     padding: 0.3rem 0.5rem;
                     border: 2px solid rgb(249, 69, 142);
-                    border-radius: 0.2rem;
+                    border-radius: 1rem;
                 }
             }
             article{
@@ -139,7 +139,7 @@
                             color: white;
                             padding: 1rem;
                             background-color: rgb(249, 69, 142);
-                            border-radius: 0.2rem;
+                            border-radius: 1rem;
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -154,7 +154,7 @@
                             color: white;
                             padding: 1rem;
                             background-color: rgb(151, 151, 151);
-                            border-radius: 0.2rem;
+                            border-radius: 1rem;
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -165,7 +165,7 @@
                     input{
                         background-color: #f7f7f7;
                         border: none;
-                        border-radius: 0.2rem;
+                        border-radius: 1rem;
                         width:22.85rem;
                         height: 2.3rem;
                         padding: 1rem;
@@ -181,28 +181,30 @@
                         align-items: center;
 
                         #access{
-                            width: 7rem;
+                            width: 22.85rem;
                             height: 2.5rem;
                             font-size: 1.2rem;
                             text-decoration: none;
                             color: white;
                             padding: 1rem;
                             background-color: rgb(249, 69, 142);
-                            border-radius: 0.2rem;
+                            border-radius: 1rem;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             margin: 0rem 0.4rem;
                         }
+                    }
+                }
 
-                        #accessGoogle{
-                            width: 15rem;
+                #accessGoogle{
+                            width: 22.85rem;
                             height: 2.5rem;
                             font-size: 1rem;
                             text-decoration: none;
                             color: black;
                             padding: 1rem;
-                            border-radius: 0.2rem;
+                            border-radius: 1rem;
                             border: 2px #979797 solid;                            
                             display: flex;
                             justify-content: space-evenly;
@@ -219,8 +221,6 @@
                                 color: rgb(249, 69, 142)
                             }
                         }
-                    }
-                }
             }
         }
     }

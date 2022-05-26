@@ -21,7 +21,7 @@ const ToggleMenu = () => {
 
     </div>
     <div class="nav-icons">
-      <RouterLink class="router-link" to="/"><button><img class="view-icon" src="../assets/svg/home-iconn.svg"
+      <RouterLink class="router-link" to="/home"><button><img class="view-icon" src="../assets/svg/home-iconn.svg"
             alt=""></button>
         <h2>Home</h2>
       </RouterLink>
@@ -144,13 +144,13 @@ const ToggleMenu = () => {
     display: flex;
 
     aside {
-      position: absolute;
+      //position: fixed;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       background-color: var(--primary);
       width: calc(5rem + 1.5rem);
-      min-height: 100vh;
+      height: 100%;
       overflow: hidden;
       padding: 1rem;
       transition: 0.5s ease-out;
