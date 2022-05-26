@@ -1,14 +1,19 @@
 <script setup>
-/* import { RouterLink, RouterView } from 'vue-router' */
+import { /*RouterLink,*/ RouterView, /*useRoute*/ } from 'vue-router'
 import SideBar from '@/components/SideBar.vue'
 import HeaderApp from '@/components/HeaderApp.vue'
+
+/* const route = useRoute();
+const path = route.path; */
+
 </script>
 
 <template>
-
-  <SideBar />
+  <!-- {{path}} -->
+  <!-- {{path != `/` || path != `/login` || path != `/register`}} v-show="path == `/home` && path == `/discover` && path == `/register`" v-if="false" -->
+  <SideBar v-if="$route.meta.requiresSideBar"/>
   <header>
-    <HeaderApp />
+    <HeaderApp v-if="$route.meta.requiresHeader"/>
   </header>
   <main>
     <RouterView class="router-view" v-slot="{ Component }">
@@ -21,6 +26,8 @@ import HeaderApp from '@/components/HeaderApp.vue'
 </template>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
   --primary: #F9458E;
   --secondary: #FFF;
@@ -30,7 +37,7 @@ import HeaderApp from '@/components/HeaderApp.vue'
 }
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: transparent;
   box-sizing: border-box;
   margin: 0;
@@ -43,7 +50,13 @@ import HeaderApp from '@/components/HeaderApp.vue'
 
     #app {
       width: 100vw;
-      height: 92vh;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+
+      /* @media (max-width: 800px) {
+        //height: 140vh; //This allows to do vertical scroll in mobile version
+      } */
 
       @media (max-width: 800px) {
 
@@ -56,10 +69,17 @@ import HeaderApp from '@/components/HeaderApp.vue'
 
       main {
         width: 100vw;
-        height: 95%;
+        height: 100%;
+
+        @media (max-width: 800px) {
+          height: 100vh;
+        }
 
         .router-view {
-          padding: 1.5rem 0 0 10rem;
+          /* padding: 1.5rem 0 0 10rem; */
+          /* box-sizing: border-box;
+          width: 100vw;
+          height: 100%; */
 
           @media (max-width: 800px) {
             padding: 0;
