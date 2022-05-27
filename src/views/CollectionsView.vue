@@ -9,7 +9,7 @@ data() {
       username: userInfo,
       /* Las recetas más populares hay que meterlas en un componente aparte */
       savedRecipes: [{
-        img: ,
+        //img: ,
       }, {
         title: "Receta 2",
       }, {
@@ -32,12 +32,13 @@ data() {
           <button>Buscar</button>
         </div>
     </div>
+    </div>
       <div class="collections">
 
         <div class="collection">
           <a href="" rel="lightbox" class="k">
             <img src="" width="352" alt="{{}}">
-            <span class="hover-text"><span>{{recipe img}}</span></span>
+            <span class="hover-text"><span>{{recip}}</span></span>
           </a>
         </div>
     </div>
