@@ -1,5 +1,25 @@
 <script>
+import { userInfo } from 'os'
 
+export default {
+  name: "CollectionsView",
+
+data() {
+    return {
+      username: userInfo,
+      /* Las recetas más populares hay que meterlas en un componente aparte */
+      savedRecipes: [{
+        img: ,
+      }, {
+        title: "Receta 2",
+      }, {
+        title: "Receta 3",
+        author: "Autor 3"
+      }
+      ],
+    }
+  },
+}
 </script>
 
 <template>
@@ -13,15 +33,13 @@
         </div>
     </div>
       <div class="collections">
-        <div class="collection 1"></div>
-        <div class="collection 2"></div>
-        <div class="collection 3"></div>
-        <div class="collection 4"></div>
-        <div class="collection 5"></div>
-        <div class="collection 6"></div>
-        <div class="collection 7"></div>
-        <div class="collection 8"></div>
-      </div>
+
+        <div class="collection">
+          <a href="" rel="lightbox" class="k">
+            <img src="" width="352" alt="{{}}">
+            <span class="hover-text"><span>{{recipe img}}</span></span>
+          </a>
+        </div>
     </div>
   </main>
 </template>
@@ -152,7 +170,7 @@ main {
           height: auto;
           width: auto;
           font-weight: bold;
-          font-size: 3.2rem;
+          font-size: 2.2rem;
           margin-bottom: none;
           display: flex;
           align-items: center;
@@ -165,7 +183,7 @@ main {
           background-color: transparent;
 
           .searcher-bar {
-            width: 13rem;
+            width: 11rem;
             height: 2.5rem;
             border-radius: 15px;
             box-shadow: 1em;
@@ -208,6 +226,9 @@ main {
           width: 80%;
           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
           border-radius: 15px;
+          :hover(
+
+          )
         }
       }
     }
