@@ -250,12 +250,14 @@ import SearcherBar from '@/components/SearcherBar.vue'
       & .container {
         display: flex;
         flex-direction: column;
-        height: 100%;
-        width: 95%;
+        height: 90%;
+        width: 94%;
         align-items: flex-start;
         justify-content: center;
         margin: 0;
-
+        position: absolute;
+        top: 5.5rem;
+        left: 6.5rem;
 
         .top-discover {
           display: flex;
