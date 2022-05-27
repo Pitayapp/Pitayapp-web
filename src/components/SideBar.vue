@@ -38,7 +38,7 @@ const ToggleMenu = () => {
             alt=""></button>
         <h2>Collections</h2>
       </RouterLink>
-      <RouterLink to="/profile"><button><img class="view-icon not-desktop" src="../assets/svg/user-icon2.svg"
+      <RouterLink class="profile-btn" to="/profile"><button><img class="view-icon not-desktop" src="../assets/svg/user-icon2.svg"
             alt=""></button>
       </RouterLink>
     </div>
@@ -164,6 +164,7 @@ const ToggleMenu = () => {
       -webkit-box-shadow: none;
       box-shadow: none;
       border-radius: 0;
+      z-index: 2;
 
       .top-elements {
         display: flex;
@@ -258,6 +259,10 @@ const ToggleMenu = () => {
 
           }
 
+        }
+
+        & .profile-btn{
+          display: none;
         }
 
         .pitayapp-logo {
