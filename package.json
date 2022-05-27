@@ -9,17 +9,19 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "gsap": "^3.10.4",
-    "firebase": "^9.8.1",
-    "pinia": "^2.0.13",
-    "vue": "^3.2.33",
-    "vue-router": "^4.0.14",
+    "color": "^4.2.3",
     "dotenv": "^16.0.0",
-    "@supabase/supabase-js": "^1.35.2",
-    "color": "^4.2.3"
+    "firebase": "^9.8.1",
+    "gsap": "^3.10.4",
+    "pinia": "^2.0.13",
+    "swiper": "^8.1.5",
+    "vue": "^3.2.33",
+    "vue-awesome-swiper": "^5.0.1",
+    "vue-router": "^4.0.14"
   },
   "type": "module",
   "devDependencies": {
+    "@iconify/vue": "^3.2.1",
     "@vitejs/plugin-vue": "^2.3.1",
     "@vitejs/plugin-vue-jsx": "^1.3.10",
     "@vue/test-utils": "^2.0.0-rc.20",
@@ -28,7 +30,6 @@
     "jsdom": "^19.0.0",
     "sass": "^1.51.0",
     "vite": "^2.9.5",
-    "vitest": "^0.9.3",
-    "@supabase/realtime-js": "^1.7.2"
+    "vitest": "^0.9.3"
   }
 }

@@ -24,6 +24,7 @@ export default {
 
 <script setup>
 import SearcherBar from '@/components/SearcherBar.vue'
+import { Icon } from '@iconify/vue';
 </script>
 
 <template>
@@ -31,7 +32,11 @@ import SearcherBar from '@/components/SearcherBar.vue'
     <div class="container">
       <div class="top-container">
         <div class="hello">
-          <p>👋 Hola {{ username }}!</p>
+          <p>
+            <Icon icon="noto-v1:victory-hand" color="#f9458e" height="25" :rotate="2" :horizontalFlip="true"
+              :verticalFlip="true" />
+            Hola {{ username }}!
+          </p>
           <img src="../assets/svg/bell.svg" alt="">
         </div>
         <SearcherBar class="searcher-comp mobile" />
@@ -118,8 +123,6 @@ body {
     & .container {
       display: flex;
       flex-direction: column;
-      height: 100%;
-      width: 100%;
 
       & .top-container {
         background-color: #F9458E;
@@ -139,13 +142,20 @@ body {
           align-items: center;
           background-color: transparent;
           height: 3rem;
+          margin-right: 0.5rem;
+
+
 
           & p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: transparent;
             height: auto;
             width: auto;
             font-weight: bold;
             font-size: 1.2rem;
+            padding: 0rem 0.1rem;
           }
 
           & img {
@@ -285,8 +295,11 @@ body {
       box-sizing: border-box;
 
       & .container {
-        height: 100%;
-        width: 100%;
+        height: 90%;
+        width: 94%;
+        position: absolute;
+        top: 5.5rem;
+        left: 6.5rem;
 
         & .top-container {
           background-color: transparent;
@@ -299,6 +312,11 @@ body {
           justify-content: center;
 
           & .hello {
+            & svg {
+              margin-right: 0.2rem;
+              height: 1.95rem;
+              width: 1.95rem;
+            }
 
             & p {
               font-size: 1.6rem;
