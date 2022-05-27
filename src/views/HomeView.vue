@@ -22,18 +22,24 @@ export default {
 }
 </script>
 
+<script setup>
+import SearcherBar from '@/components/SearcherBar.vue'
+import { Icon } from '@iconify/vue';
+</script>
+
 <template>
   <main class="home-view">
     <div class="container">
       <div class="top-container">
         <div class="hello">
-          <p>👋 Hola {{ username }}!</p>
+          <p>
+            <Icon icon="noto-v1:victory-hand" color="#f9458e" height="25" :rotate="2" :horizontalFlip="true"
+              :verticalFlip="true" />
+            Hola {{ username }}!
+          </p>
           <img src="../assets/svg/bell.svg" alt="">
         </div>
-        <div class="searcher">
-          <input type="text" placeholder="  Busca una receta" class="searcher-bar">
-          <button>Buscar</button>
-        </div>
+        <SearcherBar class="searcher-comp mobile" />
       </div>
       <div class="content">
         <div class="left-container">
@@ -83,7 +89,7 @@ export default {
           </div>
         </div>
         <div class="right-container">
-          <div class="desktop-searcher">Aquí va el buscador</div>
+          <SearcherBar class="searcher-comp desktop" />
           <div class="your-recipes">
             <p>Tus Recetas</p>
             <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
@@ -117,8 +123,6 @@ body {
     & .container {
       display: flex;
       flex-direction: column;
-      height: 100%;
-      width: 100%;
 
       & .top-container {
         background-color: #F9458E;
@@ -138,13 +142,20 @@ body {
           align-items: center;
           background-color: transparent;
           height: 3rem;
+          margin-right: 0.5rem;
+
+
 
           & p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: transparent;
             height: auto;
             width: auto;
             font-weight: bold;
             font-size: 1.2rem;
+            padding: 0rem 0.1rem;
           }
 
           & img {
@@ -153,39 +164,10 @@ body {
           }
         }
 
-        & .searcher {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: transparent;
-
-          .searcher-bar {
-            width: 12rem;
-            height: 1.5rem;
-            border-radius: 15px;
-            border: 0;
-            background-color: white;
-          }
-
-          & input::placeholder {
-            font-size: 0.8rem;
-
-          }
-
-          & button {
-            width: 3.5rem;
-            height: 1.5rem;
-            background: #FFFFFF;
-            border: 0;
-            border-radius: 15px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 0.8rem;
-            color: #F9458E;
-            cursor: pointer;
-          }
+        .mobile {
+          height: 1.5rem;
         }
+
       }
 
       & .right-container {
@@ -313,8 +295,11 @@ body {
       box-sizing: border-box;
 
       & .container {
-        height: 100%;
-        width: 100%;
+        height: 90%;
+        width: 94%;
+        position: absolute;
+        top: 5.5rem;
+        left: 6.5rem;
 
         & .top-container {
           background-color: transparent;
@@ -327,6 +312,11 @@ body {
           justify-content: center;
 
           & .hello {
+            & svg {
+              margin-right: 0.2rem;
+              height: 1.95rem;
+              width: 1.95rem;
+            }
 
             & p {
               font-size: 1.6rem;
@@ -337,9 +327,11 @@ body {
             }
           }
 
-          & .searcher {
+          & .mobile {
             display: none;
           }
+
+
         }
 
         & .content {
@@ -412,21 +404,15 @@ body {
             width: 100%;
             height: 90%;
             display: grid;
-            grid-template-rows: 5% 70% 7%;
+            grid-template-rows: 7% 70% 7%;
             grid-row-gap: 3%;
             align-content: end;
             justify-items: center;
-            /* display: flex;
-            flex-direction: column;
-            justify-content: end;
-            align-items: center; */
 
-            & .desktop-searcher {
+            & .searcher-comp {
               width: 60%;
-              background-color: blue;
-              color: white;
-              font-weight: bold;
-              text-align: center;
+
+
             }
 
             & .your-recipes {
