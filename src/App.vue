@@ -2,7 +2,6 @@
 /* import { RouterLink, RouterView } from 'vue-router' */
 import SideBar from '@/components/SideBar.vue'
 import HeaderApp from '@/components/HeaderApp.vue'
-import { Vue } from 'pinia/node_modules/vue-demi';
 </script>
 
 <template>
@@ -49,7 +48,7 @@ import { Vue } from 'pinia/node_modules/vue-demi';
         height: 90%;
 
         @media (max-width: 800px) {
-          height: 100vh;
+          //height: 100vh;
         }
 
         .router-view {
