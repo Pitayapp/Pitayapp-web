@@ -99,7 +99,7 @@ const path = route.path; */
 }
 
 .route-enter-active {
-  transition: all 0.3s ease-in;
+  transition: all 0.4s ease-in;
 }
 
 .route-leave-to {
@@ -108,7 +108,7 @@ const path = route.path; */
 }
 
 .route-leave-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.4s ease-out;
 }
 </style>
 

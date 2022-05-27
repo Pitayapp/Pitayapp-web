@@ -73,6 +73,7 @@ const isOpen = () => {
       width: 100%;
       height: 5.5rem;
       position: fixed;
+      z-index: 1;
 
       .logo {
         display: flex;

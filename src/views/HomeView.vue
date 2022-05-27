@@ -295,8 +295,11 @@ body {
       box-sizing: border-box;
 
       & .container {
-        height: 100%;
-        width: 100%;
+        height: 90%;
+        width: 94%;
+        position: absolute;
+        top: 5.5rem;
+        left: 6.5rem;
 
         & .top-container {
           background-color: transparent;
