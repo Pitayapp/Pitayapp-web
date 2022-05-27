@@ -72,6 +72,8 @@ const isOpen = () => {
       -webkit-box-shadow: 2px 10px 15px 1px rgba(0, 0, 0, 0.2);
       width: 100%;
       height: 5.5rem;
+      position: fixed;
+      z-index: 1;
 
       .logo {
         display: flex;
