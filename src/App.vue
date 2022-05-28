@@ -48,7 +48,7 @@ import HeaderApp from '@/components/HeaderApp.vue'
         height: 90%;
 
         @media (max-width: 800px) {
-          height: 100vh;
+          //height: 100vh;
         }
 
         .router-view {
