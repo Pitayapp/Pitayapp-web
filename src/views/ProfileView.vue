@@ -1,27 +1,27 @@
 <script>
-import CustomInput from '@/components/CustomInput.vue'
-import ToggleButton from '@/components/ToggleButton.vue'
+import CustomInput from "@/components/CustomInput.vue";
+import ToggleButton from "@/components/ToggleButton.vue";
 
 let idInterests = 0;
 
 export default {
   components: {
     CustomInput,
-    ToggleButton
+    ToggleButton,
   },
   data() {
     return {
-      name: 'Noelia',
-      lastName: 'Plasencia',
-      username: 'tastyfancy79',
-    }
+      name: "Noelia",
+      lastName: "Plasencia",
+      username: "tastyfancy79",
+    };
   },
   methods: {
     onFileSelected(event) {
-      console.log(event)
-    }
-  }
-}
+      console.log(event);
+    },
+  },
+};
 </script>
 
 <template>
@@ -30,9 +30,11 @@ export default {
     <div class="main-container">
       <section class="column-left">
         <div class="box">
-          <img src="/src/assets/img/user-image.png" class="pitayapp-user">
+          <img src="/src/assets/img/user-image.png" class="pitayapp-user" />
           <div>
-            <input type="file" @change="onFileSelected">
+            <div class="file-select" id="src-file1">
+              <input type="file" @change="onFileSelected" />
+            </div>
             <p>Sube una foto de perfil</p>
           </div>
         </div>
@@ -45,13 +47,14 @@ export default {
           <p>18/05/2021</p>
         </div>
         <p class="reset-password">Cambiar contraseña</p>
+        <p class="reset-password">Eliminar cuenta</p>
       </section>
       <section class="column-right">
         <div class="userInformationContainer">
-          <CustomInput v-model="name" title="Nombre" text="Noelia"/>
-          <CustomInput v-model="lastName" title="Apellido" text="Plasencia"/>
-          <CustomInput v-model="username" title="Usuario" text="tastyfancy79"/>
-          <CustomInput title="Email" text="tastyfancy79@gmail.com"/>
+          <CustomInput v-model="name" title="Nombre" text="Noelia" />
+          <CustomInput v-model="lastName" title="Apellido" text="Plasencia" />
+          <CustomInput v-model="username" title="Usuario" text="tastyfancy79" />
+          <CustomInput title="Email" text="tastyfancy79@gmail.com" />
         </div>
         <div class="buttons-submit">
           <button>Guardar cambios</button>
@@ -63,7 +66,7 @@ export default {
           <h1>Configuración</h1>
           <div class="checkbox-button">
             <label>Permitir notificaciones</label>
-            <ToggleButton/>
+            <ToggleButton />
           </div>
         </div>
       </section>
@@ -72,7 +75,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
 @media (min-width: 300px) {
   header {
     display: none;
@@ -104,10 +106,40 @@ export default {
         margin-bottom: 30px;
         padding: 15px;
 
-
         img {
           width: 70%;
           padding: 5%;
+        }
+
+        .file-select {
+          position: relative;
+          display: inline-block;
+
+          & ::before {
+            background-color: #f9458e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            content: "Seleccionar";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            font-weight: bold;
+          }
+
+          & input[type="file"] {
+            width: 200px;
+            height: 32px;
+            display: inline-block;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
 
         div {
@@ -137,14 +169,13 @@ export default {
         margin-bottom: 20px;
         font-size: 1rem;
         font-weight: bold;
-        color: #F9458E;
+        color: #f9458e;
 
         &:hover {
           color: #b83268;
           cursor: pointer;
         }
       }
-
     }
 
     .buttons-submit {
@@ -154,12 +185,12 @@ export default {
       margin: 50px 0;
 
       button {
-        background: #F9458E;
+        background: #f9458e;
         border-radius: 30px;
         border-color: transparent;
         font-size: 1rem;
         font-weight: bold;
-        color: #FFFFFF;
+        color: #ffffff;
         width: 200px;
         height: 40px;
 
@@ -172,7 +203,7 @@ export default {
       .router-link {
         font-size: 1rem;
         font-weight: bold;
-        color: #F9458E;
+        color: #f9458e;
         text-decoration: none;
 
         &:hover {
@@ -196,7 +227,6 @@ export default {
 }
 
 @media (min-width: 800px) {
-
   main {
     h1 {
       margin-bottom: 30px;
@@ -221,10 +251,40 @@ export default {
           margin-bottom: 30px;
           padding: 15px;
 
-
           img {
             width: 70%;
             padding: 5%;
+          }
+
+          .file-select {
+            position: relative;
+            display: inline-block;
+
+            & ::before {
+              background-color: #f9458e;
+              color: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 3px;
+              content: "Seleccionar";
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              font-weight: bold;
+            }
+
+            & input[type="file"] {
+              width: 200px;
+              height: 32px;
+              display: inline-block;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
           }
 
           div {
@@ -254,7 +314,7 @@ export default {
           margin-bottom: 20px;
           font-size: 1rem;
           font-weight: bold;
-          color: #F9458E;
+          color: #f9458e;
 
           &:hover {
             color: #b83268;
@@ -284,12 +344,12 @@ export default {
           margin-bottom: 50px;
 
           button {
-            background: #F9458E;
+            background: #f9458e;
             border-radius: 30px;
             border-color: transparent;
             font-size: 1rem;
             font-weight: bold;
-            color: #FFFFFF;
+            color: #ffffff;
             width: 200px;
             height: 40px;
 
@@ -302,7 +362,7 @@ export default {
           .router-link {
             font-size: 1rem;
             font-weight: bold;
-            color: #F9458E;
+            color: #f9458e;
             text-decoration: none;
 
             &:hover {
@@ -326,5 +386,4 @@ export default {
     }
   }
 }
-
 </style>
