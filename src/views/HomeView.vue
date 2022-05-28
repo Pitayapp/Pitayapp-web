@@ -5,16 +5,15 @@ export default {
   data() {
     return {
       username: "Antonio",
-      /* Las recetas más populares hay que meterlas en un componente aparte */
       mostPopular: [{
-        title: "Receta 1",
-        author: "Autor 1"
+        "title": "Croquetas de tofu",
+        "url": "/src/assets/recipes/croquetas_tofu.jpg"
       }, {
-        title: "Receta 2",
-        author: "Autor 2"
+        "title": "Hamburguesa de lenteja y tofu",
+        "url": "/src/assets/recipes/hamburguesa_lentejas_tofu.jpg"
       }, {
-        title: "Receta 3",
-        author: "Autor 3"
+        "title": "Clafoutis de frambuesa",
+        "url": "/src/assets/recipes/clafoutis-frambuesa.jpg"
       }
       ],
     }
@@ -22,18 +21,24 @@ export default {
 }
 </script>
 
+<script setup>
+import SearcherBar from '@/components/SearcherBar.vue'
+import { Icon } from '@iconify/vue';
+</script>
+
 <template>
   <main class="home-view">
     <div class="container">
       <div class="top-container">
         <div class="hello">
-          <p>👋 Hola {{ username }}!</p>
+          <p>
+            <Icon icon="noto-v1:victory-hand" color="#f9458e" height="25" :rotate="2" :horizontalFlip="true"
+              :verticalFlip="true" />
+            Hola {{ username }}!
+          </p>
           <img src="../assets/svg/bell.svg" alt="">
         </div>
-        <div class="searcher">
-          <input type="text" placeholder="  Busca una receta" class="searcher-bar">
-          <button>Buscar</button>
-        </div>
+        <SearcherBar class="searcher-comp mobile" />
       </div>
       <div class="content">
         <div class="left-container">
@@ -42,12 +47,11 @@ export default {
               <h2>Más populares</h2>
               <a href="">Ver más</a>
             </div>
-            <!-- Esto hay que meterlo en un componente aparte. Crear un componente con la imagen
-        el título y el autor de la receta y llamarlo 3 veces en HomeView -->
             <div class="recipe-list">
               <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
+                <img :src="recipe.url" />
                 <h4 class="title">{{ recipe.title }}</h4>
-                <p>{{ recipe.author }}</p>
+                <button>Ver</button>
               </div>
             </div>
           </div>
@@ -83,11 +87,13 @@ export default {
           </div>
         </div>
         <div class="right-container">
-          <div class="desktop-searcher">Aquí va el buscador</div>
+          <SearcherBar class="searcher-comp desktop" />
           <div class="your-recipes">
             <p>Tus Recetas</p>
-            <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
-              <h4 class="title">{{ recipe.title }}</h4>
+            <div class="user-recipes">
+              <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
+                <h4 class="title">{{ recipe.title }}</h4>
+              </div>
             </div>
           </div>
           <div class="buttons">
@@ -117,8 +123,6 @@ body {
     & .container {
       display: flex;
       flex-direction: column;
-      height: 100%;
-      width: 100%;
 
       & .top-container {
         background-color: #F9458E;
@@ -138,13 +142,20 @@ body {
           align-items: center;
           background-color: transparent;
           height: 3rem;
+          margin-right: 0.5rem;
+
+
 
           & p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: transparent;
             height: auto;
             width: auto;
             font-weight: bold;
             font-size: 1.2rem;
+            padding: 0rem 0.1rem;
           }
 
           & img {
@@ -153,39 +164,10 @@ body {
           }
         }
 
-        & .searcher {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: transparent;
-
-          .searcher-bar {
-            width: 12rem;
-            height: 1.5rem;
-            border-radius: 15px;
-            border: 0;
-            background-color: white;
-          }
-
-          & input::placeholder {
-            font-size: 0.8rem;
-
-          }
-
-          & button {
-            width: 3.5rem;
-            height: 1.5rem;
-            background: #FFFFFF;
-            border: 0;
-            border-radius: 15px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 0.8rem;
-            color: #F9458E;
-            cursor: pointer;
-          }
+        .mobile {
+          height: 1.5rem;
         }
+
       }
 
       & .right-container {
@@ -231,19 +213,37 @@ body {
             width: 7rem;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
             border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: end;
+            display: grid;
+            grid-template-rows: 60% 20% 20%;
+            place-items: center;
             cursor: pointer;
 
+            & img {
+              max-width: 90%;
+              max-height: 80%;
+            }
+
+            & h4 {
+              width: 90%;
+              text-align: center;
+              font-size: 0.7rem;
+            }
+
+            & button {
+              background-color: #F9458E;
+              color: white;
+              border-radius: 15px;
+              border: none;
+              height: 1.2rem;
+              width: 2.5rem;
+            }
           }
         }
       }
 
       .bottom-container {
         height: 47%;
-        margin: 1rem 0 2rem 0;
+        margin: 1rem 0 6rem 0;
 
         .categories {
           width: 100%;
@@ -313,8 +313,13 @@ body {
       box-sizing: border-box;
 
       & .container {
-        height: 100%;
-        width: 100%;
+        height: 90%;
+        width: 94%;
+        position: absolute;
+        top: 5.5rem;
+        left: 6.5rem;
+        padding: 2rem;
+        box-sizing: border-box;
 
         & .top-container {
           background-color: transparent;
@@ -327,6 +332,11 @@ body {
           justify-content: center;
 
           & .hello {
+            & svg {
+              margin-right: 0.2rem;
+              height: 1.95rem;
+              width: 1.95rem;
+            }
 
             & p {
               font-size: 1.6rem;
@@ -337,9 +347,11 @@ body {
             }
           }
 
-          & .searcher {
+          & .mobile {
             display: none;
           }
+
+
         }
 
         & .content {
@@ -352,6 +364,9 @@ body {
           & .left-container {
             height: 100%;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
 
             .most-popular {
               width: 100%;
@@ -364,17 +379,74 @@ body {
               & .most-popular-text {
                 margin-top: 0;
                 font-size: 0.8rem;
+                height: 20%;
               }
 
               & .recipe-list {
                 width: 100%;
-                display: grid;
-                grid-template-columns: 33% 33% 33%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+
+                & .popular-recipes {
+
+                  margin: 1rem 0.5rem;
+                  height: 9rem;
+                  width: 7rem;
+                  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+                  border-radius: 15px;
+                  display: grid;
+                  grid-template-rows: 60% 20% 20%;
+                  place-items: center;
+                  cursor: pointer;
+
+                  & img {
+                    max-width: 90%;
+                    max-height: 80%;
+                  }
+
+                  & h4 {
+                    width: 90%;
+                    text-align: center;
+                    font-size: 0.7rem;
+                  }
+
+                  & button {
+                    background-color: #F9458E;
+                    color: white;
+                    border-radius: 15px;
+                    border: none;
+                    height: 1.2rem;
+                    width: 2.5rem;
+                  }
+                }
+              }
+
+              & .recipe-list {
+                width: 100%;
+                height: 80%;
+                display: flex;
+                justify-content: space-around;
 
 
                 & .popular-recipes {
-                  height: 90%;
-                  width: 80%;
+                  height: 100%;
+                  width: 30%;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-evenly;
+                  align-items: center;
+
+                  & img {
+                    max-width: 90%;
+                    max-height: 50%;
+                  }
+
+                  & h4 {
+                    width: 90%;
+                    text-align: center;
+                    font-size: 100%;
+                  }
                 }
               }
             }
@@ -382,7 +454,7 @@ body {
             .bottom-container {
               height: 50%;
               width: 100%;
-              margin-top: 2.5%;
+              margin: 2.5% 0 0 0;
               display: grid;
               grid-template-columns: 50% 50%;
               grid-template-rows: 50% 50%;
@@ -399,7 +471,6 @@ body {
                   justify-content: center;
                   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
                   border-radius: 15px;
-                  /* background: rgba(151, 151, 151, 0.57); */
                   background-position: center;
                   background-size: 100%;
                 }
@@ -411,51 +482,50 @@ body {
             width: 100%;
             height: 90%;
             display: grid;
-            grid-template-rows: 5% 70% 7%;
+            grid-template-rows: 7% 70% 7%;
             grid-row-gap: 3%;
             align-content: end;
             justify-items: center;
-            /* display: flex;
-            flex-direction: column;
-            justify-content: end;
-            align-items: center; */
 
-            & .desktop-searcher {
-              width: 60%;
-              background-color: blue;
-              color: white;
-              font-weight: bold;
-              text-align: center;
+            & .searcher-comp {
+              width: 70%;
             }
 
             & .your-recipes {
-              width: 60%;
+              width: 70%;
               box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
               border-radius: 15px;
-              padding: 2rem;
+              padding: 1rem;
               box-sizing: border-box;
 
               & p {
-                font-size: 2rem;
+                font-size: 1.5rem;
                 font-weight: bold;
               }
 
-              & .popular-recipes {
-                margin: 2rem;
-                height: 20%;
-                width: 90%;
-                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-                border-radius: 15px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
+              & .user-recipes {
+                height: 80%;
+                display: grid;
+                grid-template-rows: 30% 30% 30%;
+                grid-row-gap: 8%;
 
+                & .popular-recipes {
+                  margin: 1rem;
+                  height: 100%;
+                  width: 90%;
+                  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+                  border-radius: 15px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  cursor: pointer;
+
+                }
               }
             }
 
             & .buttons {
-              width: 60%;
+              width: 70%;
               display: flex;
               justify-content: space-around;
 
