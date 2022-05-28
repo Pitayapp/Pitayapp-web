@@ -2,8 +2,6 @@
 import CustomInput from "@/components/CustomInput.vue";
 import ToggleButton from "@/components/ToggleButton.vue";
 
-let idInterests = 0;
-
 export default {
   components: {
     CustomInput,
@@ -82,6 +80,7 @@ export default {
 
   .main-container {
     margin: 10px 0;
+    margin-left: 7 rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -231,6 +230,12 @@ export default {
     h1 {
       margin-bottom: 30px;
     }
+
+    margin-bottom: 0;
+    //display: grid;
+    //grid-template-columns: 60% 40%;
+    padding: 6rem 0 0 8rem;
+    box-sizing: border-box;
 
     .main-container {
       display: flex;
