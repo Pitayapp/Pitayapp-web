@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=2
+ReferrerUrl=http://localhost:3000/upload
+HostUrl=http://localhost:3000/src/assets/svg/upload-iconn.svg
