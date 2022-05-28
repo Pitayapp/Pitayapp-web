@@ -232,8 +232,6 @@ export default {
     }
 
     margin-bottom: 0;
-    //display: grid;
-    //grid-template-columns: 60% 40%;
     padding: 6rem 0 0 8rem;
     box-sizing: border-box;
 
