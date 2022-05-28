@@ -302,6 +302,8 @@ body {
         position: absolute;
         top: 5.5rem;
         left: 6.5rem;
+        padding: 2rem;
+        box-sizing: border-box;
 
         & .top-container {
           background-color: transparent;
@@ -412,11 +414,11 @@ body {
             justify-items: center;
 
             & .searcher-comp {
-              width: 60%;
+              width: 70%;
             }
 
             & .your-recipes {
-              width: 60%;
+              width: 70%;
               box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
               border-radius: 15px;
               padding: 1rem;
@@ -449,7 +451,7 @@ body {
             }
 
             & .buttons {
-              width: 60%;
+              width: 70%;
               display: flex;
               justify-content: space-around;
 

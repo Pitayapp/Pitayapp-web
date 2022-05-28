@@ -50,27 +50,14 @@ export default {
         <h1>Sube tu receta</h1>
       </div>
       <div class="input-recipe-textbox">
-        <input
-          type="text"
-          placeholder="    Nombre de tu receta"
-          class="name-input-bar"
-        />
+        <input type="text" placeholder="    Nombre de tu receta" class="name-input-bar" />
       </div>
       <div class="image">
         <h4>Imágenes</h4>
         <div class="upload-image">
-          <input
-            type="file"
-            name="imagen"
-            class="input-file"
-            @change="onFileChange"
-          />
+          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
           <div id="preview">
-            <img
-              v-if="url == null"
-              src="../assets/svg/imageupload.svg"
-              alt=""
-            />
+            <img v-if="url == null" src="../assets/svg/imageupload.svg" alt="" />
             <img v-if="url" :src="url" />
           </div>
           <p v-if="url == null">
@@ -79,11 +66,7 @@ export default {
         </div>
       </div>
       <div class="categories">
-        <div
-          v-for="(category, i) in categories"
-          :key="i"
-          class="categories-recipes"
-        >
+        <div v-for="(category, i) in categories" :key="i" class="categories-recipes">
           <button class="title">{{ category.name }}</button>
         </div>
       </div>
@@ -105,13 +88,8 @@ export default {
         <h4>Descripción</h4>
         <div class="steps-preparation">
           <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
-          <textarea
-            class="boxtext"
-            v-model="preparationSteps"
-            placeholder="Escribe aquí tu receta"
-            rows="10"
-            columns="5"
-          ></textarea>
+          <textarea class="boxtext" v-model="preparationSteps" placeholder="Escribe aquí tu receta" rows="10"
+            columns="5"></textarea>
         </div>
       </div>
       <div class="upload">
@@ -121,18 +99,9 @@ export default {
     <div class="desktop-container">
       <div class="image">
         <div class="upload-image">
-          <input
-            type="file"
-            name="imagen"
-            class="input-file"
-            @change="onFileChange"
-          />
+          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
           <div id="preview">
-            <img
-              v-if="url == null"
-              src="../assets/svg/imageuploadbig.svg"
-              alt=""
-            />
+            <img v-if="url == null" src="../assets/svg/imageuploadbig.svg" alt="" />
             <img v-if="url" :src="url" />
             <p v-if="url == null">
               Pincha en el recuadro para agregar una imagen
@@ -194,6 +163,7 @@ body {
         }
       }
     }
+
     & .categories {
       margin-top: 2rem;
       display: grid;
@@ -213,12 +183,14 @@ body {
         height: 1.5rem;
       }
     }
+
     & .upload-image {
       background-color: white;
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
       border-radius: 30px;
       color: dimgray;
-      min-height: 200px; /* minimum height */
+      min-height: 200px;
+      /* minimum height */
       cursor: pointer;
       display: flex;
       flex-direction: column;
@@ -227,8 +199,10 @@ body {
       margin-top: 1rem;
       height: 8rem;
       width: 100%;
+
       & .input-file {
-        opacity: 0; /* invisible but it's there! */
+        opacity: 0;
+        /* invisible but it's there! */
         width: 100%;
         height: 150px;
         position: absolute;
@@ -256,8 +230,10 @@ body {
         }
       }
     }
+
     & .ingredients {
       margin-top: 1rem;
+
       &.list-ingredientes {
         width: 100%;
         height: 100%;
@@ -294,6 +270,7 @@ body {
         }
       }
     }
+
     & .time {
       margin-top: 1.5rem;
       display: flex;
@@ -323,6 +300,7 @@ body {
         }
       }
     }
+
     & .preparation {
       margin-top: 1rem;
       display: flex;
@@ -345,6 +323,7 @@ body {
           padding: 10px 5px 2px 10px;
           box-sizing: content-box;
         }
+
         & textarea::placeholder {
           font-size: 0.8rem;
           text-align: start;
@@ -352,6 +331,7 @@ body {
         }
       }
     }
+
     & .upload {
       margin-top: 1.5rem;
       display: flex;
@@ -383,6 +363,8 @@ body {
       margin-bottom: 0;
       display: grid;
       grid-template-columns: 60% 40%;
+      padding: 6rem 0 0 6rem;
+      box-sizing: border-box;
 
       & .top-container {
         padding: 2% 4% 2% 4%;
@@ -396,6 +378,7 @@ body {
             font-size: 1rem;
           }
         }
+
         & .categories {
           margin-top: 2rem;
           margin-bottom: 1.5rem;
@@ -409,6 +392,7 @@ body {
 
         & .image {
           display: none;
+
           & h4 {
             font-size: 1.5rem;
           }
@@ -417,11 +401,13 @@ body {
         & .ingredients {
           margin-top: 1rem;
           font-size: 1.5rem;
+
           &.list-ingredientes {
             margin-top: 1rem;
             width: 100%;
             height: 100%;
           }
+
           & .add-ingredient {
             margin-top: 1rem;
             margin-left: 0rem;
@@ -434,6 +420,7 @@ body {
             & input::placeholder {
               font-size: 1rem;
             }
+
             & button {
               width: 20%;
               height: 2.5rem;
@@ -441,6 +428,7 @@ body {
             }
           }
         }
+
         & .time {
           width: 90%;
           height: 3rem;
@@ -449,6 +437,7 @@ body {
           font-size: 1.5rem;
           display: flex;
           justify-content: space-between;
+
           & .time-set {
             & input {
               height: 2rem;
@@ -458,8 +447,10 @@ body {
             }
           }
         }
+
         & .preparation {
           margin-top: 2.5rem;
+
           & h4 {
             font-size: 1.5rem;
             margin-bottom: 0.2rem;
@@ -473,11 +464,13 @@ body {
               box-sizing: content-box;
               font-size: 1rem;
             }
+
             & textarea::placeholder {
               font-size: 1rem;
             }
           }
         }
+
         & .upload {
           display: none;
         }
@@ -498,7 +491,8 @@ body {
           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
           border-radius: 5px;
           color: dimgray;
-          min-height: 200px; /* minimum height */
+          min-height: 200px;
+          /* minimum height */
           cursor: pointer;
           display: flex;
           flex-direction: column;
@@ -507,8 +501,10 @@ body {
           margin-top: 1rem;
           height: 25rem;
           width: 25rem;
+
           & .input-file {
-            opacity: 0; /* invisible but it's there! */
+            opacity: 0;
+            /* invisible but it's there! */
             width: 20rem;
             height: 20rem;
             position: absolute;
@@ -528,6 +524,7 @@ body {
               max-height: 100%;
               margin-bottom: 1rem;
             }
+
             & p {
               justify-content: center;
               margin-bottom: 1rem;
@@ -537,6 +534,7 @@ body {
             }
           }
         }
+
         & .upload {
           margin-top: 2rem;
           display: flex;
@@ -572,12 +570,14 @@ body {
       width: 100vw;
       height: 100vh;
       margin-bottom: 20rem;
+
       & .top-container {
         width: 95%;
         padding: 5% 5% 5% 5%;
         justify-content: flex-start;
         gap: 1.5rem;
       }
+
       & .desktop-container {
         margin-top: 6rem;
         margin-left: 2rem;
@@ -587,6 +587,7 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+
         & .upload-image {
           width: 20rem;
           height: 20rem;

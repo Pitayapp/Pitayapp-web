@@ -258,6 +258,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
         position: absolute;
         top: 5.5rem;
         left: 6.5rem;
+        padding: 2rem;
+        box-sizing: border-box;
 
         .top-discover {
           display: flex;
