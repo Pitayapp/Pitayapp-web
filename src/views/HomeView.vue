@@ -5,16 +5,15 @@ export default {
   data() {
     return {
       username: "Antonio",
-      /* Las recetas más populares hay que meterlas en un componente aparte */
       mostPopular: [{
-        title: "Receta 1",
-        author: "Autor 1"
+        "title": "Croquetas de tofu",
+        "url": "/src/assets/recipes/croquetas_tofu.jpg"
       }, {
-        title: "Receta 2",
-        author: "Autor 2"
+        "title": "Hamburguesa de lenteja y tofu",
+        "url": "/src/assets/recipes/hamburguesa_lentejas_tofu.jpg"
       }, {
-        title: "Receta 3",
-        author: "Autor 3"
+        "title": "Clafoutis de frambuesa",
+        "url": "/src/assets/recipes/clafoutis-frambuesa.jpg"
       }
       ],
     }
@@ -48,12 +47,11 @@ import { Icon } from '@iconify/vue';
               <h2>Más populares</h2>
               <a href="">Ver más</a>
             </div>
-            <!-- Esto hay que meterlo en un componente aparte. Crear un componente con la imagen
-        el título y el autor de la receta y llamarlo 3 veces en HomeView -->
             <div class="recipe-list">
               <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
+                <img :src="recipe.url" />
                 <h4 class="title">{{ recipe.title }}</h4>
-                <p>{{ recipe.author }}</p>
+                <button>Ver</button>
               </div>
             </div>
           </div>
@@ -215,12 +213,30 @@ body {
             width: 7rem;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
             border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: end;
+            display: grid;
+            grid-template-rows: 60% 20% 20%;
+            place-items: center;
             cursor: pointer;
 
+            & img {
+              max-width: 90%;
+              max-height: 80%;
+            }
+
+            & h4 {
+              width: 90%;
+              text-align: center;
+              font-size: 0.7rem;
+            }
+
+            & button {
+              background-color: #F9458E;
+              color: white;
+              border-radius: 15px;
+              border: none;
+              height: 1.2rem;
+              width: 2.5rem;
+            }
           }
         }
       }
@@ -348,6 +364,9 @@ body {
           & .left-container {
             height: 100%;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
 
             .most-popular {
               width: 100%;
@@ -360,18 +379,74 @@ body {
               & .most-popular-text {
                 margin-top: 0;
                 font-size: 0.8rem;
+                height: 20%;
               }
 
               & .recipe-list {
                 width: 100%;
-                display: grid;
-                grid-template-columns: 33% 33% 33%;
-                place-items: center;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+
+                & .popular-recipes {
+
+                  margin: 1rem 0.5rem;
+                  height: 9rem;
+                  width: 7rem;
+                  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+                  border-radius: 15px;
+                  display: grid;
+                  grid-template-rows: 60% 20% 20%;
+                  place-items: center;
+                  cursor: pointer;
+
+                  & img {
+                    max-width: 90%;
+                    max-height: 80%;
+                  }
+
+                  & h4 {
+                    width: 90%;
+                    text-align: center;
+                    font-size: 0.7rem;
+                  }
+
+                  & button {
+                    background-color: #F9458E;
+                    color: white;
+                    border-radius: 15px;
+                    border: none;
+                    height: 1.2rem;
+                    width: 2.5rem;
+                  }
+                }
+              }
+
+              & .recipe-list {
+                width: 100%;
+                height: 80%;
+                display: flex;
+                justify-content: space-around;
 
 
                 & .popular-recipes {
-                  height: 90%;
-                  width: 80%;
+                  height: 100%;
+                  width: 30%;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-evenly;
+                  align-items: center;
+
+                  & img {
+                    max-width: 90%;
+                    max-height: 50%;
+                  }
+
+                  & h4 {
+                    width: 90%;
+                    text-align: center;
+                    font-size: 100%;
+                  }
                 }
               }
             }
@@ -396,7 +471,6 @@ body {
                   justify-content: center;
                   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
                   border-radius: 15px;
-                  /* background: rgba(151, 151, 151, 0.57); */
                   background-position: center;
                   background-size: 100%;
                 }
