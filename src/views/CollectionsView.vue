@@ -5,21 +5,19 @@ export default {
   name: "CollectionsView",
 
 data() {
+  /* Tantos elementos como recetas guardadas por el usuario */
+    let collectionRecipes  = document.createElement("div");
+    collectionRecipes.classList.add("collection");
+    //collectionRecipes.textContent = imgRecipe;
+
     return {
       username: userInfo,
-      /* Las recetas más populares hay que meterlas en un componente aparte */
-      savedRecipes: [{
-        //img: ,
-      }, {
-        title: "Receta 2",
-      }, {
-        title: "Receta 3",
-        author: "Autor 3"
+      //collectionRecipes :
+
       }
-      ],
+
     }
-  },
-}
+  }
 </script>
 
 <template>
@@ -36,11 +34,12 @@ data() {
       <div class="collections">
 
         <div class="collection">
-          <a href="" rel="lightbox" class="k">
-            <img src="" width="352" alt="{{}}">
-            <span class="hover-text"><span>{{recip}}</span></span>
+          <a href="{{linkRecipe}}" rel="lightbox" class="k">
+            <img src="{{imgRecipe}}" width="352" alt="{{}}">
+            <span class="hover-text"><span>{{recipe}}</span></span>
           </a>
         </div>
+
     </div>
   </main>
 </template>
@@ -209,7 +208,7 @@ main {
             background-color: #F9458E;
             cursor: pointer;
           }
-        }}
+        }
       }
       .collections {
         display: grid;
@@ -227,9 +226,10 @@ main {
           width: 80%;
           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
           border-radius: 15px;
-          :hover(
-
-          )
+        }
+        .collection:hover{
+            opacity: 0.07;
+        }
         }
       }
     }
