@@ -9,9 +9,9 @@ export default {
   },
   data() {
     return {
-      name: "Noelia",
-      lastName: "Plasencia",
-      username: "tastyfancy79",
+      name: "Nombre",
+      lastName: "Apellido",
+      username: "Nombre de usuario",
     };
   },
   methods: {
