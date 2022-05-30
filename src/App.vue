@@ -76,7 +76,7 @@ const path = route.path; */
         height: 100%;
 
         @media (max-width: 800px) {
-          height: 100vh;
+          //height: 100vh;
         }
 
         .router-view {
