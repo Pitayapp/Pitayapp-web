@@ -107,6 +107,8 @@ import { Icon } from '@iconify/vue';
   </main>
 </template>
 
+
+
 <style lang="scss" scoped>
 body {
   margin: 0;
@@ -302,6 +304,9 @@ body {
     }
   }
 }
+
+
+
 
 @media (min-width: 800px) {
   body {
