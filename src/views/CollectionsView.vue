@@ -1,125 +1,101 @@
+<!--
 <script>
-import { userInfo } from 'os'
+
+//import { userInfo } from 'os'
 
 export default {
-  name: "CollectionsView",
+  //name: "CollectionsView",
 
 data() {
-  /* Tantos elementos como recetas guardadas por el usuario */
+   //Tantos elementos como recetas guardadas por el usuario
     let collectionRecipes  = document.createElement("div");
     collectionRecipes.classList.add("collection");
     //collectionRecipes.textContent = imgRecipe;
 
     return {
-      username: userInfo,
+      //username: userInfo,
       //collectionRecipes :
-
       }
-
     }
   }
+
+</script> -->
+
+
+<script setup>
+  import SearcherBar from '../components/SearcherBar.vue';
+
 </script>
 
 <template>
   <main class="collections-view">
     <div class="container">
-    <div class="top-container">
-      <h1 class="title">Recetas guardadas</h1>
-        <div class="searcher">
-          <input type="text" placeholder="  Busca una receta" class="searcher-bar">
-          <button>Buscar</button>
+      <div class="top-container">
+        <h1 class="title">Recetas guardadas</h1>
+        <SearcherBar class="searcher mobile"/>
+      </div>
+      <div class="bottom-container">
+        <div class="collections">
+          <div class="collection 1"></div>
+          <div class="collection 2"></div>
+          <div class="collection 3"></div>
+          <div class="collection 4"></div>
+          <div class="collection 5"></div>
+          <div class="collection 6"></div>
         </div>
-    </div>
-    </div>
-      <div class="collections">
-
-        <div class="collection">
-          <a href="{{linkRecipe}}" rel="lightbox" class="k">
-            <img src="{{imgRecipe}}" width="352" alt="{{}}">
-            <span class="hover-text"><span>{{recipe}}</span></span>
-          </a>
-        </div>
-
+      </div>
     </div>
   </main>
 </template>
 
-
-
 <style lang="scss" scoped>
-@media (min-width: 300px) {
-
-main {
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
 
-  .collections-view {
+  & .collections-view {
     width: 100vw;
     height: 100vh;
+    margin-bottom: 6rem;
 
-    .container {
-      height: 100%;
+    & .container {
+      height: 100vh;
       width: 100%;
-      display: grid;
-      grid-template-rows: 20% 80%;
-
-      .top-container {
-        width: 80%;
-        height: 100%;
-        background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      & .top-container {
+        background-color: #F9458E;
+        color: white;
+        width: 100%;
+        height: 13.2%;
+        border-radius: 0 0 15px 15px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        margin-left: 2rem;
+        padding: 5% 12% 5% 12%;
+        box-sizing: border-box;
+        justify-content: space-around;
 
         & .title {
           height: auto;
           width: auto;
           font-weight: bold;
           font-size: 1.2rem;
-          margin-bottom: 2rem;
         }
         & .searcher {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          background-color: transparent;
-
-          .searcher-bar {
-            width: 12rem;
-            height: 1.5rem;
-            border-radius: 15px;
-            border: 0;
-            background-color: white;
-          }
-
-          & input::placeholder {
-            font-size: 0.8rem;
-
-          }
-
-          & button {
-            width: 3.5rem;
-            height: 1.5rem;
-            color: #FFFFFF;
-            border: 0;
-            border-radius: 15px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 0.8rem;
-            background-color: #F9458E;
-            cursor: pointer;
-          }
+          height: 1.5rem;
         }
       }
-      .collections {
+
+      & .bottom-container {
+        width: 100%;
+        height: 80%;
         display: grid;
-        grid-template-columns: repeat( auto-fill, minmax(min(50%,15rem), 1fr) );
-        transition: 0.3 ease-in-out;
+      & .collections {
+        display: grid;
+        grid-template-columns: 50% 50%;
         box-sizing: border-box;
         //grid-row-gap: 2rem;
         //grid-column-gap: 2rem;
@@ -135,12 +111,15 @@ main {
         }
       }
     }
+    }
   }
 }
-}
+
+
 
 @media (min-width: 800px) {
-main {
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -156,15 +135,21 @@ main {
       width: 100%;
       display: grid;
       grid-template-rows: 20% 80%;
+      padding: 6rem 0 0 6rem;
+      box-sizing: border-box;
 
       .top-container {
-        width: 80%;
+        width: 100%;
         height: 100%;
         background-color: transparent;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-left: 2rem;
+        padding: 0;
+        align-items: center;
+        padding: 0 6rem 0 0;
+        box-sizing: border-box;
 
         & .title {
           height: auto;
@@ -175,67 +160,43 @@ main {
           display: flex;
           align-items: center;
           justify-content: center;
+          color: black;
         }
         & .searcher {
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          background-color: transparent;
-
-          .searcher-bar {
-            width: 11rem;
-            height: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 1em;
-            border: 0;
-            background-color: white;
-          }
-
-          & input::placeholder {
-            font-size: 0.8rem;
-          }
-
-          & button {
-            width: 3.5rem;
-            height: 1.5rem;
-            color: #FFFFFF;
-            border: 0;
-            border-radius: 15px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 0.8rem;
-            background-color: #F9458E;
-            cursor: pointer;
-          }
+          width: 40rem;
+          height: 2.5rem;
         }
       }
-      .collections {
-        display: grid;
-        grid-template-columns: repeat( auto-fill, minmax(min(50%,15rem), 1fr) );
-        transition: 0.3 ease-in-out;
-        box-sizing: border-box;
-        //grid-row-gap: 2rem;
-        //grid-column-gap: 2rem;
-        //grid-gap: 20px;
-        place-items: center;
 
-        .collection {
-          background-color: #F9458E;
-          height: 80%;
-          width: 80%;
-          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-          border-radius: 15px;
-        }
-        .collection:hover{
-            opacity: 0.07;
-        }
+      & .bottom-container {
+        width: 100%;
+        height: 80%;
+        display: grid;
+
+        & .collections {
+
+          grid-template-columns: 25% 25% 25% 25%;
+          transition: 0.3 ease-in-out;
+          box-sizing: border-box;
+          //grid-row-gap: 2rem;
+          //grid-column-gap: 2rem;
+          //grid-gap: 20px;
+          place-items: center;
+
+          .collection {
+            background-color:#F9458E;
+            height: 80%;
+            width: 80%;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+            border-radius: 15px;
+          }
         }
       }
     }
+    }
   }
 }
-}
+
 
 </style>
 
