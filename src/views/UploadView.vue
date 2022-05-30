@@ -480,7 +480,6 @@ body {
         margin-top: 6rem;
         margin-left: 1.5rem;
         width: 90%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -595,5 +594,23 @@ body {
       }
     }
   }
+}
+
+.route-center-from {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.route-enter-active {
+  transition: all 0.4s ease-in;
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.route-leave-active {
+  transition: all 0.4s ease-out;
 }
 </style>

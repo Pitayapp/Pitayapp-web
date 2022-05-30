@@ -1,4 +1,7 @@
 <script>
+import croquetasTofuImage from "/src/assets/recipes/croquetas_tofu.jpg";
+import hamburguesaLentejasImage from "/src/assets/recipes/hamburguesa_lentejas_tofu.jpg";
+import clafoutisFrambuesaImage from "/src/assets/recipes/clafoutis-frambuesa.jpg";
 export default {
   name: "HomeView",
 
@@ -7,13 +10,13 @@ export default {
       username: "Antonio",
       mostPopular: [{
         "title": "Croquetas de tofu",
-        "url": "../assets/recipes/clafoutis-frambuesa.jpg"
+        "url": croquetasTofuImage
       }, {
         "title": "Hamburguesa de lenteja y tofu",
-        "url": "../assets/recipes/hamburguesa_lentejas_tofu.jpg"
+        "url": hamburguesaLentejasImage
       }, {
         "title": "Clafoutis de frambuesa",
-        "url": "../assets/recipes/clafoutis-frambuesa.jpg"
+        "url": clafoutisFrambuesaImage
       }
       ],
     }
@@ -116,6 +119,7 @@ body {
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
+  transition: 0.5s ease-out;
 
   .home-view {
     width: 100vw;
@@ -554,5 +558,23 @@ body {
       }
     }
   }
+}
+
+.route-center-from {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.route-enter-active {
+  transition: all 0.4s ease-in;
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.route-leave-active {
+  transition: all 0.4s ease-out;
 }
 </style>
