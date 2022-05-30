@@ -58,6 +58,7 @@
 </template>
 
 <style lang="scss" scoped>
+
 @mixin backgrounds($image, $bgSize, $bgPosition, $bgRepeat) {
     background-image: $image;
     background-size: $bgSize;
@@ -73,31 +74,28 @@
     text-align: $textAlign;
 }
 
-main {
+main{
     background: white;
     width: 100vw;
     height: 100vh;
     display: flex;
 
-    aside {
+    aside{
         width: 50%;
         height: 100%;
     }
-
-    section {
+    section{
         display: flex;
         flex-direction: column;
         width: 50%;
         height: 100%;
-
-        header {
+        header{
             width: 100%;
             height: 7%;
             display: flex;
             justify-content: end;
             align-items: center;
-
-            a {
+            a{
                 margin-right: 1rem;
                 @include fonts('Nunito', normal, 700, 1.2rem, center);
                 text-decoration: none;
@@ -107,8 +105,7 @@ main {
                 border-radius: 1rem;
             }
         }
-
-        article {
+        article{
             width: 100%;
             height: 83%;
             display: flex;
@@ -116,47 +113,36 @@ main {
             justify-content: center;
             align-items: center;
 
-            .logo {
+            .logo{
                 width: 8rem;
                 height: 8rem;
             }
 
-            .title {
-                h2 {
+            .title{
+                h2{
                     font-size: 2rem;
                     color: rgb(249, 69, 142);
                 }
             }
 
-            form {
+            form{
+                margin-top: 0.6rem;
                 width: 25rem;
-                height: 20rem;
+                height: 19.5rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-
-                .logo{
-                    width: 8rem;
-                    height: 8rem;
-                }
-
-                .title{
-                    h2{
-                        font-size: 2rem;
-                        color: rgb(249, 69, 142);
-                    }
-                }
-
-                form{
-                    margin-top: 0.6rem;
-                    width: 25rem;
-                    height: 19.5rem;
+                
+                .alterMethods{
+                    margin-bottom: 0.5rem;
+                    width: 100%;
+                    height: 5rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
-                    #login {
+                    #login{
                         width: 11rem;
                         height: 3rem;
                         font-size: 1.5rem;
@@ -171,7 +157,7 @@ main {
                         margin: 0rem 0.4rem;
                     }
 
-                    #register {
+                    #register{
                         width: 11rem;
                         height: 3rem;
                         font-size: 1.5rem;
@@ -187,48 +173,39 @@ main {
                     }
                 }
 
-                input {
+                input{
                     background-color: #f7f7f7;
                     border: none;
                     border-radius: 1rem;
-                    width: 22.85rem;
+                    width:22.85rem;
                     height: 2.3rem;
                     padding: 1rem;
                     margin-bottom: 1.2rem;
                 }
 
-                .accessMethods {
-                    margin-bottom: 0.5rem;
+                .accessMethods{
+                    /* margin-bottom: 0.5rem; */
                     width: 100%;
                     height: 5rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
-                    .accessMethods{
-                        /* margin-bottom: 0.5rem; */
-                        width: 100%;
-                        height: 5rem;
+                    #loginAccess{
+                        border: none;
+                        width: 22.85rem;
+                        height: 2.5rem;
+                        font-size: 1.2rem;
+                        text-decoration: none;
+                        color: white;
+                        padding: 1rem;
+                        background-color: rgb(249, 69, 142);
+                        border-radius: 1rem;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-
-                        #loginAccess{
-                            border: none;
-                            width: 22.85rem;
-                            height: 2.5rem;
-                            font-size: 1.2rem;
-                            text-decoration: none;
-                            color: white;
-                            padding: 1rem;
-                            background-color: rgb(249, 69, 142);
-                            border-radius: 1rem;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            margin: 0rem 0.4rem;
-                            cursor: pointer;
-                        }
+                        margin: 0rem 0.4rem;
+                        cursor: pointer;
                     }
                 }
             }
@@ -279,4 +256,5 @@ main {
         }
     }
 }
+    
 </style>
