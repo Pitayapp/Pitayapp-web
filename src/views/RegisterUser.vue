@@ -1,3 +1,22 @@
+<script setup>
+
+    /* import { createUser } from "../services/crudUser"; */
+    import { ref } from "vue";
+    import { useRouter } from "vue-router";
+    import FooterLoginRegister from "../components/FooterLoginRegister.vue";
+    import SliderLoginRegister from "../components/SliderLoginRegister.vue";
+    import IsotypePitayapp from "../components/IsotypePitayapp.vue";
+    import { Icon } from '@iconify/vue';
+    import { useUserStore } from "../stores/userStore";
+
+    const registerUserForm = ref({});
+    const userStore = useUserStore();
+
+    const register = async () => {
+        userStore.registerUser(registerUserForm.value); //registerUserForm.value ==> email y password
+    }
+</script>
+
 <template>
     <main>
         <aside class="photos">
@@ -8,61 +27,31 @@
                 <a id="goBackLanding" href="https://pitayapp.com"><p>Volver al Inicio</p></a>
             </header>
             <article>
-                <img src="../assets/img/pitayappLogoPink.svg" alt="logo" class="logo">
-                <div class="title">
-                    <h2>Pitayapp</h2>
-                </div>
-                <form @submit.prevent="sendForm()">
+                <IsotypePitayapp />
+                <form @submit.prevent="register">
                     <div class="alterMethods">
                         <RouterLink id="login" to="/login">Iniciar Sesión</RouterLink>
-                        <RouterLink id="register" to="/register">Regístrate</RouterLink>
+                        <RouterLink id="register" to="/register">Registrarte</RouterLink>
                     </div>
-                    <input type="email" placeholder="Correo" v-model="email">
+                    <input class="mail" type="email" placeholder="Correo" v-model="registerUserForm.email" required>
                     <div class="dataUser">
-                        <!-- <input type="text" placeholder="Nombre" v-model="name">
-                        <input type="text" placeholder="Apellido" v-model="surname"> -->
+                        <!-- <input type="text" placeholder="Nombre" v-model="registerUserForm.name" required>
+                        <input type="text" placeholder="Apellido" v-model="registerUserForm.surname" required> -->
                     </div>
-                    <input type="password" placeholder="Contraseña" v-model="password">
-                    <input type="password" placeholder="Repetir contraseña" v-model="repeatPassword">
-                    <a @click="forgot">¿Olvidaste tu contraseña?</a>
+                    <input class="pass" type="password" placeholder="Contraseña" v-model="registerUserForm.password" required>
+                    <input class="repeat" type="password" placeholder="Repetir contraseña" v-model="repeatPassword" required>
+                    <!-- <a @click="forgot">¿Olvidaste tu contraseña?</a> -->
                     <div class="accessMethods">
-                        <button id="access"><p>Acceder</p></button>
+                        <button id="registerAccess"><p>Acceder a Pitayapp</p></button>
                     </div>
                 </form>
-                <button id="accessGoogle" @click="registerWithgoogle"><p>Registrarse con Google</p><Icon icon="ant-design:google-outlined" /></button>
+                <!-- <button id="accessGoogle" @click="registerWithgoogle"><p>Registrarse con Google</p><Icon icon="ant-design:google-outlined" /></button> -->
                 <RouterView></RouterView>
             </article>
             <FooterLoginRegister/>
         </section>
     </main>
 </template>
-
-<script setup>
-
-    import { createUser } from "../services/crudUser";
-    import { ref } from "vue";
-    import { useRouter } from "vue-router";
-    import FooterLoginRegister from "../components/FooterLoginRegister.vue";
-    import SliderLoginRegister from "../components/SliderLoginRegister.vue";
-    import { Icon } from '@iconify/vue';
-    /* import { FooterLoginRegister } from "@components/FooterLoginRegister";
-    import { SliderLoginRegister } from "@components/SliderLoginRegister"; */
-
-    const email = ref('');
-    const password = ref('');
-    const repeatPassword = ref('');
-    const router = useRouter();
-
-    const sendForm = () => {
-        if (password.value === repeatPassword.value) {
-            createUser(email.value, password.value);
-            router.push("/home");
-        }else{
-            alert("No son iguales.")
-        }
-    }
-
-</script>
 
 <style lang="scss" scoped>
 
@@ -106,7 +95,7 @@
                     margin-right: 1rem;
                     @include fonts('Nunito', normal, 700, 1.2rem, center);
                     text-decoration: none;
-                    color: rgb(249, 69, 142);
+                    color: hsl(336, 94%, 62%);
                     padding: 0.3rem 0.5rem;
                     border: 2px solid rgb(249, 69, 142);
                     border-radius: 1rem;
@@ -134,8 +123,8 @@
 
                 form{
                     width: 25rem;
-                    height: 23rem;
-                    margin-top: 1.2rem;
+                    height: 21rem;
+                    margin-top: 0.8rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -187,7 +176,14 @@
                         width:22.85rem;
                         height: 2.3rem;
                         padding: 1rem;
+                    }
+
+                    .mail, .pass{
                         margin-bottom: 1.2rem;
+                    }
+
+                    .repeat{
+                        margin-bottom: 0.4rem;
                     }
 
                     .dataUser{
@@ -201,14 +197,14 @@
                     }
 
                     .accessMethods{
-                        margin-bottom: 0.5rem;
+                        /* margin-bottom: 0.5rem; */
                         width: 100%;
                         height: 5rem;
                         display: flex;
                         justify-content: center;
                         align-items: center;
 
-                        #access{
+                        #registerAccess{
                             border: none;
                             cursor: pointer;
                             width: 22.85rem;
@@ -228,30 +224,30 @@
                 }
 
                 #accessGoogle{
-                            cursor: pointer;
-                            width: 22.85rem;
-                            height: 2.5rem;
-                            font-size: 1rem;
-                            text-decoration: none;
-                            color: black;
-                            padding: 1rem;
-                            border-radius: 1rem;
-                            border: 2px #979797 solid;                            
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            margin: 0rem 0.4rem 2rem 0.4rem;
+                    cursor: pointer;
+                    width: 22.85rem;
+                    height: 2.5rem;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    color: black;
+                    padding: 1rem;
+                    border-radius: 1rem;
+                    border: 2px #979797 solid;                            
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0rem 0.4rem 2rem 0.4rem;
 
-                            p{
-                                width: 11rem;
-                            }
+                    p{
+                        width: 11rem;
+                    }
 
-                            svg{
-                                width: 1.8rem;
-                                height: 1.8rem;
-                                color: rgb(249, 69, 142)
-                            }
-                        }
+                    svg{
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        color: rgb(249, 69, 142)
+                    }
+                }
             }
         }
     }
