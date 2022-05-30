@@ -7,13 +7,13 @@ export default {
       username: "Antonio",
       mostPopular: [{
         "title": "Croquetas de tofu",
-        "url": "/src/assets/recipes/croquetas_tofu.jpg"
+        "url": "../assets/recipes/clafoutis-frambuesa.jpg"
       }, {
         "title": "Hamburguesa de lenteja y tofu",
-        "url": "/src/assets/recipes/hamburguesa_lentejas_tofu.jpg"
+        "url": "../assets/recipes/hamburguesa_lentejas_tofu.jpg"
       }, {
         "title": "Clafoutis de frambuesa",
-        "url": "/src/assets/recipes/clafoutis-frambuesa.jpg"
+        "url": "../assets/recipes/clafoutis-frambuesa.jpg"
       }
       ],
     }
