@@ -71,49 +71,56 @@
     text-align: $textAlign;
 }
 
-main {
+main{
     background: white;
     width: 100vw;
     height: 100vh;
     display: flex;
 
-    aside {
+    aside{
         width: 50%;
         height: 100%;
     }
-
-    section {
+    section{
         display: flex;
         flex-direction: column;
         width: 50%;
         height: 100%;
-
-        header {
+        header{
             width: 100%;
             height: 7%;
             display: flex;
             justify-content: end;
             align-items: center;
-
-            a {
+            a{
                 margin-right: 1rem;
                 @include fonts('Nunito', normal, 700, 1.2rem, center);
                 text-decoration: none;
-                color: rgb(249, 69, 142);
+                color: hsl(336, 94%, 62%);
                 padding: 0.3rem 0.5rem;
                 border: 2px solid rgb(249, 69, 142);
                 border-radius: 1rem;
             }
         }
-
-        article {
-
+        article{
             width: 100%;
             height: 83%;
             display: flex;
             flex-direction: column;
-            width: 50%;
-            height: 100%;
+            justify-content: center;
+            align-items: center;
+
+            .logo{
+                width: 8rem;
+                height: 8rem;
+            }
+
+            .title{
+                h2{
+                    font-size: 2rem;
+                    color: rgb(249, 69, 142);
+                }
+            }
 
             form{
                 width: 25rem;
@@ -122,28 +129,53 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
-                #login {
-                    width: 11rem;
-                    height: 3rem;
-                    font-size: 1.5rem;
-                    text-decoration: none;
-                    color: white;
-                    padding: 1rem;
-                    background-color: rgb(151, 151, 151);
-                    border-radius: 1rem;
+                flex-direction: column;
+                
+                .alterMethods{
+                    margin-bottom: 0.5rem;
+                    width: 100%;
+                    height: 5rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin: 0rem 0.4rem;
+
+                    #login{
+                        width: 11rem;
+                        height: 3rem;
+                        font-size: 1.5rem;
+                        text-decoration: none;
+                        color: white;
+                        padding: 1rem;
+                        background-color: rgb(151, 151, 151);
+                        border-radius: 1rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0rem 0.4rem;
+                    }
+
+                    #register{
+                        width: 11rem;
+                        height: 3rem;
+                        font-size: 1.5rem;
+                        text-decoration: none;
+                        color: white;
+                        padding: 1rem;
+                        background-color:rgb(249, 69, 142);
+                        border-radius: 1rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0rem 0.4rem;
+                    }
                 }
 
-                #register {
-                    width: 11rem;
-                    height: 3rem;
-                    font-size: 1.5rem;
-                    text-decoration: none;
-                    color: white;
+                input{
+                    background-color: #f7f7f7;
+                    border: none;
+                    border-radius: 1rem;
+                    width:22.85rem;
+                    height: 2.3rem;
                     padding: 1rem;
                 }
 
@@ -155,14 +187,15 @@ main {
                     margin-bottom: 0.4rem;
                 }
 
-                /* .dataUser{
+                .dataUser{
                     display: flex;
                     flex-direction: row;
 
-                input {
-                    width: 11rem;
-                    margin: 0rem 0.4rem 1.2rem 0.4rem;
-                } */
+                    input{
+                        width: 11rem;
+                        margin: 0rem 0.4rem 1.2rem 0.4rem;
+                    }
+                }
 
                 .accessMethods{
                     /* margin-bottom: 0.5rem; */
@@ -190,6 +223,7 @@ main {
                     }
                 }
             }
+
             #accessGoogle{
                 cursor: pointer;
                 width: 22.85rem;
