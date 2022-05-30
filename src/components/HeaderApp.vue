@@ -1,3 +1,22 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+import { useUserStore } from '../stores/userStore'
+
+const best_dropdown = ref(localStorage.getItem("best_dropwdown") === "true")
+const isOpen = () => {
+  best_dropdown.value = !best_dropdown.value
+  localStorage.setItem("best_dropdown", best_dropdown.value)
+}
+
+const userStore = useUserStore();
+
+const goOut = async () => {
+  userStore.logOut();
+}
+
+</script>
+
 <template>
   <header>
     <div class="container">
@@ -55,27 +74,12 @@
             />
           </button>
           <div class="dropdown-content" id="myDropdown">
-            <RouterLink class="router-link" to="/profile"
-              ><img
-                src="../assets/svg/config-icon.svg"
-                alt=""
-                class="icon-dd"
-              />Configuración
-            </RouterLink>
-            <RouterLink class="router-link" to="/collections"
-              ><img
-                src="../assets/svg/bcollection-icon.svg"
-                alt=""
-                class="icon-dd"
-              />Mis Colecciones
-            </RouterLink>
-            <a href="#" class="router-link"
-              ><img
-                src="../assets/svg/logout-icon.svg"
-                alt=""
-                class="icon-dd"
-              />Cerrar Sesión</a
-            >
+            <RouterLink class="router-link" to="/profile"><img src="../assets/svg/config-icon.svg" alt=""
+                class="icon-dd">Configuración </RouterLink>
+            <RouterLink class="router-link" to="/collections"><img src="../assets/svg/bcollection-icon.svg" alt=""
+                class="icon-dd">Mis Colecciones </RouterLink>
+            <a @click="goOut" class="router-link"><img src="../assets/svg/logout-icon.svg" alt="" class="icon-dd">Cerrar
+              Sesión</a>
           </div>
         </div>
       </div>
@@ -83,7 +87,7 @@
   </header>
 </template>
 
-<script setup>
+<!-- <script setup>
 import { RouterLink } from "vue-router";
 import { ref } from "vue";
 
@@ -92,7 +96,7 @@ const isOpen = () => {
   best_dropdown.value = !best_dropdown.value;
   localStorage.setItem("best_dropdown", best_dropdown.value);
 };
-</script>
+</script> -->
 
 <style lang="scss" scoped>
 @media (min-width: 300px) {
@@ -120,7 +124,7 @@ const isOpen = () => {
       .logo {
         display: flex;
         background-color: transparent;
-        margin-left: 8%;
+        margin-left: 7%;
 
         .pitayapp-img-logo {
           background-color: transparent;
@@ -244,6 +248,7 @@ const isOpen = () => {
               display: flex;
               align-items: center;
               flex-direction: row;
+              cursor: pointer;
 
               .icon-dd {
                 width: 1.5rem;
