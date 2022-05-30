@@ -1,15 +1,23 @@
-<script>
+<script setup>
+    import { ref } from "vue";
+    import { useRouter } from "vue-router";
     import FooterLoginRegister from "../components/FooterLoginRegister.vue";
     import SliderLoginRegister from "../components/SliderLoginRegister.vue";
-    import { Icon } from '@iconify/vue'
+    import IsotypePitayapp from "../components/IsotypePitayapp.vue";
+    import { Icon } from '@iconify/vue';
+    import { useUserStore } from "../stores/userStore";
 
-    export default {
-        components: {
-            Icon,
-            FooterLoginRegister,
-            SliderLoginRegister
-        },
-    };
+    const loginUserForm = ref({});
+    const userStore = useUserStore();
+
+    const login = async () => {
+        userStore.loginUser(loginUserForm.value);
+    }
+
+    const google = async () => {
+        userStore.enterWithGoogle();
+    }
+
 
 </script>
 
@@ -23,20 +31,17 @@
                 <a id="goBackLanding" href="https://pitayapp.com"><p>Volver al Inicio</p></a>
             </header>
             <article>
-                <img src="../assets/img/pitayappLogoPink.svg" alt="logo" class="logo">
-                <div class="title">
-                    <h2>Pitayapp</h2>
-                </div>
-                <form @submit.prevent="sendLogin">
+                <IsotypePitayapp />
+                <form @submit.prevent="login">
                     <div class="alterMethods">
                         <RouterLink id="login" to="/login">Iniciar Sesión</RouterLink>
                         <RouterLink id="register" to="/register">Regístrate</RouterLink>
                     </div>  
-                    <input type="text" placeholder="Correo" v-model="email">
-                    <input type="text" placeholder="Contraseña" v-model="password">
+                    <input type="text" placeholder="Correo" v-model="loginUserForm.email" required>
+                    <input type="password" placeholder="Contraseña" v-model="loginUserForm.password" required>
                     <a @click="forgot">¿Olvidaste tu contraseña?</a>
                     <div class="accessMethods">
-                        <a id="access"><p>Acceder</p></a>
+                        <a id="loginAccess"><p>Acceder</p></a>
                     </div>
                 </form>
                 <a id="accessGoogle" @click="google"><p>Iniciar sesión con Google</p><Icon icon="ant-design:google-outlined" /></a>
@@ -116,8 +121,9 @@
                 }
 
                 form{
+                    margin-top: 0.6rem;
                     width: 25rem;
-                    height: 20rem;
+                    height: 19.5rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -173,14 +179,14 @@
                     }
 
                     .accessMethods{
-                        margin-bottom: 0.5rem;
+                        /* margin-bottom: 0.5rem; */
                         width: 100%;
                         height: 5rem;
                         display: flex;
                         justify-content: center;
                         align-items: center;
 
-                        #access{
+                        #loginAccess{
                             width: 22.85rem;
                             height: 2.5rem;
                             font-size: 1.2rem;
@@ -193,6 +199,7 @@
                             justify-content: center;
                             align-items: center;
                             margin: 0rem 0.4rem;
+                            cursor: pointer;
                         }
                     }
                 }
@@ -207,17 +214,19 @@
                             border-radius: 1rem;
                             border: 2px #979797 solid;                            
                             display: flex;
-                            justify-content: space-evenly;
+                            justify-content: center;
                             align-items: center;
                             margin: 0rem 0.4rem;
+                            cursor: pointer;
 
                             p{
-                                width: 15rem;
+                                width: 12rem;
+                                text-align: center;
                             }
 
                             svg{
-                                width: 2rem;
-                                height: 2rem;
+                                width: 1.8rem;
+                                height: 1.8rem;
                                 color: rgb(249, 69, 142)
                             }
                         }

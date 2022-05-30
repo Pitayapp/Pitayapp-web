@@ -64,6 +64,7 @@ const ToggleMenu = () => {
     .top-elements {
       .menu-icon {
         display: none;
+        cursor: pointer;
 
         .menu {
 
@@ -97,7 +98,14 @@ const ToggleMenu = () => {
         justify-content: center;
         width: 100%;
         transition: 0.3s ease-in-out;
+        
+        & button{
+          cursor: pointer;
 
+          /* & img{
+            margin-left: 1rem;
+          } */
+        }
 
         .active {
           filter: brightness(0) saturate(100%) invert(43%) sepia(64%) saturate(2217%) hue-rotate(308deg) brightness(95%) contrast(105%);
@@ -141,6 +149,25 @@ const ToggleMenu = () => {
         display: none;
       }
 
+    }
+  }
+
+  .is-expanded{
+    .top-elements{
+      .menu-icon{
+        img{
+          margin-right: 1rem;
+        }
+      }
+    }
+    .nav-icons{
+      a{
+        button{
+          img{
+            margin-left: 1rem;
+          }
+        }
+      }
     }
   }
 }
