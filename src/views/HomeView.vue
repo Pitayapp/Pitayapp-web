@@ -1,7 +1,7 @@
 <script>
-import croquetasTofuImage from "/src/assets/recipes/croquetas_tofu.jpg";
-import hamburguesaLentejasImage from "/src/assets/recipes/hamburguesa_lentejas_tofu.jpg";
-import clafoutisFrambuesaImage from "/src/assets/recipes/clafoutis-frambuesa.jpg";
+import croquetasTofuImage from "../assets/recipes/croquetas_tofu.jpg";
+import hamburguesaLentejasImage from "../assets/recipes/hamburguesa_lentejas_tofu.jpg";
+import clafoutisFrambuesaImage from "../assets/recipes/clafoutis-frambuesa.jpg";
 export default {
   name: "HomeView",
 
