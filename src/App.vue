@@ -42,7 +42,7 @@ const path = route.path; */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: 0.5s ease-out;
+  /* transition: 0.5s ease-out; */
 
   body {
     width: 100vw;
@@ -53,6 +53,15 @@ const path = route.path; */
       height: 100vh;
       margin: 0;
       padding: 0;
+
+      .swal2-icon.swal2-error {
+          border-color: #f9458e !important;
+          color: #f9458e !important;
+      }
+
+      .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+          background-color: #f9458e !important;
+      }
 
       /* @media (max-width: 800px) {
         //height: 140vh; //This allows to do vertical scroll in mobile version
@@ -91,24 +100,5 @@ const path = route.path; */
   }
 }
 
-// route transitions
-
-.route-center-from {
-  opacity: 0;
-  transform: translateX(50px);
-}
-
-.route-enter-active {
-  transition: all 0.4s ease-in;
-}
-
-.route-leave-to {
-  opacity: 0;
-  transform: translateX(-50px);
-}
-
-.route-leave-active {
-  transition: all 0.4s ease-out;
-}
 </style>
 

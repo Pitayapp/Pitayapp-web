@@ -1,20 +1,30 @@
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc, getDoc, doc } from "firebase/firestore";
 import { bbdd } from "./firebase";
+
+
 /* import { useRouter } from "vue-router"; */
 
 /* const router = useRouter(); */
 /* console.log(router); */
 
-export const createUser = async (email, pass) => {
-    console.log("Creando Usuario");
-    const addUser = await addDoc(collection(bbdd, "Users"), {
-        email: email,
-        pass: pass
-    });
-    /* router.push("/home"); */
-    console.log("Usuario escrito con ID automático: ", addUser.id)
+export const addUpdUser = async (pitayuser) => {
+
+    const { uid } = pitayuser;
+    console.log(uid);
+    console.log("Creando Pitayero");
+    try {
+        await setDoc(doc(bbdd, "Users", uid), pitayuser);
+    }
+    catch (error) {
+        console.error("No se ha podido añadir el documento de usuario", error);
+    }
 }
 
-/* export const deleteUser = async() => {
-    const deleteUser = await deleteDoc(doc(bbdd, ""));
-} */
+export const obtainUser = async (pitayuser) => {
+    const docRef = doc(bbdd, "Users", pitayuser.uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        return docSnap.data();
+    }
+}

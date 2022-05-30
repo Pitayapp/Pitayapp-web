@@ -8,7 +8,7 @@ import LogIn from '@/views/LogIn.vue'
 import Register from '@/views/RegisterUser.vue'
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   linkActiveClass: 'active',
   routes: [
     {
@@ -65,6 +65,6 @@ const router = createRouter({
 
 }
 
-  )
+)
 
 export default router
