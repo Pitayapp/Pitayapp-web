@@ -1,4 +1,7 @@
 <script>
+import croquetasTofuImage from "/src/assets/recipes/croquetas_tofu.jpg";
+import hamburguesaLentejasImage from "/src/assets/recipes/hamburguesa_lentejas_tofu.jpg";
+import clafoutisFrambuesaImage from "/src/assets/recipes/clafoutis-frambuesa.jpg";
 export default {
   name: "HomeView",
 
@@ -7,13 +10,13 @@ export default {
       username: "Antonio",
       mostPopular: [{
         "title": "Croquetas de tofu",
-        "url": "../assets/recipes/clafoutis-frambuesa.jpg"
+        "url": croquetasTofuImage
       }, {
         "title": "Hamburguesa de lenteja y tofu",
-        "url": "../assets/recipes/hamburguesa_lentejas_tofu.jpg"
+        "url": hamburguesaLentejasImage
       }, {
         "title": "Clafoutis de frambuesa",
-        "url": "../assets/recipes/clafoutis-frambuesa.jpg"
+        "url": clafoutisFrambuesaImage
       }
       ],
     }
