@@ -9,7 +9,7 @@
     import { Icon } from '@iconify/vue';
     import { useUserStore } from "../stores/userStore";
 
-    const registerUserForm = ref({});
+    const registerUserForm = ref({}); //email y el pass
     const userStore = useUserStore();
 
     const register = async () => {
