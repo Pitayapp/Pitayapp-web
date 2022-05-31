@@ -48,6 +48,36 @@ const router = createRouter({
       component: SmoothiesList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
+            {
+      path: '/discover/postres',
+      name: 'postres',
+      component: SmoothiesList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+            {
+      path: '/discover/cremasysopas',
+      name: 'cremas y sopas',
+      component: SmoothiesList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+            {
+      path: '/discover/pastas',
+      name: 'pastas',
+      component: SmoothiesList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+                {
+      path: '/discover/veganas',
+      name: 'veganas',
+      component: SmoothiesList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+                {
+      path: '/discover/veganfastfood',
+      name: 'vegan fast food',
+      component: SmoothiesList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
       ]
     },
 
