@@ -23,8 +23,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
                 <div class="upload-date">13-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="">
-                  <img src="../assets/svg/save-recipe.svg" alt="">
+                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
+                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
                 </div>
               </div>
             </div>
@@ -38,8 +38,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
                 <div class="upload-date">13-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="">
-                  <img src="../assets/svg/save-recipe.svg" alt="">
+                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
+                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
                 </div>
               </div>
             </div>
@@ -53,8 +53,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
                 <div class="upload-date">13-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="">
-                  <img src="../assets/svg/save-recipe.svg" alt="">
+                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
+                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
                 </div>
               </div>
             </div>
@@ -68,8 +68,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
                 <div class="upload-date">13-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="">
-                  <img src="../assets/svg/save-recipe.svg" alt="">
+                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
+                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
                 </div>
               </div>
             </div>
@@ -83,8 +83,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
                 <div class="upload-date">13-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="">
-                  <img src="../assets/svg/save-recipe.svg" alt="">
+                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
+                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
                 </div>
               </div>
             </div>
@@ -98,8 +98,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
                 <div class="upload-date">13-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="">
-                  <img src="../assets/svg/save-recipe.svg" alt="">
+                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
+                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
                 </div>
               </div>
             </div>
@@ -113,28 +113,12 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
                 <div class="upload-date">13-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="">
-                  <img src="../assets/svg/save-recipe.svg" alt="">
+                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
+                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
                 </div>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="item-container">
-              <img src="../assets/img/paralospeques.jpg" alt="" class="recipe-img">
-              <div class="text-box">
-                <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
-                <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
-                <div class="upload-date">13-06-2022</div>
-                <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="">
-                  <img src="../assets/svg/save-recipe.svg" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -342,8 +326,8 @@ main {
         .grid-recipe-list {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(min(100%, 100%), 1fr));
-          grid-column-gap: 25px;
-          grid-row-gap: 25px;
+          grid-template-rows: repeat(auto-fill, minmax(min(100%, 100%), 1fr));
+          gap: 25px;
           box-sizing: border-box;
           padding: 1rem;
           width: 100%;
@@ -352,7 +336,7 @@ main {
           .item {
             background-color: var(--secondary);
             width: 100%;
-            height: 100%;
+            height: 90%;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
             border-radius: 15px;
             display: flex;
@@ -361,56 +345,70 @@ main {
             cursor: pointer;
 
             .item-container {
-              height: 90%;
+              height: 100%;
               width: 100%;
               display: flex;
               align-items: center;
-              justify-content: space-around;
+              justify-content: space-evenly;
 
               .recipe-img {
                 height: 80%;
-                width: 9rem;
+                width: 15%;
                 border-radius: 15%;
               }
 
               .text-box {
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                margin-left: 6%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-left: 0;
+                width: 70%;
 
 
                 .prep-time {
                   font-weight: 500;
-                  font-size: 0.8rem;
+                  font-size: 1.5rem;
                   margin-bottom: 5px;
                   position: none;
-                  display: flex;
+                  left: 0;
+                  top: 0;
                 }
 
                 .box-title {
                   font-weight: 700;
+                  font-size: 1.5rem;
                   margin-bottom: 6px;
                 }
 
                 .box-content {
                   font-weight: 400;
+                  display: none;
                 }
 
                 .upload-date {
                   font-weight: 500;
                   display: block;
+                  font-size: 1.5rem;
                 }
 
                 .list-icons {
                   display: block;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  width: 15%;
+                  height: 3rem;
+
+                  .reaction-icons {
+                    height: 100%;
+                  }
                 }
               }
             }
           }
         }
       }
-
 
     }
   }
