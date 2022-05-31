@@ -1,3 +1,22 @@
+<script setup>
+
+    /* import { createUser } from "../services/crudUser"; */
+    import { ref } from "vue";
+    import { useRouter } from "vue-router";
+    import FooterLoginRegister from "../components/FooterLoginRegister.vue";
+    import SliderLoginRegister from "../components/SliderLoginRegister.vue";
+    import IsotypePitayapp from "../components/IsotypePitayapp.vue";
+    import { Icon } from '@iconify/vue';
+    import { useUserStore } from "../stores/userStore";
+
+    const registerUserForm = ref({});
+    const userStore = useUserStore();
+
+    const register = async () => {
+        userStore.registerUser(registerUserForm.value); //registerUserForm.value ==> email y password
+    }
+</script>
+
 <template>
     <main>
         <aside class="photos">
@@ -10,66 +29,31 @@
                 </a>
             </header>
             <article>
-                <img src="../assets/img/pitayappLogoPink.svg" alt="logo" class="logo">
-                <div class="title">
-                    <h2>Pitayapp</h2>
-                </div>
-                <form @submit.prevent="sendForm()">
+                <IsotypePitayapp />
+                <form @submit.prevent="register">
                     <div class="alterMethods">
                         <RouterLink id="login" to="/login">Iniciar Sesión</RouterLink>
-                        <RouterLink id="register" to="/register">Regístrate</RouterLink>
+                        <RouterLink id="register" to="/register">Registrarte</RouterLink>
                     </div>
-                    <input type="email" placeholder="Correo" v-model="email">
+                    <input class="mail" type="email" placeholder="Correo" v-model="registerUserForm.email" required>
                     <div class="dataUser">
-                        <!-- <input type="text" placeholder="Nombre" v-model="name">
-                        <input type="text" placeholder="Apellido" v-model="surname"> -->
+                        <!-- <input type="text" placeholder="Nombre" v-model="registerUserForm.name" required>
+                        <input type="text" placeholder="Apellido" v-model="registerUserForm.surname" required> -->
                     </div>
-                    <input type="password" placeholder="Contraseña" v-model="password">
-                    <input type="password" placeholder="Repetir contraseña" v-model="repeatPassword">
-                    <a @click="forgot">¿Olvidaste tu contraseña?</a>
+                    <input class="pass" type="password" placeholder="Contraseña" v-model="registerUserForm.password" required>
+                    <input class="repeat" type="password" placeholder="Repetir contraseña" v-model="repeatPassword" required>
+                    <!-- <a @click="forgot">¿Olvidaste tu contraseña?</a> -->
                     <div class="accessMethods">
-                        <button id="access">
-                            <p>Acceder</p>
-                        </button>
+                        <button id="registerAccess"><p>Acceder a Pitayapp</p></button>
                     </div>
                 </form>
-                <button id="accessGoogle" @click="registerWithgoogle">
-                    <p>Registrarse con Google</p>
-                    <Icon icon="ant-design:google-outlined" />
-                </button>
+                <!-- <button id="accessGoogle" @click="registerWithgoogle"><p>Registrarse con Google</p><Icon icon="ant-design:google-outlined" /></button> -->
                 <RouterView></RouterView>
             </article>
             <FooterLoginRegister />
         </section>
     </main>
 </template>
-
-<script setup>
-
-import { createUser } from "../services/crudUser";
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-import FooterLoginRegister from "../components/FooterLoginRegister.vue";
-import SliderLoginRegister from "../components/SliderLoginRegister.vue";
-import { Icon } from '@iconify/vue';
-/* import { FooterLoginRegister } from "@components/FooterLoginRegister";
-import { SliderLoginRegister } from "@components/SliderLoginRegister"; */
-
-const email = ref('');
-const password = ref('');
-const repeatPassword = ref('');
-const router = useRouter();
-
-const sendForm = () => {
-    if (password.value === repeatPassword.value) {
-        createUser(email.value, password.value);
-        router.push("/home");
-    } else {
-        alert("No son iguales.")
-    }
-}
-
-</script>
 
 <style lang="scss" scoped>
 @mixin backgrounds($image, $bgSize, $bgPosition, $bgRepeat) {
@@ -87,42 +71,38 @@ const sendForm = () => {
     text-align: $textAlign;
 }
 
-main {
+main{
     background: white;
     width: 100vw;
     height: 100vh;
     display: flex;
 
-    aside {
+    aside{
         width: 50%;
         height: 100%;
     }
-
-    section {
+    section{
         display: flex;
         flex-direction: column;
         width: 50%;
         height: 100%;
-
-        header {
+        header{
             width: 100%;
             height: 7%;
             display: flex;
             justify-content: end;
             align-items: center;
-
-            a {
+            a{
                 margin-right: 1rem;
                 @include fonts('Nunito', normal, 700, 1.2rem, center);
                 text-decoration: none;
-                color: rgb(249, 69, 142);
+                color: hsl(336, 94%, 62%);
                 padding: 0.3rem 0.5rem;
                 border: 2px solid rgb(249, 69, 142);
                 border-radius: 1rem;
             }
         }
-
-        article {
+        article{
             width: 100%;
             height: 83%;
             display: flex;
@@ -130,28 +110,28 @@ main {
             justify-content: center;
             align-items: center;
 
-            .logo {
+            .logo{
                 width: 8rem;
                 height: 8rem;
             }
 
-            .title {
-                h2 {
+            .title{
+                h2{
                     font-size: 2rem;
                     color: rgb(249, 69, 142);
                 }
             }
 
-            form {
+            form{
                 width: 25rem;
-                height: 23rem;
-                margin-top: 1.2rem;
+                height: 21rem;
+                margin-top: 0.8rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-
-                .alterMethods {
+                
+                .alterMethods{
                     margin-bottom: 0.5rem;
                     width: 100%;
                     height: 5rem;
@@ -159,7 +139,7 @@ main {
                     justify-content: center;
                     align-items: center;
 
-                    #login {
+                    #login{
                         width: 11rem;
                         height: 3rem;
                         font-size: 1.5rem;
@@ -174,14 +154,14 @@ main {
                         margin: 0rem 0.4rem;
                     }
 
-                    #register {
+                    #register{
                         width: 11rem;
                         height: 3rem;
                         font-size: 1.5rem;
                         text-decoration: none;
                         color: white;
                         padding: 1rem;
-                        background-color: rgb(249, 69, 142);
+                        background-color:rgb(249, 69, 142);
                         border-radius: 1rem;
                         display: flex;
                         justify-content: center;
@@ -190,35 +170,42 @@ main {
                     }
                 }
 
-                input {
+                input{
                     background-color: #f7f7f7;
                     border: none;
                     border-radius: 1rem;
-                    width: 22.85rem;
+                    width:22.85rem;
                     height: 2.3rem;
                     padding: 1rem;
+                }
+
+                .mail, .pass{
                     margin-bottom: 1.2rem;
                 }
 
-                .dataUser {
+                .repeat{
+                    margin-bottom: 0.4rem;
+                }
+
+                .dataUser{
                     display: flex;
                     flex-direction: row;
 
-                    input {
+                    input{
                         width: 11rem;
                         margin: 0rem 0.4rem 1.2rem 0.4rem;
                     }
                 }
 
-                .accessMethods {
-                    margin-bottom: 0.5rem;
+                .accessMethods{
+                    /* margin-bottom: 0.5rem; */
                     width: 100%;
                     height: 5rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
-                    #access {
+                    #registerAccess{
                         border: none;
                         cursor: pointer;
                         width: 22.85rem;
@@ -237,7 +224,7 @@ main {
                 }
             }
 
-            #accessGoogle {
+            #accessGoogle{
                 cursor: pointer;
                 width: 22.85rem;
                 height: 2.5rem;
@@ -246,17 +233,17 @@ main {
                 color: black;
                 padding: 1rem;
                 border-radius: 1rem;
-                border: 2px #979797 solid;
+                border: 2px #979797 solid;                            
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin: 0rem 0.4rem 2rem 0.4rem;
 
-                p {
+                p{
                     width: 11rem;
                 }
 
-                svg {
+                svg{
                     width: 1.8rem;
                     height: 1.8rem;
                     color: rgb(249, 69, 142)
