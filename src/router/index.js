@@ -7,6 +7,7 @@ import ProfileView from '@/views/ProfileView.vue'
 import LogIn from '@/views/LogIn.vue'
 import Register from '@/views/RegisterUser.vue'
 import SmoothiesList from '@/views/SmoothiesList.vue'
+import PostresList from '@/views/PostresList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,9 +42,9 @@ const router = createRouter({
       component: DiscoverView,
       name: 'discover',
       meta: { requiresSideBar: true, requiresHeader: true },
-      children: [
-        {
-      path: '/discover/smoothies',
+    },
+    {
+      path: '/discover/:smoothies',
       name: 'smoothies',
       component: SmoothiesList,
       meta: { requiresSideBar: true, requiresHeader: true }
@@ -51,7 +52,7 @@ const router = createRouter({
             {
       path: '/discover/postres',
       name: 'postres',
-      component: SmoothiesList,
+      component: PostresList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
             {
@@ -77,8 +78,6 @@ const router = createRouter({
       name: 'vegan fast food',
       component: SmoothiesList,
       meta: { requiresSideBar: true, requiresHeader: true }
-    },
-      ]
     },
 
     {

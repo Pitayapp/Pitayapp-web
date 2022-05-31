@@ -1,7 +1,7 @@
 <script setup>
+import { RouterLink } from "vue-router";
 import SearcherBar from '@/components/SearcherBar.vue'
 </script>
-
 
 <template>
   <main class="discover-view">
@@ -14,8 +14,9 @@ import SearcherBar from '@/components/SearcherBar.vue'
         </div>
       </div>
       <div class="grid-discover">
-        <div class="cattegories one"><img src="../assets/img/smoothies.png" alt="" class="discover-img"> Smoothies
-        </div>
+        <RouterLink to="/discover/smoothies" class="cattegories one"><img src="../assets/img/smoothies.png" alt=""
+            class="discover-img"> Smoothies
+        </RouterLink>
         <div class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt="" class="discover-img"> Postres
         </div>
         <div class="cattegories three"><img src="../assets/img/sopa-veg.png" alt="" class="discover-img">Cremas y
