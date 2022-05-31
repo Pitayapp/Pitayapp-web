@@ -8,7 +8,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
         <div class="top-discover">
           <div class="section-title">
             <h1>Descubre</h1>
-
             <SearcherBar class="searcher-comp" />
           </div>
         </div>
