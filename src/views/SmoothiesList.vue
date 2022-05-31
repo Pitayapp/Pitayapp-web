@@ -281,33 +281,19 @@ main {
 
 @media (min-width: 800px) {
   main {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s ease-in-out;
 
     .recipe-list {
-      padding: 0;
-      margin: 0;
-      height: 100%;
-      width: 100%;
-      box-sizing: border-box;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
 
       .container {
         display: flex;
         flex-direction: column;
-        height: 90%;
-        width: 94%;
+        height: 70%;
+        width: 93%;
         align-items: flex-start;
         justify-content: center;
         margin: 0;
         position: absolute;
-        top: 5.5rem;
+        top: 4.5rem;
         left: 6.5rem;
         padding: 2rem;
         box-sizing: border-box;
@@ -347,11 +333,77 @@ main {
 
             .searcher-comp {
               width: 100%;
-              height: 70%;
+              height: 80%;
 
-              & .searcher {
-                & button {
-                  background-color: var(--primary);
+            }
+          }
+        }
+
+        .grid-recipe-list {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(min(100%, 100%), 1fr));
+          grid-column-gap: 25px;
+          grid-row-gap: 25px;
+          box-sizing: border-box;
+          padding: 1rem;
+          width: 100%;
+          height: 80%;
+
+          .item {
+            background-color: var(--secondary);
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            .item-container {
+              height: 90%;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+
+              .recipe-img {
+                height: 80%;
+                width: 9rem;
+                border-radius: 15%;
+              }
+
+              .text-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 6%;
+
+
+                .prep-time {
+                  font-weight: 500;
+                  font-size: 0.8rem;
+                  margin-bottom: 5px;
+                  position: none;
+                  display: flex;
+                }
+
+                .box-title {
+                  font-weight: 700;
+                  margin-bottom: 6px;
+                }
+
+                .box-content {
+                  font-weight: 400;
+                }
+
+                .upload-date {
+                  font-weight: 500;
+                  display: block;
+                }
+
+                .list-icons {
+                  display: block;
                 }
               }
             }
@@ -359,77 +411,7 @@ main {
         }
       }
 
-      .grid-recipe-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 100%), 1fr));
-        grid-column-gap: 25px;
-        grid-row-gap: 25px;
-        box-sizing: border-box;
-        padding: 1rem;
-        width: 100%;
-        height: 80%;
 
-        .item {
-          background-color: var(--secondary);
-          width: 100%;
-          height: 100%;
-          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
-          border-radius: 15px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-
-          .item-container {
-            height: 90%;
-            width: 90%;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-
-            .recipe-img {
-              height: 80%;
-              width: 9rem;
-              border-radius: 15%;
-            }
-
-            .text-box {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              margin-left: 6%;
-
-
-              .prep-time {
-                font-weight: 500;
-                font-size: 0.8rem;
-                margin-bottom: 5px;
-                position: relative;
-                left: 90%;
-                top: 0;
-              }
-
-              .box-title {
-                font-weight: 700;
-                margin-bottom: 6px;
-              }
-
-              .box-content {
-                font-weight: 400;
-              }
-
-              .upload-date {
-                font-weight: 500;
-                display: block;
-              }
-
-              .list-icons {
-                display: block;
-              }
-            }
-          }
-        }
-      }
     }
   }
 }

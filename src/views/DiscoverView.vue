@@ -131,6 +131,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
             height: 80%;
             font-size: 1rem;
             font-weight: 700;
+            text-decoration: none;
+            color: #282828;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
             .discover-img {
@@ -149,6 +151,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
             justify-content: center;
             font-size: 1rem;
             font-weight: 700;
+            text-decoration: none;
+            color: #282828;
             cursor: pointer;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
@@ -166,6 +170,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
             align-items: center;
             justify-content: space-around;
             cursor: pointer;
+            text-decoration: none;
+            color: #282828;
             padding: 10%;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
