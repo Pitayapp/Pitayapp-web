@@ -50,14 +50,27 @@ export default {
         <h1>Sube tu receta</h1>
       </div>
       <div class="input-recipe-textbox">
-        <input type="text" placeholder="    Nombre de tu receta" class="name-input-bar" />
+        <input
+          type="text"
+          placeholder="    Nombre de tu receta"
+          class="name-input-bar"
+        />
       </div>
       <div class="image">
         <h4>Imágenes</h4>
         <div class="upload-image">
-          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
+          <input
+            type="file"
+            name="imagen"
+            class="input-file"
+            @change="onFileChange"
+          />
           <div id="preview">
-            <img v-if="url == null" src="../assets/svg/imageupload.svg" alt="" />
+            <img
+              v-if="url == null"
+              src="../assets/svg/imageupload.svg"
+              alt=""
+            />
             <img v-if="url" :src="url" />
           </div>
           <p v-if="url == null">
@@ -66,9 +79,17 @@ export default {
         </div>
       </div>
       <div class="categories">
-        <div v-for="(category, i) in categories" :key="i" class="categories-recipes">
-          <button class="title">{{ category.name }}</button>
+        <h2>Categories</h2>
+        <div class="dropdown-wrapper">
+          <div class="selected-item"></div>
         </div>
+        <!-- <div
+          v-for="(category, i) in categories"
+          :key="i"
+          class="categories-recipes"
+        >
+          <button class="title">{{ category.name }}</button>
+        </div> -->
       </div>
       <div class="ingredients">
         <h4>Ingredientes</h4>
@@ -88,8 +109,13 @@ export default {
         <h4>Descripción</h4>
         <div class="steps-preparation">
           <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
-          <textarea class="boxtext" v-model="preparationSteps" placeholder="Escribe aquí tu receta" rows="10"
-            columns="5"></textarea>
+          <textarea
+            class="boxtext"
+            v-model="preparationSteps"
+            placeholder="Escribe aquí tu receta"
+            rows="10"
+            columns="5"
+          ></textarea>
         </div>
       </div>
       <div class="upload">
@@ -99,9 +125,18 @@ export default {
     <div class="desktop-container">
       <div class="image">
         <div class="upload-image">
-          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
+          <input
+            type="file"
+            name="imagen"
+            class="input-file"
+            @change="onFileChange"
+          />
           <div id="preview">
-            <img v-if="url == null" src="../assets/svg/imageuploadbig.svg" alt="" />
+            <img
+              v-if="url == null"
+              src="../assets/svg/imageuploadbig.svg"
+              alt=""
+            />
             <img v-if="url" :src="url" />
             <p v-if="url == null">
               Pincha en el recuadro para agregar una imagen
