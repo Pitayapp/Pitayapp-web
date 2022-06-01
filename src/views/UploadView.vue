@@ -87,6 +87,17 @@ export default {
               type="text"
               placeholder="Search for category"
             />
+            <div class="options">
+              <ul>
+                <li>Vegana</li>
+                <li>Smoothie</li>
+                <li>Cremas y sopas</li>
+                <li>Pastas</li>
+                <li>Postres</li>
+                <li>Fast food</li>
+                <li>Vegetariana</li>
+              </ul>
+            </div>
           </div>
         </div>
         <!-- <div
