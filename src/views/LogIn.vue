@@ -1,6 +1,6 @@
 <script setup>
     import { ref } from "vue";
-    import { useRouter } from "vue-router";
+    /* import { useRouter } from "vue-router"; */
     import FooterLoginRegister from "../components/FooterLoginRegister.vue";
     import SliderLoginRegister from "../components/SliderLoginRegister.vue";
     import IsotypePitayapp from "../components/IsotypePitayapp.vue";

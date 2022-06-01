@@ -2,11 +2,11 @@
 
     /* import { createUser } from "../services/crudUser"; */
     import { ref } from "vue";
-    import { useRouter } from "vue-router";
+    /* import { useRouter } from "vue-router"; */
     import FooterLoginRegister from "../components/FooterLoginRegister.vue";
     import SliderLoginRegister from "../components/SliderLoginRegister.vue";
     import IsotypePitayapp from "../components/IsotypePitayapp.vue";
-    import { Icon } from '@iconify/vue';
+    /* import { Icon } from '@iconify/vue'; */
     import { useUserStore } from "../stores/userStore";
 
     const registerUserForm = ref({}); //email y el pass
