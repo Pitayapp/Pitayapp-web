@@ -81,7 +81,13 @@ export default {
       <div class="categories">
         <h2>Categories</h2>
         <div class="dropdown-wrapper">
-          <div class="selected-item"></div>
+          <div class="dropdown-popover">
+            <input
+              v-model="searchQuery"
+              type="text"
+              placeholder="Search for category"
+            />
+          </div>
         </div>
         <!-- <div
           v-for="(category, i) in categories"
@@ -203,19 +209,19 @@ body {
       margin-top: 2rem;
       display: grid;
       grid-template-columns: 33% 33% 33%;
-      grid-row-gap: 0.5rem;
+      grid-row-gap: 1rem;
       border-radius: 30px;
       font-size: 1rem;
       place-items: center;
 
-      & button {
-        background-color: #f9458e;
+      & input {
+        background-color: #ffffff;
         color: white;
-        width: 6rem;
+        width: 8rem;
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
         border-radius: 15px;
         border: none;
-        height: 1.5rem;
+        height: 2rem;
       }
     }
 
