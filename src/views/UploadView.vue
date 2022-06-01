@@ -234,6 +234,21 @@ body {
         border: none;
         height: 2rem;
       }
+
+      & .options {
+        width: 100%;
+
+        & ul {
+          list-style: none;
+          text-align: left;
+          overflow-y: scroll;
+          overflow-x: hidden;
+        }
+        & li {
+          width: 100%;
+          cursor: pointer;
+        }
+      }
     }
 
     & .upload-image {
