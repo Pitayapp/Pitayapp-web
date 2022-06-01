@@ -8,25 +8,31 @@ export default {
   data() {
     return {
       username: "Antonio",
-      mostPopular: [{
-        "title": "Croquetas de tofu",
-        "url": croquetasTofuImage
-      }, {
-        "title": "Hamburguesa de lenteja y tofu",
-        "url": hamburguesaLentejasImage
-      }, {
-        "title": "Clafoutis de frambuesa",
-        "url": clafoutisFrambuesaImage
-      }
+      mostPopular: [
+        {
+          id: "/recipes/9",
+          title: "Croquetas de tofu",
+          url: croquetasTofuImage,
+        },
+        {
+          id: "/recipes/17",
+          title: "Hamburguesa de lenteja y tofu",
+          url: hamburguesaLentejasImage,
+        },
+        {
+          id: "/recipes/31",
+          title: "Clafoutis de frambuesa",
+          url: clafoutisFrambuesaImage,
+        },
       ],
-    }
+    };
   },
-}
+};
 </script>
 
 <script setup>
-import SearcherBar from '@/components/SearcherBar.vue'
-import { Icon } from '@iconify/vue';
+import SearcherBar from "@/components/SearcherBar.vue";
+import { Icon } from "@iconify/vue";
 </script>
 
 <template>
@@ -35,11 +41,17 @@ import { Icon } from '@iconify/vue';
       <div class="top-container">
         <div class="hello">
           <p>
-            <Icon icon="noto-v1:victory-hand" color="#f9458e" height="25" :rotate="2" :horizontalFlip="true"
-              :verticalFlip="true" />
+            <Icon
+              icon="noto-v1:victory-hand"
+              color="#f9458e"
+              height="25"
+              :rotate="2"
+              :horizontalFlip="true"
+              :verticalFlip="true"
+            />
             Hola {{ username }}!
           </p>
-          <img src="../assets/svg/bell.svg" alt="">
+          <img src="../assets/svg/bell.svg" alt="" />
         </div>
         <SearcherBar class="searcher-comp mobile" />
       </div>
@@ -51,10 +63,16 @@ import { Icon } from '@iconify/vue';
               <a href="">Ver más</a>
             </div>
             <div class="recipe-list">
-              <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
+              <div
+                v-for="(recipe, i) in mostPopular"
+                :key="i"
+                class="popular-recipes"
+              >
                 <img :src="recipe.url" />
                 <h4 class="title">{{ recipe.title }}</h4>
-                <button>Ver</button>
+                <RouterLink :to="recipe.id">
+                  <button>Ver</button>
+                </RouterLink>
               </div>
             </div>
           </div>
@@ -94,23 +112,26 @@ import { Icon } from '@iconify/vue';
           <div class="your-recipes">
             <p>Tus Recetas</p>
             <div class="user-recipes">
-              <div v-for="(recipe, i) in mostPopular" :key="i" class="popular-recipes">
-                <h4 class="title">{{ recipe.title }}</h4>
+              <div
+                v-for="(recipe, i) in mostPopular"
+                :key="i"
+                class="popular-recipes"
+              >
+                <RouterLink :to="recipe.id">
+                  <h4 class="title">{{ recipe.title }}</h4>
+                </RouterLink>
               </div>
             </div>
           </div>
           <div class="buttons">
             <button>Mis colecciones</button>
             <button>Crear nueva receta</button>
-
           </div>
         </div>
       </div>
     </div>
   </main>
 </template>
-
-
 
 <style lang="scss" scoped>
 body {
@@ -131,7 +152,7 @@ body {
       flex-direction: column;
 
       & .top-container {
-        background-color: #F9458E;
+        background-color: #f9458e;
         color: white;
         width: 100%;
         height: 20%;
@@ -149,8 +170,6 @@ body {
           background-color: transparent;
           height: 3rem;
           margin-right: 0.5rem;
-
-
 
           & p {
             display: flex;
@@ -173,7 +192,6 @@ body {
         .mobile {
           height: 1.5rem;
         }
-
       }
 
       & .right-container {
@@ -213,7 +231,6 @@ body {
           justify-content: center;
 
           & .popular-recipes {
-
             margin: 1rem 0.5rem;
             height: 9rem;
             width: 7rem;
@@ -236,7 +253,7 @@ body {
             }
 
             & button {
-              background-color: #F9458E;
+              background-color: #f9458e;
               color: white;
               border-radius: 15px;
               border: none;
@@ -302,15 +319,11 @@ body {
             background: transparent;
             color: white;
           }
-
         }
       }
     }
   }
 }
-
-
-
 
 @media (min-width: 800px) {
   body {
@@ -359,8 +372,6 @@ body {
           & .mobile {
             display: none;
           }
-
-
         }
 
         & .content {
@@ -398,7 +409,6 @@ body {
                 justify-content: center;
 
                 & .popular-recipes {
-
                   margin: 1rem 0.5rem;
                   height: 9rem;
                   width: 7rem;
@@ -421,7 +431,7 @@ body {
                   }
 
                   & button {
-                    background-color: #F9458E;
+                    background-color: #f9458e;
                     color: white;
                     border-radius: 15px;
                     border: none;
@@ -436,7 +446,6 @@ body {
                 height: 80%;
                 display: flex;
                 justify-content: space-around;
-
 
                 & .popular-recipes {
                   height: 100%;
@@ -528,7 +537,6 @@ body {
                   align-items: center;
                   justify-content: center;
                   cursor: pointer;
-
                 }
               }
             }
@@ -541,11 +549,11 @@ body {
               & button {
                 width: 40%;
                 height: 100%;
-                background: #F9458E;
+                background: #f9458e;
                 border: 0;
                 box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
                 border-radius: 10px;
-                font-family: 'Inter';
+                font-family: "Inter";
                 font-style: normal;
                 font-weight: 700;
                 font-size: 1rem;
