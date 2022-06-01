@@ -98,8 +98,7 @@ export default {
   }
 
   .main-container {
-    margin: 10px 0;
-    margin-left: 7 rem;
+    margin: 10px 0 10px 7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
