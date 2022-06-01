@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import DiscoverView from '@/views/DiscoverView.vue'
 import UploadView from '@/views/UploadView.vue'
@@ -6,6 +6,7 @@ import CollectionsView from '@/views/CollectionsView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import LogIn from '@/views/LogIn.vue'
 import Register from '@/views/RegisterUser.vue'
+import RecipeView from '@/views/RecipeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -59,10 +60,14 @@ const router = createRouter({
       name: 'profile',
       component: ProfileView,
       meta: { requiresSideBar: true, requiresHeader: true }
-      /* component: () => import('../views/CollectionsView.vue') */
+    },
+    {
+      path: '/recipes/:id',
+      name: 'recipe',
+      component: RecipeView,
+      meta: { requiresSideBar: true, requiresHeader: true }
     },
   ]
-
 }
 
 )
