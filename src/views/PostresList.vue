@@ -8,7 +8,7 @@ import SearcherBar from '@/components/SearcherBar.vue'
         <div class="top-discover">
           <div class="section-title">
             <h1>
-              <Router-Link to="/discover" class="h1-link">Descubre</Router-Link> > Smoothies
+              <Router-Link to="/discover" class="h1-link">Descubre</Router-Link> > Postres
             </h1>
             <SearcherBar class="searcher-comp" />
           </div>

@@ -12,6 +12,7 @@ import VegansList from '@/views/VegansList.vue'
 import VeganFastFood from '@/views/VeganFastFood.vue'
 import VegetarianList from '@/views/VegetarianList.vue'
 import CremasSopasList from '@/views/CremasSopasList.vue'
+import PastasList from '@/views/PastasList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -68,7 +69,7 @@ const router = createRouter({
             {
       path: '/discover/pastas',
       name: 'pastas',
-      component: SmoothiesList,
+      component: PastasList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
                 {

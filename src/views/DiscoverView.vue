@@ -17,14 +17,16 @@ import SearcherBar from '@/components/SearcherBar.vue'
         <RouterLink to="/discover/smoothies" class="cattegories one"><img src="../assets/img/smoothies.png" alt=""
             class="discover-img"> Smoothies
         </RouterLink>
-        <div class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt="" class="discover-img"> Postres
-        </div>
+        <RouterLink to="/discover/postres" class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt=""
+            class="discover-img"> Postres
+        </RouterLink>
         <RouterLink to="/discover/cremas-y-sopas" class="cattegories three"><img src="../assets/img/sopa-veg.png" alt=""
             class="discover-img">Cremas y
           sopas
         </RouterLink>
-        <div class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt="" class="discover-img">Pastas
-        </div>
+        <RouterLink to="/discover/pastas" class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt=""
+            class="discover-img">Pastas
+        </RouterLink>
         <RouterLink to="/discover/veganas" class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt=""
             class="discover-img2">Veganas
         </RouterLink>
