@@ -1,4 +1,4 @@
-import { collection, addDoc, setDoc, getDoc, doc } from "firebase/firestore";
+import { setDoc, getDoc, doc } from "firebase/firestore";
 import { bbdd } from "./firebase";
 
 
