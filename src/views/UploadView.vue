@@ -4,6 +4,9 @@ export default {
 
   data() {
     return {
+      searchQuery: "",
+      selectedItem: null,
+      isVisible: false,
       url: null,
       username: "nombreusuario",
       categories: [
@@ -79,8 +82,9 @@ export default {
         </div>
       </div>
       <div class="categories">
-        <h2>Categories</h2>
+        <h2>Categorías</h2>
         <div class="dropdown-wrapper">
+          <div class="selected-item"></div>
           <div class="dropdown-popover">
             <input
               v-model="searchQuery"
@@ -224,6 +228,10 @@ body {
       border-radius: 30px;
       font-size: 1rem;
       place-items: center;
+
+      & .dropdown-popover {
+        display: flex;
+      }
 
       & input {
         background-color: #ffffff;
