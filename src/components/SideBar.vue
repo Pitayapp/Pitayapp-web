@@ -18,46 +18,29 @@ const ToggleMenu = () => {
       </button>
     </div>
     <div class="nav-icons">
-      <RouterLink class="router-link" to="/home"
-        ><button>
+      <RouterLink class="router-link" to="/home"><button>
           <img class="view-icon" src="../assets/svg/home-iconn.svg" alt="" />
         </button>
         <h2>Home</h2>
       </RouterLink>
-      <RouterLink to="/discover"
-        ><button>
-          <img
-            class="view-icon"
-            src="../assets/svg/discover-iconn.svg"
-            alt=""
-          />
+      <RouterLink to="/discover"><button>
+          <img class="view-icon" src="../assets/svg/discover-iconn.svg" alt="" />
           <div class="svg"></div>
         </button>
         <h2>Discover</h2>
       </RouterLink>
-      <RouterLink to="/upload"
-        ><button>
+      <RouterLink to="/upload"><button>
           <img class="view-icon" src="../assets/svg/upload-iconn.svg" alt="" />
         </button>
         <h2>Upload</h2>
       </RouterLink>
-      <RouterLink to="/collections"
-        ><button>
-          <img
-            class="view-icon"
-            src="../assets/svg/collections-iconn.svg"
-            alt=""
-          />
+      <RouterLink to="/collections"><button>
+          <img class="view-icon" src="../assets/svg/collections-iconn.svg" alt="" />
         </button>
         <h2>Collections</h2>
       </RouterLink>
-      <RouterLink class="profile-btn" to="/profile"
-        ><button>
-          <img
-            class="view-icon not-desktop"
-            src="../assets/svg/user-icon2.svg"
-            alt=""
-          />
+      <RouterLink class="profile-btn" to="/profile"><button>
+          <img class="view-icon not-desktop" src="../assets/svg/user-icon2.svg" alt="" />
         </button>
       </RouterLink>
     </div>
@@ -80,18 +63,22 @@ const ToggleMenu = () => {
     box-shadow: 1px -4px 16px 8px rgba(0, 0, 0, 0.28);
     z-index: 1;
     border-radius: 20px 20px 0 0;
+
     .top-elements {
       .menu-icon {
         display: none;
+
         .menu {
           cursor: pointer;
         }
+
         .toggle-title {
           display: none;
           background-color: transparent;
         }
       }
     }
+
     .nav-icons {
       background-color: transparent;
       display: flex;
@@ -102,6 +89,7 @@ const ToggleMenu = () => {
       width: 100%;
       height: 100%;
       transition: 0.3s ease-in-out;
+
       & a {
         background-color: transparent;
         text-decoration: none;
@@ -110,55 +98,60 @@ const ToggleMenu = () => {
         justify-content: center;
         width: 100%;
         transition: 0.3s ease-in-out;
+
         .active {
-          filter: brightness(0) saturate(100%) invert(43%) sepia(64%)
-            saturate(2217%) hue-rotate(308deg) brightness(95%) contrast(105%);
-          background-color: red;
+          filter: brightness(0) saturate(100%) invert(43%) sepia(64%) saturate(2217%) hue-rotate(308deg) brightness(95%) contrast(105%);
         }
+
         &:hover {
-          background-color: var(--cursor-color);
+          background-color: none;
           transition: 0.3s all;
           z-index: 1;
           width: 100%;
         }
+
         h2 {
           display: none;
         }
+
         button {
           background-color: transparent;
           outline: none;
           border: none;
           justify-content: center;
+
           .view-icon {
             background-color: transparent;
             width: 2rem;
             height: 2rem;
             transition: 0.2s ease-out;
             margin-top: 0.5rem;
-            filter: brightness(0) saturate(100%) invert(13%) sepia(61%)
-              saturate(20%) hue-rotate(38deg) brightness(102%) contrast(96%);
+            filter: brightness(0) saturate(100%) invert(13%) sepia(61%) saturate(20%) hue-rotate(38deg) brightness(102%) contrast(96%);
           }
         }
       }
     }
+
     .pitayapp-logo {
       .loguito {
         display: none;
       }
     }
   }
-  .is-expanded{
-    .top-elements{
-      .menu-icon{
-        img{
+
+  .is-expanded {
+    .top-elements {
+      .menu-icon {
+        img {
           margin-right: 1rem;
         }
       }
     }
-    .nav-icons{
-      a{
-        button{
-          img{
+
+    .nav-icons {
+      a {
+        button {
+          img {
             margin-left: 1rem;
           }
         }
@@ -166,9 +159,11 @@ const ToggleMenu = () => {
     }
   }
 }
+
 @media (min-width: 800px) {
   #app {
     display: flex;
+
     aside {
       //position: fixed;
       display: flex;
@@ -185,12 +180,14 @@ const ToggleMenu = () => {
       box-shadow: none;
       border-radius: 0;
       z-index: 2;
+
       .top-elements {
         display: flex;
         flex-direction: column;
         background-color: var(--primary);
         justify-content: center;
         transition: 0.3s ease-in-out;
+
         .menu-icon {
           background-color: var(--primary);
           display: flex;
@@ -199,17 +196,20 @@ const ToggleMenu = () => {
           outline: none;
           border: none;
           transition: 0.3s ease-out;
+
           .menu {
             background-color: var(--primary);
             width: 2.5rem;
             cursor: pointer;
           }
+
           .toggle-title {
             display: none;
             background-color: transparent;
           }
         }
       }
+
       .nav-icons {
         background-color: transparent;
         display: flex;
@@ -219,6 +219,7 @@ const ToggleMenu = () => {
         margin-top: 1rem;
         width: 100%;
         transition: 0.3s ease-in-out;
+
         & a {
           background-color: transparent;
           text-decoration: none;
@@ -227,21 +228,25 @@ const ToggleMenu = () => {
           justify-content: center;
           width: 100%;
           transition: 0.3s ease-in-out;
+
           &.active.router-link-exact-active {
             background-color: var(--cursor-color);
             border-radius: 10px;
           }
+
           &:hover {
             z-index: 1;
             width: 100%;
             border-radius: 10px;
             background-color: var(--dope);
           }
+
           & h2 {
             background-color: transparent;
             text-decoration: none;
             display: none;
           }
+
           button {
             background-color: transparent;
             outline: none;
@@ -249,32 +254,40 @@ const ToggleMenu = () => {
             justify-content: center;
             margin-top: 1.5rem;
             margin-bottom: 1.5rem;
+
             .view-icon {
               background-color: transparent;
               width: 3rem;
               transition: 0.2s ease-out;
               filter: none;
             }
+
             & .not-desktop {
               display: none;
             }
           }
         }
+
         & .profile-btn {
           display: none;
         }
+
         .pitayapp-logo {
           display: none;
         }
+
         .profile-link {
           display: none;
         }
+
         .pitayapp-logo {
           display: none;
         }
       }
+
       &.is-expanded {
         width: var(--sidebar-width);
+
         .top-elements {
           .toggle-title {
             display: block;
@@ -285,13 +298,16 @@ const ToggleMenu = () => {
             margin-left: 10px;
           }
         }
+
         a {
           width: 100%;
           justify-content: flex-start;
+
           .nav-icons {
             background-color: transparent;
             margin-right: 1rem;
           }
+
           & h2 {
             background-color: transparent;
             color: var(--secondary);
@@ -303,10 +319,12 @@ const ToggleMenu = () => {
             display: block;
           }
         }
+
         .pitayapp-logo {
           display: flex;
           align-items: center;
           justify-content: center;
+
           .loguito {
             width: 5rem;
             height: 5rem;
