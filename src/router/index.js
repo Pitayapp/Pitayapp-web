@@ -8,6 +8,10 @@ import LogIn from '@/views/LogIn.vue'
 import Register from '@/views/RegisterUser.vue'
 import SmoothiesList from '@/views/SmoothiesList.vue'
 import PostresList from '@/views/PostresList.vue'
+import VegansList from '@/views/VegansList.vue'
+import VeganFastFood from '@/views/VeganFastFood.vue'
+import VegetarianList from '@/views/VegetarianList.vue'
+import CremasSopasList from '@/views/CremasSopasList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,9 +60,9 @@ const router = createRouter({
       meta: { requiresSideBar: true, requiresHeader: true }
     },
             {
-      path: '/discover/cremasysopas',
-      name: 'cremas y sopas',
-      component: SmoothiesList,
+      path: '/discover/cremas-y-sopas',
+      name: 'cremas-y-sopas',
+      component: CremasSopasList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
             {
@@ -70,13 +74,19 @@ const router = createRouter({
                 {
       path: '/discover/veganas',
       name: 'veganas',
-      component: SmoothiesList,
+      component: VegansList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
                 {
-      path: '/discover/veganfastfood',
-      name: 'vegan fast food',
-      component: SmoothiesList,
+      path: '/discover/vegan-fast-food',
+      name: 'vegan-fast-food',
+      component: VeganFastFood,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+                    {
+      path: '/discover/vegetarianas',
+      name: 'vegetarianas',
+      component: VegetarianList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
 

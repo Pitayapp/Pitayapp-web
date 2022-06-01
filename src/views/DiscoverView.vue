@@ -19,21 +19,26 @@ import SearcherBar from '@/components/SearcherBar.vue'
         </RouterLink>
         <div class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt="" class="discover-img"> Postres
         </div>
-        <div class="cattegories three"><img src="../assets/img/sopa-veg.png" alt="" class="discover-img">Cremas y
+        <RouterLink to="/discover/cremas-y-sopas" class="cattegories three"><img src="../assets/img/sopa-veg.png" alt=""
+            class="discover-img">Cremas y
           sopas
-        </div>
+        </RouterLink>
         <div class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt="" class="discover-img">Pastas
         </div>
-        <div class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt="" class="discover-img2">Veganas
-        </div>
-        <div class="cattegories3 six"><img src="../assets/img/vegan-burger.png" alt="" class="discover-img3">
+        <RouterLink to="/discover/veganas" class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt=""
+            class="discover-img2">Veganas
+        </RouterLink>
+        <RouterLink to="/discover/vegan-fast-food" class="cattegories3 six"><img src="../assets/img/vegan-burger.png"
+            alt="" class="discover-img3">
           <div class="fastfood-text">
             <h3>Vegan Fast Food</h3>
             <p>¡Prepara tus recetas favoritas y disfruta los viernes por la noche!</p>
           </div>
-        </div>
-        <div class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png" alt="" class="discover-img2">
-          vegetarianas</div>
+        </RouterLink>
+        <RouterLink to="/discover/vegetarianas" class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png"
+            alt="" class="discover-img2">
+          vegetarianas
+        </RouterLink>
       </div>
     </div>
   </main>
