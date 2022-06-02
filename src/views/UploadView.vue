@@ -31,18 +31,9 @@ const onFileChange = (e) => {
       <div class="image">
         <h4>Imágenes</h4>
         <div class="upload-image">
-          <input
-            type="file"
-            name="imagen"
-            class="input-file"
-            @change="onFileChange"
-          />
+          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
           <div id="preview">
-            <img
-              v-if="url == null"
-              src="../assets/svg/imageupload.svg"
-              alt=""
-            />
+            <img v-if="url == null" src="../assets/svg/imageupload.svg" alt="" />
             <img v-if="url" :src="url" />
           </div>
           <p v-if="url == null">
@@ -51,31 +42,8 @@ const onFileChange = (e) => {
         </div>
       </div>
       <div class="categories">
-        <h2>Categorías</h2>
-        <div class="dropdown-wrapper">
-          <!-- <div @click="isVisible = !isVisible" class="selected-item">
-            <div class="dropdown-popover">
-              <input
-                v-model="searchQuery"
-                type="text"
-                placeholder="Search for category"
-              />
-              <div class="options">
-                <ul>
-                  <li>Vegana</li>
-                  <li>Smoothie</li>
-                  <li>Cremas y sopas</li>
-                  <li>Pastas</li>
-                  <li>Postres</li>
-                  <li>Fast food</li>
-                  <li>Vegetariana</li>
-                </ul>
-              </div>
-            </div>
-          </div> -->
-          <div v-for="(category, i) in categories" :key="i" class="categories-recipes">
+        <div v-for="(category, i) in categories" :key="i" class="categories-recipes">
           <button class="title">{{ category.name }}</button>
-        </div>
         </div>
       </div>
       <div class="ingredients">
@@ -96,13 +64,8 @@ const onFileChange = (e) => {
         <h4>Descripción</h4>
         <div class="steps-preparation">
           <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
-          <textarea
-            class="boxtext"
-            v-model="preparationSteps"
-            placeholder="Escribe aquí tu receta"
-            rows="10"
-            columns="5"
-          ></textarea>
+          <textarea class="boxtext" v-model="preparationSteps" placeholder="Escribe aquí tu receta" rows="10"
+            columns="5"></textarea>
         </div>
       </div>
       <div class="upload">
@@ -112,18 +75,9 @@ const onFileChange = (e) => {
     <div class="desktop-container">
       <div class="image">
         <div class="upload-image">
-          <input
-            type="file"
-            name="imagen"
-            class="input-file"
-            @change="onFileChange"
-          />
+          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
           <div id="preview">
-            <img
-              v-if="url == null"
-              src="../assets/svg/imageuploadbig.svg"
-              alt=""
-            />
+            <img v-if="url == null" src="../assets/svg/imageuploadbig.svg" alt="" />
             <img v-if="url" :src="url" />
             <p v-if="url == null">
               Pincha en el recuadro para agregar una imagen
