@@ -90,91 +90,89 @@ export default {
         <h2>Categorías</h2>
         <div class="dropdown-wrapper">
           <div @click="isVisible = !isVisible" class="selected-item">
-            <svg class="drop-down-icon" xlmns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24" height="24" <path fill="non"
-          </div>
-          <div class="dropdown-popover">
-            <input
-              v-model="searchQuery"
-              type="text"
-              placeholder="Search for category"
-            />
-            <div class="options">
-              <ul>
-                <li>Vegana</li>
-                <li>Smoothie</li>
-                <li>Cremas y sopas</li>
-                <li>Pastas</li>
-                <li>Postres</li>
-                <li>Fast food</li>
-                <li>Vegetariana</li>
-              </ul>
+            <div class="dropdown-popover">
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="Search for category"
+              />
+              <div class="options">
+                <ul>
+                  <li>Vegana</li>
+                  <li>Smoothie</li>
+                  <li>Cremas y sopas</li>
+                  <li>Pastas</li>
+                  <li>Postres</li>
+                  <li>Fast food</li>
+                  <li>Vegetariana</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- <div
+          <!-- <div
           v-for="(category, i) in categories"
           :key="i"
           class="categories-recipes"
         >
           <button class="title">{{ category.name }}</button>
         </div> -->
-      </div>
-      <div class="ingredients">
-        <h4>Ingredientes</h4>
-        <div class="list-ingredientes"></div>
-        <div class="add-ingredient">
-          <input type="text" placeholder="Introduce aquí cada ingrediente" />
-          <button>Añadir</button>
         </div>
-      </div>
-      <div class="time">
-        <h4>Tiempo de preparación</h4>
-        <div class="time-set">
-          <input type="number" id="number" value="10" min="10" max="120" />
-        </div>
-      </div>
-      <div class="preparation">
-        <h4>Descripción</h4>
-        <div class="steps-preparation">
-          <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
-          <textarea
-            class="boxtext"
-            v-model="preparationSteps"
-            placeholder="Escribe aquí tu receta"
-            rows="10"
-            columns="5"
-          ></textarea>
-        </div>
-      </div>
-      <div class="upload">
-        <button class="upload-button">Subir receta</button>
-      </div>
-    </div>
-    <div class="desktop-container">
-      <div class="image">
-        <div class="upload-image">
-          <input
-            type="file"
-            name="imagen"
-            class="input-file"
-            @change="onFileChange"
-          />
-          <div id="preview">
-            <img
-              v-if="url == null"
-              src="../assets/svg/imageuploadbig.svg"
-              alt=""
-            />
-            <img v-if="url" :src="url" />
-            <p v-if="url == null">
-              Pincha en el recuadro para agregar una imagen
-            </p>
+        <div class="ingredients">
+          <h4>Ingredientes</h4>
+          <div class="list-ingredientes"></div>
+          <div class="add-ingredient">
+            <input type="text" placeholder="Introduce aquí cada ingrediente" />
+            <button>Añadir</button>
           </div>
         </div>
+        <div class="time">
+          <h4>Tiempo de preparación</h4>
+          <div class="time-set">
+            <input type="number" id="number" value="10" min="10" max="120" />
+          </div>
+        </div>
+        <div class="preparation">
+          <h4>Descripción</h4>
+          <div class="steps-preparation">
+            <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
+            <textarea
+              class="boxtext"
+              v-model="preparationSteps"
+              placeholder="Escribe aquí tu receta"
+              rows="10"
+              columns="5"
+            ></textarea>
+          </div>
+        </div>
+        <div class="upload">
+          <button class="upload-button">Subir receta</button>
+        </div>
       </div>
-      <div class="upload">
-        <button class="upload-button">Subir receta</button>
+      <div class="desktop-container">
+        <div class="image">
+          <div class="upload-image">
+            <input
+              type="file"
+              name="imagen"
+              class="input-file"
+              @change="onFileChange"
+            />
+            <div id="preview">
+              <img
+                v-if="url == null"
+                src="../assets/svg/imageuploadbig.svg"
+                alt=""
+              />
+              <img v-if="url" :src="url" />
+              <p v-if="url == null">
+                Pincha en el recuadro para agregar una imagen
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="upload">
+          <button class="upload-button">Subir receta</button>
+        </div>
       </div>
     </div>
   </main>
