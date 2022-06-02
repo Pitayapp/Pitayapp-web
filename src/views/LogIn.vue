@@ -37,7 +37,7 @@
                 <form @submit.prevent="login">
                     <div class="alterMethods">
                         <RouterLink id="login" to="/login">Iniciar Sesión</RouterLink>
-                        <RouterLink id="register" to="/register">Regístrate</RouterLink>
+                        <RouterLink id="register" to="/register">Registrarte</RouterLink>
                     </div>  
                     <input type="email" placeholder="Correo" v-model="loginUserForm.email" required>
                     <input type="password" placeholder="Contraseña" v-model="loginUserForm.password" required>

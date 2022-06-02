@@ -2,7 +2,7 @@ import router from '../router';
 import { defineStore } from "pinia";
 import { auth } from "../services/firebase";
 import { addUpdUser, obtainUser } from '../services/crudUser';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, getAdditionalUserInfo } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { bigAlerts, littleAlerts } from '../libraries/alert';
 
 
@@ -57,7 +57,7 @@ export const useUserStore = defineStore("userStore", {
 
                     case "auth/weak-password":
                         bigAlerts("wrong", "Contraseña debil", "Debe contener al menos 6 carácteres");
-
+                        break;
                     default:
                         console.error(error);
                         break;
@@ -90,11 +90,11 @@ export const useUserStore = defineStore("userStore", {
             } catch (error) {
                 switch (error.code) {
                     case "auth/user-not-found":
-                        hugeAlerts("wrong", "Usuario no encontrado", "El usuario que ha introducido no existe.");
+                        bigAlerts("wrong", "Usuario no encontrado", "El usuario que ha introducido no existe.");
                         break;
                     case "auth/wrong-password":
-                        hugeAlerts("wrong", "Contraseña incorrecta", "La contraseña introducida no es correcta. Pruebe a poner una distinta. :)")
-
+                        bigAlerts("wrong", "Contraseña incorrecta", "La contraseña introducida no es correcta. Pruebe a poner una distinta. :)")
+                        break;
                     default:
                         console.error(error);
                         break;
