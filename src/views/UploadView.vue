@@ -1,9 +1,15 @@
 <script>
+import DropdownMenuVue from "../components/DropdownMenu.vue";
+import LogIn from "./LogIn.vue";
+import LogIn1 from "./LogIn.vue";
+
 export default {
   name: "UploadView",
-
   data() {
     return {
+      searchQuery: "",
+      selectedItem: null,
+      isVisible: false,
       url: null,
       username: "nombreusuario",
       categories: [
@@ -31,6 +37,7 @@ export default {
       ],
     };
   },
+  components: DropdownMenuVue,
   methods: {
     onFileChange(e) {
       const file = e.target.files[0];
@@ -38,6 +45,7 @@ export default {
       this.url = URL.createObjectURL(file);
     },
   },
+  components: { LogIn, LogIn1 },
 };
 </script>
 
@@ -50,14 +58,27 @@ export default {
         <h1>Sube tu receta</h1>
       </div>
       <div class="input-recipe-textbox">
-        <input type="text" placeholder="    Nombre de tu receta" class="name-input-bar" />
+        <input
+          type="text"
+          placeholder="    Nombre de tu receta"
+          class="name-input-bar"
+        />
       </div>
       <div class="image">
         <h4>Imágenes</h4>
         <div class="upload-image">
-          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
+          <input
+            type="file"
+            name="imagen"
+            class="input-file"
+            @change="onFileChange"
+          />
           <div id="preview">
-            <img v-if="url == null" src="../assets/svg/imageupload.svg" alt="" />
+            <img
+              v-if="url == null"
+              src="../assets/svg/imageupload.svg"
+              alt=""
+            />
             <img v-if="url" :src="url" />
           </div>
           <p v-if="url == null">
@@ -66,51 +87,92 @@ export default {
         </div>
       </div>
       <div class="categories">
-        <div v-for="(category, i) in categories" :key="i" class="categories-recipes">
+        <h2>Categorías</h2>
+        <div class="dropdown-wrapper">
+          <div @click="isVisible = !isVisible" class="selected-item">
+            <div class="dropdown-popover">
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="Search for category"
+              />
+              <div class="options">
+                <ul>
+                  <li>Vegana</li>
+                  <li>Smoothie</li>
+                  <li>Cremas y sopas</li>
+                  <li>Pastas</li>
+                  <li>Postres</li>
+                  <li>Fast food</li>
+                  <li>Vegetariana</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- <div
+          v-for="(category, i) in categories"
+          :key="i"
+          class="categories-recipes"
+        >
           <button class="title">{{ category.name }}</button>
+        </div> -->
         </div>
-      </div>
-      <div class="ingredients">
-        <h4>Ingredientes</h4>
-        <div class="list-ingredientes"></div>
-        <div class="add-ingredient">
-          <input type="text" placeholder="Introduce aquí cada ingrediente" />
-          <button>Añadir</button>
-        </div>
-      </div>
-      <div class="time">
-        <h4>Tiempo de preparación</h4>
-        <div class="time-set">
-          <input type="number" id="number" value="10" min="10" max="120" />
-        </div>
-      </div>
-      <div class="preparation">
-        <h4>Descripción</h4>
-        <div class="steps-preparation">
-          <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
-          <textarea class="boxtext" v-model="preparationSteps" placeholder="Escribe aquí tu receta" rows="10"
-            columns="5"></textarea>
-        </div>
-      </div>
-      <div class="upload">
-        <button class="upload-button">Subir receta</button>
-      </div>
-    </div>
-    <div class="desktop-container">
-      <div class="image">
-        <div class="upload-image">
-          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
-          <div id="preview">
-            <img v-if="url == null" src="../assets/svg/imageuploadbig.svg" alt="" />
-            <img v-if="url" :src="url" />
-            <p v-if="url == null">
-              Pincha en el recuadro para agregar una imagen
-            </p>
+        <div class="ingredients">
+          <h4>Ingredientes</h4>
+          <div class="list-ingredientes"></div>
+          <div class="add-ingredient">
+            <input type="text" placeholder="Introduce aquí cada ingrediente" />
+            <button>Añadir</button>
           </div>
         </div>
+        <div class="time">
+          <h4>Tiempo de preparación</h4>
+          <div class="time-set">
+            <input type="number" id="number" value="10" min="10" max="120" />
+          </div>
+        </div>
+        <div class="preparation">
+          <h4>Descripción</h4>
+          <div class="steps-preparation">
+            <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
+            <textarea
+              class="boxtext"
+              v-model="preparationSteps"
+              placeholder="Escribe aquí tu receta"
+              rows="10"
+              columns="5"
+            ></textarea>
+          </div>
+        </div>
+        <div class="upload">
+          <button class="upload-button">Subir receta</button>
+        </div>
       </div>
-      <div class="upload">
-        <button class="upload-button">Subir receta</button>
+      <div class="desktop-container">
+        <div class="image">
+          <div class="upload-image">
+            <input
+              type="file"
+              name="imagen"
+              class="input-file"
+              @change="onFileChange"
+            />
+            <div id="preview">
+              <img
+                v-if="url == null"
+                src="../assets/svg/imageuploadbig.svg"
+                alt=""
+              />
+              <img v-if="url" :src="url" />
+              <p v-if="url == null">
+                Pincha en el recuadro para agregar una imagen
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="upload">
+          <button class="upload-button">Subir receta</button>
+        </div>
       </div>
     </div>
   </main>
@@ -168,19 +230,38 @@ body {
       margin-top: 2rem;
       display: grid;
       grid-template-columns: 33% 33% 33%;
-      grid-row-gap: 0.5rem;
+      grid-row-gap: 1rem;
       border-radius: 30px;
       font-size: 1rem;
       place-items: center;
 
-      & button {
-        background-color: #f9458e;
+      & .dropdown-popover {
+        display: flex;
+      }
+
+      & input {
+        background-color: #ffffff;
         color: white;
-        width: 6rem;
+        width: 8rem;
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
         border-radius: 15px;
         border: none;
-        height: 1.5rem;
+        height: 2rem;
+      }
+
+      & .options {
+        width: 100%;
+
+        & ul {
+          list-style: none;
+          text-align: left;
+          overflow-y: scroll;
+          overflow-x: hidden;
+        }
+        & li {
+          width: 100%;
+          cursor: pointer;
+        }
       }
     }
 
