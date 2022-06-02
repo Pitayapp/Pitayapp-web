@@ -312,8 +312,6 @@ body {
 }
 
 
-
-
 @media (min-width: 800px) {
   body {
     width: 100vw;
