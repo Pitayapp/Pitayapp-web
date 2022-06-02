@@ -7,6 +7,13 @@ import ProfileView from '@/views/ProfileView.vue'
 import LogIn from '@/views/LogIn.vue'
 import Register from '@/views/RegisterUser.vue'
 import RecipeView from '@/views/RecipeView.vue'
+import SmoothiesList from '@/views/SmoothiesList.vue'
+import PostresList from '@/views/PostresList.vue'
+import VegansList from '@/views/VegansList.vue'
+import VeganFastFood from '@/views/VeganFastFood.vue'
+import VegetarianList from '@/views/VegetarianList.vue'
+import CremasSopasList from '@/views/CremasSopasList.vue'
+import PastasList from '@/views/PastasList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,10 +45,53 @@ const router = createRouter({
     },
     {
       path: '/discover',
-      name: 'discover',
       component: DiscoverView,
+      name: 'discover',
+      meta: { requiresSideBar: true, requiresHeader: true },
+    },
+    {
+      path: '/discover/:smoothies',
+      name: 'smoothies',
+      component: SmoothiesList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
+            {
+      path: '/discover/postres',
+      name: 'postres',
+      component: PostresList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+            {
+      path: '/discover/cremas-y-sopas',
+      name: 'cremas-y-sopas',
+      component: CremasSopasList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+            {
+      path: '/discover/pastas',
+      name: 'pastas',
+      component: PastasList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+                {
+      path: '/discover/veganas',
+      name: 'veganas',
+      component: VegansList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+                {
+      path: '/discover/vegan-fast-food',
+      name: 'vegan-fast-food',
+      component: VeganFastFood,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+                    {
+      path: '/discover/vegetarianas',
+      name: 'vegetarianas',
+      component: VegetarianList,
+      meta: { requiresSideBar: true, requiresHeader: true }
+    },
+
     {
       path: '/upload',
       name: 'upload',
