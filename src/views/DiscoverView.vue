@@ -1,7 +1,7 @@
 <script setup>
+import { RouterLink } from "vue-router";
 import SearcherBar from '@/components/SearcherBar.vue'
 </script>
-
 
 <template>
   <main class="discover-view">
@@ -14,25 +14,33 @@ import SearcherBar from '@/components/SearcherBar.vue'
         </div>
       </div>
       <div class="grid-discover">
-        <div class="cattegories one"><img src="../assets/img/smoothies.png" alt="" class="discover-img"> Smoothies
-        </div>
-        <div class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt="" class="discover-img"> Postres
-        </div>
-        <div class="cattegories three"><img src="../assets/img/sopa-veg.png" alt="" class="discover-img">Cremas y
+        <RouterLink to="/discover/smoothies" class="cattegories one"><img src="../assets/img/smoothies.png" alt=""
+            class="discover-img"> Smoothies
+        </RouterLink>
+        <RouterLink to="/discover/postres" class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt=""
+            class="discover-img"> Postres
+        </RouterLink>
+        <RouterLink to="/discover/cremas-y-sopas" class="cattegories three"><img src="../assets/img/sopa-veg.png" alt=""
+            class="discover-img">Cremas y
           sopas
-        </div>
-        <div class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt="" class="discover-img">Pastas
-        </div>
-        <div class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt="" class="discover-img2">Veganas
-        </div>
-        <div class="cattegories3 six"><img src="../assets/img/vegan-burger.png" alt="" class="discover-img3">
+        </RouterLink>
+        <RouterLink to="/discover/pastas" class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt=""
+            class="discover-img">Pastas
+        </RouterLink>
+        <RouterLink to="/discover/veganas" class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt=""
+            class="discover-img2">Veganas
+        </RouterLink>
+        <RouterLink to="/discover/vegan-fast-food" class="cattegories3 six"><img src="../assets/img/vegan-burger.png"
+            alt="" class="discover-img3">
           <div class="fastfood-text">
             <h3>Vegan Fast Food</h3>
             <p>¡Prepara tus recetas favoritas y disfruta los viernes por la noche!</p>
           </div>
-        </div>
-        <div class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png" alt="" class="discover-img2">
-          vegetarianas</div>
+        </RouterLink>
+        <RouterLink to="/discover/vegetarianas" class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png"
+            alt="" class="discover-img2">
+          vegetarianas
+        </RouterLink>
       </div>
     </div>
   </main>
@@ -130,6 +138,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
             height: 80%;
             font-size: 1rem;
             font-weight: 700;
+            text-decoration: none;
+            color: #282828;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
             .discover-img {
@@ -148,6 +158,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
             justify-content: center;
             font-size: 1rem;
             font-weight: 700;
+            text-decoration: none;
+            color: #282828;
             cursor: pointer;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
@@ -165,6 +177,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
             align-items: center;
             justify-content: space-around;
             cursor: pointer;
+            text-decoration: none;
+            color: #282828;
             padding: 10%;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
