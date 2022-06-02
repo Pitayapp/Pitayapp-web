@@ -4,7 +4,7 @@
     import FooterLoginRegister from "../components/FooterLoginRegister.vue";
     import SliderLoginRegister from "../components/SliderLoginRegister.vue";
     import IsotypePitayapp from "../components/IsotypePitayapp.vue";
-    import { Icon } from '@iconify/vue';
+    /* import { Icon } from '@iconify/vue'; */
     import { useUserStore } from "../stores/userStore";
 
     const loginUserForm = ref({});
@@ -14,9 +14,9 @@
         userStore.loginUser(loginUserForm.value);
     }
 
-    const google = async () => {
+    /* const google = async () => {
         userStore.enterWithGoogle();
-    }
+    } */
 
 
 </script>
@@ -46,10 +46,10 @@
                         <button id="loginAccess"><p>Acceder</p></button>
                     </div>
                 </form>
-                <a id="accessGoogle" @click="google">
+                <!-- <a id="accessGoogle" @click="google">
                     <p>Iniciar sesión con Google</p>
                     <Icon icon="ant-design:google-outlined" />
-                </a>
+                </a> -->
                 <RouterView></RouterView>
             </article>
             <FooterLoginRegister />

@@ -1,56 +1,32 @@
-<script>
-export default {
-  name: "UploadView",
+<script setup>
+import { ref } from 'vue';
+import { useRecipeStore } from '../stores/recipesStore';
 
-  data() {
-    return {
-      url: null,
-      username: "nombreusuario",
-      categories: [
-        {
-          name: "Vegana",
-        },
-        {
-          name: "Smoothie",
-        },
-        {
-          name: "Cremas/sopas",
-        },
-        {
-          name: "Pastas",
-        },
-        {
-          name: "Postres",
-        },
-        {
-          name: "Fast food",
-        },
-        {
-          name: "Vegetariana",
-        },
-      ],
-    };
-  },
-  methods: {
-    onFileChange(e) {
-      const file = e.target.files[0];
-      console.log(file);
-      this.url = URL.createObjectURL(file);
-    },
-  },
-};
+const recipeForm = ref({});
+const recipeStore = useRecipeStore();
+
+const url = ref(null);
+/* const username = ref('nombreusuario'); */
+const categories = ref([{name:'Vegana'}, {name: 'Smoothie'},{name: 'Cremas/sopas'},{name: 'Pastas'},{name: 'Postres'},{name: 'Fast food'},{name: 'Vegetariana'}]);
+
+const onFileChange = (e) => {
+  const file = e.target.files[0];
+    console.log(file);
+    this.url = URL.createObjectURL(file);
+}
+
 </script>
 
 
 
 <template>
-  <main class="upload-view">
+  <form class="upload-view" @submit.prevent="create">
     <div class="top-container">
       <div class="title">
         <h1>Sube tu receta</h1>
       </div>
       <div class="input-recipe-textbox">
-        <input type="text" placeholder="    Nombre de tu receta" class="name-input-bar" />
+        <input type="text" placeholder="    Nombre de tu receta" class="name-input-bar" v-model="recipeForm.title" />
       </div>
       <div class="image">
         <h4>Imágenes</h4>
@@ -81,7 +57,7 @@ export default {
       <div class="time">
         <h4>Tiempo de preparación</h4>
         <div class="time-set">
-          <input type="number" id="number" value="10" min="10" max="120" />
+          <input type="number" v-model="recipeForm.time"/> <!-- type="number" id="number" value="10" min="10" max="120" -->
         </div>
       </div>
       <div class="preparation">
@@ -113,7 +89,7 @@ export default {
         <button class="upload-button">Subir receta</button>
       </div>
     </div>
-  </main>
+  </form>
 </template>
 
 
@@ -152,10 +128,11 @@ body {
 
         .name-input-bar {
           width: 100%;
-          height: 1.5rem;
+          height: 2.5rem;
           border-radius: 15px;
           border: 0;
           background-color: white;
+          text-indent: 1rem;
         }
 
         & input::placeholder {
@@ -165,7 +142,7 @@ body {
     }
 
     & .categories {
-      margin-top: 2rem;
+      margin-top: 1rem;
       display: grid;
       grid-template-columns: 33% 33% 33%;
       grid-row-gap: 0.5rem;
@@ -256,7 +233,7 @@ body {
           border-radius: 20px;
           border: none;
           font-size: 0.8rem;
-          text-indent: 20px;
+          text-indent: 1rem;
         }
 
         & button {
@@ -272,7 +249,7 @@ body {
     }
 
     & .time {
-      margin-top: 1.5rem;
+      /* margin-top: 1.5rem; */
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -288,7 +265,8 @@ body {
         justify-content: end;
 
         & input {
-          text-indent: 15px;
+          /* text-indent: 1rem; */
+          text-align: center;
           width: 80%;
           height: 2rem;
           display: flex;
@@ -363,11 +341,15 @@ body {
       margin-bottom: 0;
       display: grid;
       grid-template-columns: 60% 40%;
-      padding: 6rem 0 0 6rem;
+      position: absolute;
+      top: 5.5rem;
+      left: 6.5rem;
+      width: 94%;
+      height: 90%;
       box-sizing: border-box;
 
       & .top-container {
-        padding: 2% 4% 2% 4%;
+        padding: 2rem;
         box-sizing: border-box;
         width: 100%;
 
@@ -380,8 +362,8 @@ body {
         }
 
         & .categories {
-          margin-top: 2rem;
-          margin-bottom: 1.5rem;
+          /* margin-top: 2rem;
+          margin-bottom: 1.5rem; */
 
           & button {
             width: 8rem;
@@ -432,8 +414,8 @@ body {
         & .time {
           width: 90%;
           height: 3rem;
-          margin-bottom: 1.5rem;
-          margin-top: 2rem;
+          /* margin-bottom: 1.5rem;
+          margin-top: 2rem; */
           font-size: 1.5rem;
           display: flex;
           justify-content: space-between;
@@ -449,7 +431,7 @@ body {
         }
 
         & .preparation {
-          margin-top: 2.5rem;
+          /* margin-top: 2.5rem; */
 
           & h4 {
             font-size: 1.5rem;
@@ -458,7 +440,7 @@ body {
 
           & .steps-preparation {
             & textarea {
-              padding: 15px 15px 15px 15px;
+              /* padding: 15px 15px 15px 15px; */
               width: 100%;
               height: 15rem;
               box-sizing: content-box;
