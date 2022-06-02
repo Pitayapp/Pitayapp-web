@@ -117,62 +117,62 @@ export default {
           <button class="title">{{ category.name }}</button>
         </div> -->
         </div>
-        <div class="ingredients">
-          <h4>Ingredientes</h4>
-          <div class="list-ingredientes"></div>
-          <div class="add-ingredient">
-            <input type="text" placeholder="Introduce aquí cada ingrediente" />
-            <button>Añadir</button>
-          </div>
-        </div>
-        <div class="time">
-          <h4>Tiempo de preparación</h4>
-          <div class="time-set">
-            <input type="number" id="number" value="10" min="10" max="120" />
-          </div>
-        </div>
-        <div class="preparation">
-          <h4>Descripción</h4>
-          <div class="steps-preparation">
-            <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
-            <textarea
-              class="boxtext"
-              v-model="preparationSteps"
-              placeholder="Escribe aquí tu receta"
-              rows="10"
-              columns="5"
-            ></textarea>
-          </div>
-        </div>
-        <div class="upload">
-          <button class="upload-button">Subir receta</button>
+      </div>
+      <div class="ingredients">
+        <h4>Ingredientes</h4>
+        <div class="list-ingredientes"></div>
+        <div class="add-ingredient">
+          <input type="text" placeholder="Introduce aquí cada ingrediente" />
+          <button>Añadir</button>
         </div>
       </div>
-      <div class="desktop-container">
-        <div class="image">
-          <div class="upload-image">
-            <input
-              type="file"
-              name="imagen"
-              class="input-file"
-              @change="onFileChange"
+      <div class="time">
+        <h4>Tiempo de preparación</h4>
+        <div class="time-set">
+          <input type="number" id="number" value="10" min="10" max="120" />
+        </div>
+      </div>
+      <div class="preparation">
+        <h4>Descripción</h4>
+        <div class="steps-preparation">
+          <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
+          <textarea
+            class="boxtext"
+            v-model="preparationSteps"
+            placeholder="Escribe aquí tu receta"
+            rows="10"
+            columns="5"
+          ></textarea>
+        </div>
+      </div>
+      <div class="upload">
+        <button class="upload-button">Subir receta</button>
+      </div>
+    </div>
+    <div class="desktop-container">
+      <div class="image">
+        <div class="upload-image">
+          <input
+            type="file"
+            name="imagen"
+            class="input-file"
+            @change="onFileChange"
+          />
+          <div id="preview">
+            <img
+              v-if="url == null"
+              src="../assets/svg/imageuploadbig.svg"
+              alt=""
             />
-            <div id="preview">
-              <img
-                v-if="url == null"
-                src="../assets/svg/imageuploadbig.svg"
-                alt=""
-              />
-              <img v-if="url" :src="url" />
-              <p v-if="url == null">
-                Pincha en el recuadro para agregar una imagen
-              </p>
-            </div>
+            <img v-if="url" :src="url" />
+            <p v-if="url == null">
+              Pincha en el recuadro para agregar una imagen
+            </p>
           </div>
         </div>
-        <div class="upload">
-          <button class="upload-button">Subir receta</button>
-        </div>
+      </div>
+      <div class="upload">
+        <button class="upload-button">Subir receta</button>
       </div>
     </div>
   </main>
