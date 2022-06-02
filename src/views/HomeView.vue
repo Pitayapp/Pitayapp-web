@@ -53,7 +53,7 @@ import { Icon } from "@iconify/vue";
               :horizontalFlip="true"
               :verticalFlip="true"
             />
-            Hola {{ username }}!
+            Hola Pitayapper <!-- {{ username }} -->!
           </p>
           <img src="../assets/svg/logout-icon.svg" alt="" class="logout-icon" />
         </div>

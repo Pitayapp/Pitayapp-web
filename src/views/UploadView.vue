@@ -92,8 +92,6 @@ const onFileChange = (e) => {
   </form>
 </template>
 
-
-
 <style lang="scss" scoped>
 body {
   margin: 0;
@@ -145,38 +143,19 @@ body {
       margin-top: 1rem;
       display: grid;
       grid-template-columns: 33% 33% 33%;
-      grid-row-gap: 1rem;
+      grid-row-gap: 0.5rem;
       border-radius: 30px;
       font-size: 1rem;
       place-items: center;
 
-      & .dropdown-popover {
-        display: flex;
-      }
-
-      & input {
-        background-color: #ffffff;
+      & button {
+        background-color: #f9458e;
         color: white;
-        width: 8rem;
+        width: 6rem;
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
         border-radius: 15px;
         border: none;
-        height: 2rem;
-      }
-
-      & .options {
-        width: 100%;
-
-        & ul {
-          list-style: none;
-          text-align: left;
-          overflow-y: scroll;
-          overflow-x: hidden;
-        }
-        & li {
-          width: 100%;
-          cursor: pointer;
-        }
+        height: 1.5rem;
       }
     }
 
