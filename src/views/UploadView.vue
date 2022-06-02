@@ -1,7 +1,10 @@
 <script>
+import DropdownMenuVue from "../components/DropdownMenu.vue";
+import LogIn from "./LogIn.vue";
+import LogIn1 from "./LogIn.vue";
+
 export default {
   name: "UploadView",
-
   data() {
     return {
       searchQuery: "",
@@ -34,6 +37,7 @@ export default {
       ],
     };
   },
+  components: DropdownMenuVue,
   methods: {
     onFileChange(e) {
       const file = e.target.files[0];
@@ -41,6 +45,7 @@ export default {
       this.url = URL.createObjectURL(file);
     },
   },
+  components: { LogIn, LogIn1 },
 };
 </script>
 
@@ -84,7 +89,10 @@ export default {
       <div class="categories">
         <h2>Categorías</h2>
         <div class="dropdown-wrapper">
-          <div class="selected-item"></div>
+          <div @click="isVisible = !isVisible" class="selected-item">
+            <svg class="drop-down-icon" xlmns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24" height="24" <path fill="non"
+          </div>
           <div class="dropdown-popover">
             <input
               v-model="searchQuery"
