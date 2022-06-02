@@ -14,6 +14,7 @@ const ToggleMenu = () => {
     <div class="top-elements">
       <button class="menu-icon" @click="ToggleMenu">
         <img src="../assets/svg/menu-icon.svg" alt="" class="menu" />
+        <img src="../assets/svg/close-icon.svg" alt="" class="close" />
         <h2 class="toggle-title">Menú</h2>
       </button>
     </div>
@@ -70,6 +71,10 @@ const ToggleMenu = () => {
 
         .menu {
           cursor: pointer;
+        }
+
+        .close {
+          display: none;
         }
 
         .toggle-title {
@@ -201,6 +206,35 @@ const ToggleMenu = () => {
             background-color: var(--primary);
             width: 2.5rem;
             cursor: pointer;
+            transition: 0.3s ease-in-out;
+            animation: fade1 0.5s linear;
+          }
+
+          .close {
+            display: none;
+            width: 2.5rem;
+            cursor: pointer;
+            animation: fade2 1s linear;
+          }
+
+          @keyframes fade1 {
+            0% {
+              opacity: 0;
+            }
+
+            100% {
+              opacity: 1;
+            }
+          }
+
+          @keyframes fade2 {
+            0% {
+              opacity: 0;
+            }
+
+            100% {
+              opacity: 1;
+            }
           }
 
           .toggle-title {
@@ -296,6 +330,18 @@ const ToggleMenu = () => {
             font-size: 1.5rem;
             transition: 0.3s ease-in-out;
             margin-left: 10px;
+          }
+
+          .menu {
+            display: none;
+          }
+
+          .close {
+            display: block;
+            width: 2rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
           }
         }
 

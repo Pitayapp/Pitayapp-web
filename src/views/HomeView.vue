@@ -353,7 +353,7 @@ body {
               font-size: 1.6rem;
             }
 
-            & img {
+            .logout-icon {
               display: none;
             }
           }
