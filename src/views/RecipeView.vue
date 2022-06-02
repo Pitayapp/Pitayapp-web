@@ -60,26 +60,32 @@ export default {
   <main v-if="recipe" class="recipe-view">
     <div class="container">
       <div class="left-container">
-        <div>
-          <h1 class="title">{{ recipe.title }}</h1>
+        <div class="title">
+          <h1>{{ recipe.title }}</h1>
           <span v-if="recipe.author"> por {{ recipe.author }}</span
           ><span v-else />
         </div>
         <img class="image" v-bind:src="recipe.image" :alt="[recipe.title]" />
         <h2>Tags</h2>
         <div class="tags">
-          <label v-for="item in recipe.tags" :key="item">
+          <label class="tags_label" v-for="item in recipe.tags" :key="item">
             {{ item }}
           </label>
         </div>
         <h2>Ingredientes</h2>
         <div class="ingredients">
-          <label v-for="item in recipe.ingredients" :key="item.name">
+          <label
+            class="ingredients_label"
+            v-for="item in recipe.ingredients"
+            :key="item.name"
+          >
             {{ item.name }}
           </label>
         </div>
         <h2>Preparación</h2>
-        <p>{{ recipe.steps }}</p>
+        <div class="pasos">
+          <p>{{ recipe.steps }}</p>
+        </div>
       </div>
       <div class="right-container">
         <h1>Más recetas</h1>
@@ -121,8 +127,129 @@ export default {
   transition: all 0.4s ease-out;
 }
 </style>
+
 <style lang="scss" scoped>
 // TODO: Falta añadir la vista para el móvil
+@media (max-width: 800px) {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+
+    .recipe-view {
+      width: 100vw;
+      height: 100%;
+    }
+
+    & .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      padding: 8% 5% 8% 5%;
+      justify-content: flex-start;
+      gap: 1.5rem;
+
+      .left-container {
+        margin: 1rem 0 6rem 0;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+
+        & .title {
+          display: flex;
+          justify-content: center;
+
+          & h1 {
+            font-size: 2rem;
+            text-align: center;
+          }
+
+          & span {
+            display: none;
+          }
+        }
+        & h2 {
+          margin-top: 0.8rem;
+          margin-bottom: 0.5rem;
+
+          & .image {
+            width: 95%;
+            display: flex;
+            justify-content: center;
+            margin-left: 0.5rem;
+            margin-top: 0.5rem;
+            object-fit: cover;
+            height: 90%;
+            border-radius: 20px;
+          }
+        }
+        & .tags {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          & label {
+            font-size: 1rem;
+            background: #f9458e;
+            color: #ffffff;
+          }
+
+          & .tags_label {
+            margin: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            padding: 0.8rem 1.2rem;
+            width: fit-content;
+            height: 1.2rem;
+            font-weight: 500;
+            font-size: 0.8rem;
+          }
+        }
+
+        & .ingredients {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          & .ingredients_label {
+            margin: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            padding: 0.8rem 1.2rem;
+            width: fit-content;
+            height: 1.2rem;
+            font-weight: 500;
+            font-size: 0.8rem;
+          }
+
+          & label {
+            background: #ffffff;
+            color: gray;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
+          }
+        }
+
+        & .pasos {
+          margin-bottom: 10rem;
+          box-sizing: content-box;
+          text-align: justify;
+        }
+      }
+      & .right-container {
+        display: none;
+      }
+    }
+  }
+}
 
 @media (min-width: 800px) {
   body {
@@ -160,11 +287,7 @@ export default {
             align-items: center;
 
             & span {
-              color: #979797;
-              font-weight: 700;
-              font-size: 1.2rem;
-              margin-left: 20px;
-              margin-top: 5px;
+              display: none;
             }
           }
 

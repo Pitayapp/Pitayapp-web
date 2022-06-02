@@ -11,7 +11,7 @@ export default {
 
   data() {
     return {
-      username: "Antonio",
+      username: "",
       mostPopular: [
         {
           id: "/recipes/9",
@@ -55,7 +55,7 @@ import { Icon } from "@iconify/vue";
             />
             Hola {{ username }}!
           </p>
-          <img src="../assets/svg/bell.svg" alt="" />
+          <img src="../assets/svg/logout-icon.svg" alt="" class="logout-icon" />
         </div>
         <SearcherBar class="searcher-comp mobile" />
       </div>
@@ -187,9 +187,12 @@ body {
             padding: 0rem 0.1rem;
           }
 
-          & img {
+          .logout-icon {
             background-color: transparent;
             cursor: pointer;
+            height: 1.2rem;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+              saturate(6795%) hue-rotate(235deg) brightness(121%) contrast(100%);
           }
         }
 
@@ -368,7 +371,7 @@ body {
               font-size: 1.6rem;
             }
 
-            & img {
+            .logout-icon {
               display: none;
             }
           }
