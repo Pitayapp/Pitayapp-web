@@ -1,7 +1,7 @@
 <script setup>
-import SearcherBar from '@/components/SearcherBar.vue'
+import { RouterLink } from "vue-router";
+import SearcherBar from "@/components/SearcherBar.vue";
 </script>
-
 
 <template>
   <main class="discover-view">
@@ -14,25 +14,61 @@ import SearcherBar from '@/components/SearcherBar.vue'
         </div>
       </div>
       <div class="grid-discover">
-        <div class="cattegories one"><img src="../assets/img/smoothies.png" alt="" class="discover-img"> Smoothies
-        </div>
-        <div class="cattegories two"><img src="../assets/img/bowl-de-frutas.png" alt="" class="discover-img"> Postres
-        </div>
-        <div class="cattegories three"><img src="../assets/img/sopa-veg.png" alt="" class="discover-img">Cremas y
-          sopas
-        </div>
-        <div class="cattegories four"><img src="../assets/img/al-horno-pitayapp.png" alt="" class="discover-img">Pastas
-        </div>
-        <div class="cattegories2 five"><img src="../assets/img/salad-pitayapp.png" alt="" class="discover-img2">Veganas
-        </div>
-        <div class="cattegories3 six"><img src="../assets/img/vegan-burger.png" alt="" class="discover-img3">
+        <RouterLink to="/discover/smoothies" class="cattegories one"
+          ><img src="../assets/img/smoothies.png" alt="" class="discover-img" />
+          Smoothies
+        </RouterLink>
+        <RouterLink to="/discover/postres" class="cattegories two"
+          ><img
+            src="../assets/img/bowl-de-frutas.png"
+            alt=""
+            class="discover-img"
+          />
+          Postres
+        </RouterLink>
+        <RouterLink to="/discover/cremas-y-sopas" class="cattegories three"
+          ><img
+            src="../assets/img/sopa-veg.png"
+            alt=""
+            class="discover-img"
+          />Cremas y sopas
+        </RouterLink>
+        <RouterLink to="/discover/pastas" class="cattegories four"
+          ><img
+            src="../assets/img/al-horno-pitayapp.png"
+            alt=""
+            class="discover-img"
+          />Pastas
+        </RouterLink>
+        <RouterLink to="/discover/veganas" class="cattegories2 five"
+          ><img
+            src="../assets/img/salad-pitayapp.png"
+            alt=""
+            class="discover-img2"
+          />Veganas
+        </RouterLink>
+        <RouterLink to="/discover/vegan-fast-food" class="cattegories3 six"
+          ><img
+            src="../assets/img/vegan-burger.png"
+            alt=""
+            class="discover-img3"
+          />
           <div class="fastfood-text">
             <h3>Vegan Fast Food</h3>
-            <p>¡Prepara tus recetas favoritas y disfruta los viernes por la noche!</p>
+            <p>
+              ¡Prepara tus recetas favoritas y disfruta los viernes por la
+              noche!
+            </p>
           </div>
-        </div>
-        <div class="cattegories2 seven"><img src="../assets/img/pasta-pitayapp.png" alt="" class="discover-img2">
-          vegetarianas</div>
+        </RouterLink>
+        <RouterLink to="/discover/vegetarianas" class="cattegories2 seven"
+          ><img
+            src="../assets/img/pasta-pitayapp.png"
+            alt=""
+            class="discover-img2"
+          />
+          Vegetarianas
+        </RouterLink>
       </div>
     </div>
   </main>
@@ -49,11 +85,9 @@ import SearcherBar from '@/components/SearcherBar.vue'
     transition: 0.5s ease-in-out;
 
     .discover-view {
-
       width: 100vw;
       height: 100vh;
       box-sizing: border-box;
-
 
       & .container {
         display: flex;
@@ -62,7 +96,7 @@ import SearcherBar from '@/components/SearcherBar.vue'
         width: 100vw;
 
         .top-discover {
-          background-color: #F9458E;
+          background-color: #f9458e;
           color: white;
           width: 100%;
           height: 15%;
@@ -91,11 +125,9 @@ import SearcherBar from '@/components/SearcherBar.vue'
               margin-bottom: 0.5rem;
             }
 
-
             & .searcher-comp {
               width: 100%;
               height: 100%;
-
 
               & .searcher {
                 & button {
@@ -117,8 +149,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
           width: 100%;
           height: 80%;
 
-
-
           .cattegories {
             align-self: center;
             background-color: var(--secondary);
@@ -130,6 +160,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
             height: 80%;
             font-size: 1rem;
             font-weight: 700;
+            text-decoration: none;
+            color: #282828;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
             .discover-img {
@@ -148,6 +180,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
             justify-content: center;
             font-size: 1rem;
             font-weight: 700;
+            text-decoration: none;
+            color: #282828;
             cursor: pointer;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
@@ -165,6 +199,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
             align-items: center;
             justify-content: space-around;
             cursor: pointer;
+            text-decoration: none;
+            color: #282828;
             padding: 10%;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
 
@@ -174,7 +210,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
             }
 
             .fastfood-text {
-
               display: flex;
               flex-direction: column;
               margin-left: 30px;
@@ -191,7 +226,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 margin-top: 10px;
               }
             }
-
           }
         }
 
@@ -216,7 +250,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
         }
 
         .six {
-
           grid-area: 3 / 1 / 5 / 3;
         }
 
@@ -294,11 +327,9 @@ import SearcherBar from '@/components/SearcherBar.vue'
               margin-bottom: 0;
             }
 
-
             & .searcher-comp {
               width: 100%;
               height: 70%;
-
 
               & .searcher {
                 & button {
@@ -306,7 +337,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 }
               }
             }
-
           }
         }
 
@@ -319,8 +349,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
           margin: 1rem;
           width: 95%;
           height: 90%;
-
-
 
           .cattegories {
             align-self: center;
@@ -379,7 +407,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
             }
 
             .fastfood-text {
-
               display: flex;
               flex-direction: column;
               margin-left: 30px;
@@ -396,7 +423,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
                 margin-top: 10px;
               }
             }
-
           }
 
           .one {
@@ -417,7 +443,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
 
           .five {
             grid-area: 3 / 1 / 5 / 2;
-
           }
 
           .six {
@@ -428,7 +453,6 @@ import SearcherBar from '@/components/SearcherBar.vue'
             grid-area: 3 / 4 / 5 / 5;
           }
         }
-
       }
     }
   }

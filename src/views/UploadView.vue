@@ -38,6 +38,8 @@ export default {
     };
   },
   components: DropdownMenuVue,
+  LogIn,
+  LogIn1,
   methods: {
     onFileChange(e) {
       const file = e.target.files[0];
@@ -45,7 +47,6 @@ export default {
       this.url = URL.createObjectURL(file);
     },
   },
-  components: { LogIn, LogIn1 },
 };
 </script>
 
