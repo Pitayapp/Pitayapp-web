@@ -156,6 +156,7 @@ body {
         border-radius: 15px;
         border: none;
         height: 1.5rem;
+        cursor: pointer;
       }
     }
 
@@ -242,6 +243,7 @@ body {
           border-radius: 30px;
           border: none;
           height: 2rem;
+          cursor: pointer;
         }
       }
     }
@@ -443,6 +445,7 @@ body {
               height: 15rem;
               box-sizing: content-box;
               font-size: 1rem;
+              display: flex;
             }
 
             & textarea::placeholder {
@@ -457,12 +460,12 @@ body {
       }
 
       & .desktop-container {
-        margin-top: 6rem;
-        margin-left: 1.5rem;
+        /* margin-top: 6rem;
+        margin-left: 1.5rem; */
         width: 90%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
 
         & .upload-image {

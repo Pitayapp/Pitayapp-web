@@ -1,12 +1,27 @@
-<script>
+<script setup>
 /* borrar, copiar img a public (public/recipes) cambiar la ur
 linea 16, 19, 22 (url) -> poner la ruta con este formato: 
 "recipes/hamburguesa_lentejas_tofu.jpg"
 */
+import { ref } from "vue";
 import croquetasTofuImage from "../assets/recipes/croquetas_tofu.jpg";
 import hamburguesaLentejasImage from "../assets/recipes/hamburguesa_lentejas_tofu.jpg";
 import clafoutisFrambuesaImage from "../assets/recipes/clafoutis-frambuesa.jpg";
-export default {
+import { useUserStore } from "../stores/userStore";
+import { RouterLink } from "vue-router";
+import { Icon } from "@iconify/vue";
+import SearcherBar from "@/components/SearcherBar.vue";
+
+const userStore = useUserStore();
+
+/* const username = ref(""); */
+const mostPopular = ref([{id: "/recipes/9", title: "Croquetas de tofu", url: croquetasTofuImage}, {id: "/recipes/17", title: "Hamburguesa de lenteja y tofu", url: hamburguesaLentejasImage}, {id: "/recipes/31", title: "Clafoutis de frambuesa", url: clafoutisFrambuesaImage}]);
+
+const goOut = async () => {
+  userStore.logOut();
+};
+
+/* export default {
   name: "HomeView",
 
   data() {
@@ -31,12 +46,14 @@ export default {
       ],
     };
   },
-};
-</script>
 
-<script setup>
-import SearcherBar from "@/components/SearcherBar.vue";
-import { Icon } from "@iconify/vue";
+  methods: {
+    goOut() {
+      userStore.logOut();
+    }
+  }
+
+}; */
 </script>
 
 <template>
@@ -45,7 +62,7 @@ import { Icon } from "@iconify/vue";
       <div class="top-container">
         <div class="hello">
           <p>
-            <Icon
+            <Icon 
               icon="noto-v1:victory-hand"
               color="#f9458e"
               height="25"
@@ -55,7 +72,7 @@ import { Icon } from "@iconify/vue";
             />
             Hola Pitayapper <!-- {{ username }} -->!
           </p>
-          <img src="../assets/svg/logout-icon.svg" alt="" class="logout-icon" />
+          <a @click="goOut"><img src="../assets/svg/logout-icon.svg" alt="" class="logout-icon" /></a>
         </div>
         <SearcherBar class="searcher-comp mobile" />
       </div>
@@ -64,7 +81,8 @@ import { Icon } from "@iconify/vue";
           <div class="most-popular">
             <div class="most-popular-text">
               <h2>Más populares</h2>
-              <a href="">Ver más</a>
+              <RouterLink to="/discover" class="seeMore">Ver más</RouterLink>
+              <!-- <a href="">Ver más</a> -->
             </div>
             <div class="recipe-list">
               <div
@@ -128,8 +146,10 @@ import { Icon } from "@iconify/vue";
             </div>
           </div>
           <div class="buttons">
-            <button>Mis colecciones</button>
-            <button>Crear nueva receta</button>
+            <!-- <button>Mis colecciones</button> -->
+            <RouterLink to="/collections">Mis colecciones</RouterLink>
+            <RouterLink to="/upload">Crear nueva receta</RouterLink>
+            <!-- <button>Crear nueva receta</button> -->
           </div>
         </div>
       </div>
@@ -197,7 +217,7 @@ body {
         }
 
         .mobile {
-          height: 1.5rem;
+          height: 2rem;
         }
       }
 
@@ -219,11 +239,17 @@ body {
           justify-content: space-between;
           align-items: center;
 
-          & a {
-            color: gray;
-            font-size: 0.8rem;
+          a{
             text-decoration: none;
-            font-weight: bold;
+            background: #f9458e;
+            padding: 0.4rem;
+            border-radius: 0.5rem;
+            color: white;
+            transition: all 1s;
+          }
+          a:hover{
+            background: #b83268;
+            transition: all 1s;
           }
 
           &p {
@@ -266,6 +292,7 @@ body {
               border: none;
               height: 1.2rem;
               width: 2.5rem;
+              cursor: pointer;
             }
           }
         }
@@ -407,6 +434,18 @@ body {
                 margin-top: 0;
                 font-size: 0.8rem;
                 height: 20%;
+
+                a{
+                  background: #f9458e;
+                  padding: 0.5rem;
+                  border-radius: 0.5rem;
+                  color: white;
+                  transition: all 1s;
+                }
+                a:hover{
+                  background: #b83268;
+                  transition: all 1s;
+                }
               }
 
               & .recipe-list {
@@ -440,10 +479,16 @@ body {
                   & button {
                     background-color: #f9458e;
                     color: white;
-                    border-radius: 15px;
+                    border-radius: 0.6rem;
                     border: none;
                     height: 1.2rem;
                     width: 2.5rem;
+                    transition: all 1s;
+                  }
+
+                  button:hover{
+                    background: #b83268;
+                    transition: all 1s;
                   }
                 }
               }
@@ -471,6 +516,11 @@ body {
                     width: 90%;
                     text-align: center;
                     font-size: 100%;
+                  }
+
+                  & button {
+                    height: 2rem;
+                    width: 3.5rem;
                   }
                 }
               }
@@ -553,7 +603,7 @@ body {
               display: flex;
               justify-content: space-around;
 
-              & button {
+              & a {
                 width: 40%;
                 height: 100%;
                 background: #f9458e;
@@ -566,6 +616,10 @@ body {
                 font-size: 1rem;
                 color: white;
                 cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
               }
             }
           }

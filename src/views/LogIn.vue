@@ -170,6 +170,11 @@ main{
                         justify-content: center;
                         align-items: center;
                         margin: 0rem 0.4rem;
+                        transition: all 1s;
+                    }
+                    #register:hover{
+                        background: #663C11;
+                        transition: all 1s;
                     }
                 }
 
@@ -206,6 +211,12 @@ main{
                         align-items: center;
                         margin: 0rem 0.4rem;
                         cursor: pointer;
+                        transition: all 1s;
+                    }
+
+                    #loginAccess:hover{
+                        background: #b83268;
+                        transition: all 1s;
                     }
                 }
             }

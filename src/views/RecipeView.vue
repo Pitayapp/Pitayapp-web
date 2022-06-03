@@ -269,7 +269,12 @@ export default {
         display: grid;
         grid-template-columns: 60% 40%;
         row-gap: 50px;
-        padding: 6rem 0 0 6rem;
+        /* padding: 6rem 0 0 6rem; */
+        position: absolute;
+        top: 5.5rem;
+        left: 6.5rem;
+        width: 94%;
+        height: 90%;
         box-sizing: border-box;
 
         .left-container {
@@ -278,8 +283,9 @@ export default {
           display: flex;
           row-gap: 10px;
           flex-direction: column;
-          margin: 2rem 0 0 4rem;
-          padding: 0 6rem 0 0;
+          /* margin: 2rem 0 0 4rem; */
+          padding: 2rem;
+          justify-content: space-between;
           box-sizing: border-box;
 
           & div {
@@ -344,13 +350,19 @@ export default {
 
         & .right-container {
           width: 100%;
-          height: 80%;
+          height: 100%;
           display: flex;
           row-gap: 10px;
           flex-direction: column;
-          margin: 2rem 0 0 1rem;
-          padding: 0 6rem 0 0;
+          /* margin: 2rem 0 0 1rem;
+          padding: 0 6rem 0 0; */
+          justify-content: center;
+          align-items: center;
           box-sizing: border-box;
+
+          .card-container{
+            margin: 1rem;
+          }
 
           .buttons-submit {
             display: flex;
@@ -367,8 +379,10 @@ export default {
               color: var(--secondary);
               width: 200px;
               height: 40px;
+              transition: all 1s;
 
               &:hover {
+                transition: all 1s;
                 background: #b83268;
                 cursor: pointer;
               }

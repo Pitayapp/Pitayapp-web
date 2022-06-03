@@ -285,8 +285,8 @@ import SearcherBar from "@/components/SearcherBar.vue";
         flex-direction: column;
         height: 90%;
         width: 94%;
-        align-items: flex-start;
-        justify-content: center;
+        /* align-items: flex-start;
+        justify-content: center; */
         margin: 0;
         position: absolute;
         top: 5.5rem;
@@ -302,12 +302,12 @@ import SearcherBar from "@/components/SearcherBar.vue";
           padding: 0;
           color: #282828;
           width: 100%;
-          height: 8%;
+          height: 2rem;
           background-color: transparent;
 
           & .section-title {
-            height: 100%;
-            width: 95%;
+            height: 3rem;
+            width: 100%;
             margin-top: 0;
             display: flex;
             flex-direction: row;
@@ -343,12 +343,12 @@ import SearcherBar from "@/components/SearcherBar.vue";
         .grid-discover {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: repeat(4, 20%);
+          grid-template-rows: repeat(4, 1fr);
           grid-column-gap: 30px;
           grid-row-gap: 30px;
-          margin: 1rem;
-          width: 95%;
-          height: 90%;
+          margin-top: 1rem;
+          width: 100%;
+          height: 95%;
 
           .cattegories {
             align-self: center;

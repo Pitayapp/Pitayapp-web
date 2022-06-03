@@ -185,8 +185,13 @@ body {
         width: 100%;
         display: grid;
         grid-template-rows: 20% 80%;
-        padding: 6rem 0 0 6rem;
+        /* padding: 6rem 0 0 6rem; */
         box-sizing: border-box;
+        position: absolute;
+        top: 5.5rem;
+        left: 6.5rem;
+        width: 94%;
+        height: 89%;
 
         .top-container {
           width: 100%;
@@ -195,10 +200,10 @@ body {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          margin-left: 2rem;
+          /* margin-left: 2rem; */
           padding: 0;
           align-items: center;
-          padding: 0 6rem 0 0;
+          padding: 0rem 3rem;
           box-sizing: border-box;
 
           & .title {
