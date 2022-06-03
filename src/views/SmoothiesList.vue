@@ -107,13 +107,15 @@ import SearcherBar from "@/components/SearcherBar.vue";
           <div class="item">
             <div class="item-container">
               <img
-                src="../assets/img/paralospeques.jpg"
+                src="../assets/img/recipe-platano-frutosrojos-melocoton.webp"
                 alt=""
                 class="recipe-img"
               />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
+                <div class="box-title">
+                  Smoothie frutos rojos, melocotón y plátano
+                </div>
                 <div class="box-content">
                   Una descripción genérica o adelanto de la receta.
                 </div>
@@ -136,13 +138,13 @@ import SearcherBar from "@/components/SearcherBar.vue";
           <div class="item">
             <div class="item-container">
               <img
-                src="../assets/img/paralospeques.jpg"
+                src="../assets/img/receta-smoothie-fresa.jpg"
                 alt=""
                 class="recipe-img"
               />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
+                <div class="box-title">Smoothie de fresa</div>
                 <div class="box-content">
                   Una descripción genérica o adelanto de la receta.
                 </div>
@@ -165,17 +167,17 @@ import SearcherBar from "@/components/SearcherBar.vue";
           <div class="item">
             <div class="item-container">
               <img
-                src="../assets/img/paralospeques.jpg"
+                src="../assets/img/smoothie-de-avena-sin-azucar.jpg"
                 alt=""
                 class="recipe-img"
               />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
+                <div class="box-title">Smoothie de avena sin azúcar</div>
                 <div class="box-content">
                   Una descripción genérica o adelanto de la receta.
                 </div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
                   <img
                     src="../assets/svg/heart-like.svg"
@@ -194,17 +196,17 @@ import SearcherBar from "@/components/SearcherBar.vue";
           <div class="item">
             <div class="item-container">
               <img
-                src="../assets/img/paralospeques.jpg"
+                src="../assets/img/smoothie-naranja-fresa.jpg"
                 alt=""
                 class="recipe-img"
               />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
+                <div class="box-title">Smoothie de naranja y fresa</div>
                 <div class="box-content">
                   Una descripción genérica o adelanto de la receta.
                 </div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
                   <img
                     src="../assets/svg/heart-like.svg"
