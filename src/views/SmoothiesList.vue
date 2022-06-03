@@ -119,7 +119,7 @@ import SearcherBar from "@/components/SearcherBar.vue";
                 <div class="box-content">
                   Una descripción genérica o adelanto de la receta.
                 </div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
                   <img
                     src="../assets/svg/heart-like.svg"
@@ -148,7 +148,7 @@ import SearcherBar from "@/components/SearcherBar.vue";
                 <div class="box-content">
                   Una descripción genérica o adelanto de la receta.
                 </div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
                   <img
                     src="../assets/svg/heart-like.svg"
