@@ -1,5 +1,5 @@
 <script setup>
-import SearcherBar from '@/components/SearcherBar.vue'
+import SearcherBar from "@/components/SearcherBar.vue";
 </script>
 <template>
   <main class="recipe-list-view">
@@ -8,7 +8,8 @@ import SearcherBar from '@/components/SearcherBar.vue'
         <div class="top-discover">
           <div class="section-title">
             <h1>
-              <Router-Link to="/discover" class="h1-link">Descubre</Router-Link> > Smoothies
+              <Router-Link to="/discover" class="h1-link">Descubre</Router-Link>
+              > Smoothies
             </h1>
             <SearcherBar class="searcher-comp" />
           </div>
@@ -16,105 +17,207 @@ import SearcherBar from '@/components/SearcherBar.vue'
         <div class="grid-recipe-list">
           <div class="item">
             <div class="item-container">
-              <img src="../assets/img/paralospeques.jpg" alt="" class="recipe-img">
+              <img
+                src="../assets/img/smoothie-sandia.jpg"
+                alt=""
+                class="recipe-img"
+              />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
-                <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="box-title">Smoothie de sandia y melón</div>
+                <div class="box-content">
+                  Una descripción genérica o adelanto de la receta.
+                </div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
-                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
+                  <img
+                    src="../assets/svg/heart-like.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
+                  <img
+                    src="../assets/svg/save-recipe.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="item-container">
-              <img src="../assets/img/paralospeques.jpg" alt="" class="recipe-img">
+              <img
+                src="../assets/img/smoothie-kiwi.jpeg"
+                alt=""
+                class="recipe-img"
+              />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
-                <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="box-title">Smoothie de kiwi</div>
+                <div class="box-content">
+                  Una descripción genérica o adelanto de la receta.
+                </div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
-                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
+                  <img
+                    src="../assets/svg/heart-like.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
+                  <img
+                    src="../assets/svg/save-recipe.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="item-container">
-              <img src="../assets/img/paralospeques.jpg" alt="" class="recipe-img">
+              <img
+                src="../assets/img/smotthie-moras-avena-yogurt.jpg"
+                alt=""
+                class="recipe-img"
+              />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
-                <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="box-title">
+                  Smoothie de moras y avena con yogurt
+                </div>
+                <div class="box-content">
+                  Una descripción genérica o adelanto de la receta.
+                </div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
-                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
+                  <img
+                    src="../assets/svg/heart-like.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
+                  <img
+                    src="../assets/svg/save-recipe.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="item-container">
-              <img src="../assets/img/paralospeques.jpg" alt="" class="recipe-img">
+              <img
+                src="../assets/img/recipe-platano-frutosrojos-melocoton.webp"
+                alt=""
+                class="recipe-img"
+              />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
-                <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="box-title">
+                  Smoothie frutos rojos, melocotón y plátano
+                </div>
+                <div class="box-content">
+                  Una descripción genérica o adelanto de la receta.
+                </div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
-                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
+                  <img
+                    src="../assets/svg/heart-like.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
+                  <img
+                    src="../assets/svg/save-recipe.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="item-container">
-              <img src="../assets/img/paralospeques.jpg" alt="" class="recipe-img">
+              <img
+                src="../assets/img/receta-smoothie-fresa.jpg"
+                alt=""
+                class="recipe-img"
+              />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
-                <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="box-title">Smoothie de fresa</div>
+                <div class="box-content">
+                  Una descripción genérica o adelanto de la receta.
+                </div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
-                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
+                  <img
+                    src="../assets/svg/heart-like.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
+                  <img
+                    src="../assets/svg/save-recipe.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="item-container">
-              <img src="../assets/img/paralospeques.jpg" alt="" class="recipe-img">
+              <img
+                src="../assets/img/smoothie-de-avena-sin-azucar.jpg"
+                alt=""
+                class="recipe-img"
+              />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
-                <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="box-title">Smoothie de avena sin azúcar</div>
+                <div class="box-content">
+                  Una descripción genérica o adelanto de la receta.
+                </div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
-                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
+                  <img
+                    src="../assets/svg/heart-like.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
+                  <img
+                    src="../assets/svg/save-recipe.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="item-container">
-              <img src="../assets/img/paralospeques.jpg" alt="" class="recipe-img">
+              <img
+                src="../assets/img/smoothie-naranja-fresa.jpg"
+                alt=""
+                class="recipe-img"
+              />
               <div class="text-box">
                 <div class="prep-time">15'</div>
-                <div class="box-title">NOMBRE DE RECETA</div>
-                <div class="box-content">Una descripción genérica o adelanto de la receta.</div>
-                <div class="upload-date">13-06-2022</div>
+                <div class="box-title">Smoothie de naranja y fresa</div>
+                <div class="box-content">
+                  Una descripción genérica o adelanto de la receta.
+                </div>
+                <div class="upload-date">03-06-2022</div>
                 <div class="list-icons">
-                  <img src="../assets/svg/heart-like.svg" alt="" class="reaction-icons">
-                  <img src="../assets/svg/save-recipe.svg" alt="" class="reaction-icons">
+                  <img
+                    src="../assets/svg/heart-like.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
+                  <img
+                    src="../assets/svg/save-recipe.svg"
+                    alt=""
+                    class="reaction-icons"
+                  />
                 </div>
               </div>
             </div>
@@ -145,7 +248,7 @@ main {
       width: 100vw;
 
       .top-discover {
-        background-color: #F9458E;
+        background-color: #f9458e;
         color: white;
         width: 100%;
         height: 15%;
@@ -228,7 +331,6 @@ main {
               justify-content: center;
               margin-left: 6%;
 
-
               .prep-time {
                 font-weight: 500;
                 font-size: 0.8rem;
@@ -261,14 +363,11 @@ main {
       }
     }
   }
-
 }
 
 @media (min-width: 800px) {
   main {
-
     .recipe-list {
-
       .container {
         display: flex;
         flex-direction: column;
@@ -319,14 +418,16 @@ main {
             .searcher-comp {
               width: 100%;
               height: 80%;
-
             }
           }
         }
 
         .grid-recipe-list {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(min(100%, 100%), 1fr));
+          grid-template-columns: repeat(
+            auto-fill,
+            minmax(min(100%, 100%), 1fr)
+          );
           grid-template-rows: repeat(auto-fill, minmax(min(8, 100%), 1fr));
           gap: 25px;
           box-sizing: border-box;
@@ -356,6 +457,7 @@ main {
                 height: 80%;
                 width: 15%;
                 border-radius: 15%;
+                display: flex;
               }
 
               .text-box {
@@ -365,7 +467,6 @@ main {
                 align-items: center;
                 margin-left: 0;
                 width: 70%;
-
 
                 .prep-time {
                   font-weight: 500;
@@ -410,7 +511,6 @@ main {
           }
         }
       }
-
     }
   }
 }
