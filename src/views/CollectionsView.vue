@@ -84,6 +84,7 @@ body {
       width: 100%;
       display: flex;
       flex-direction: column;
+
       & .top-container {
         background-color: #f9458e;
         color: white;
@@ -102,6 +103,7 @@ body {
           font-weight: bold;
           font-size: 1.2rem;
         }
+
         & .searcher {
           height: 1.5rem;
         }
@@ -111,6 +113,7 @@ body {
         width: 100%;
         height: 80%;
         display: grid;
+
         & .collections {
           display: grid;
           grid-template-columns: 50% 50%;
@@ -126,38 +129,44 @@ body {
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
             border-radius: 15px;
           }
+
           .one {
-            background-image: url("../assets/img/receta1.jpg");
+            background-image: url("../assets/img/receta1-compressed.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
           }
+
           .two {
-            background-image: url("../assets/img/receta2-min.jpg");
+            background-image: url("../assets/img/receta2-compressed.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
           }
+
           .three {
-            background-image: url("../assets/img/receta3.jpg");
+            background-image: url("../assets/img/receta3-compressed.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
           }
+
           .four {
-            background-image: url("../assets/img/receta4.jpg");
+            background-image: url("../assets/img/receta4-compressed.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
           }
+
           .five {
-            background-image: url("../assets/img/receta5.jpg");
+            background-image: url("../assets/img/receta5-compressed.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
           }
+
           .six {
-            background-image: url("../assets/img/receta6.jpg");
+            background-image: url("../assets/img/receta6-compressed.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -217,6 +226,7 @@ body {
             justify-content: center;
             color: black;
           }
+
           & .searcher {
             width: 40rem;
             height: 2.5rem;
