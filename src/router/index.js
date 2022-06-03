@@ -50,7 +50,7 @@ const router = createRouter({
       meta: { requiresSideBar: true, requiresHeader: true },
     },
     {
-      path: '/discover/:smoothies',
+      path: '/discover/smoothies',
       name: 'smoothies',
       component: SmoothiesList,
       meta: { requiresSideBar: true, requiresHeader: true }
