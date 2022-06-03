@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import DiscoverView from '@/views/DiscoverView.vue'
 import UploadView from '@/views/UploadView.vue'
@@ -55,37 +55,37 @@ const router = createRouter({
       component: SmoothiesList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
-            {
+    {
       path: '/discover/postres',
       name: 'postres',
       component: PostresList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
-            {
+    {
       path: '/discover/cremas-y-sopas',
       name: 'cremas-y-sopas',
       component: CremasSopasList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
-            {
+    {
       path: '/discover/pastas',
       name: 'pastas',
       component: PastasList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
-                {
+    {
       path: '/discover/veganas',
       name: 'veganas',
       component: VegansList,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
-                {
+    {
       path: '/discover/vegan-fast-food',
       name: 'vegan-fast-food',
       component: VeganFastFood,
       meta: { requiresSideBar: true, requiresHeader: true }
     },
-                    {
+    {
       path: '/discover/vegetarianas',
       name: 'vegetarianas',
       component: VegetarianList,

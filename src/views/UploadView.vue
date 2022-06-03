@@ -1,85 +1,39 @@
-<script>
-import DropdownMenuVue from "../components/DropdownMenu.vue";
-import LogIn from "./LogIn.vue";
-import LogIn1 from "./LogIn.vue";
+<script setup>
+import { ref } from 'vue';
+/* import { useRecipeStore } from '../stores/recipesStore'; */
 
-export default {
-  name: "UploadView",
-  data() {
-    return {
-      searchQuery: "",
-      selectedItem: null,
-      isVisible: false,
-      url: null,
-      username: "nombreusuario",
-      categories: [
-        {
-          name: "Vegana",
-        },
-        {
-          name: "Smoothie",
-        },
-        {
-          name: "Cremas/sopas",
-        },
-        {
-          name: "Pastas",
-        },
-        {
-          name: "Postres",
-        },
-        {
-          name: "Fast food",
-        },
-        {
-          name: "Vegetariana",
-        },
-      ],
-    };
-  },
-  components: DropdownMenuVue,
-  LogIn,
-  LogIn1,
-  methods: {
-    onFileChange(e) {
-      const file = e.target.files[0];
-      console.log(file);
-      this.url = URL.createObjectURL(file);
-    },
-  },
-};
+const recipeForm = ref({});
+/* const recipeStore = useRecipeStore(); */
+
+const url = ref(null);
+/* const username = ref('nombreusuario'); */
+const categories = ref([{name:'Vegana'}, {name: 'Smoothie'},{name: 'Cremas/sopas'},{name: 'Pastas'},{name: 'Postres'},{name: 'Fast food'},{name: 'Vegetariana'}]);
+
+const onFileChange = (e) => {
+  const file = e.target.files[0];
+    console.log(file);
+    this.url = URL.createObjectURL(file);
+}
+
 </script>
 
 
 
 <template>
-  <main class="upload-view">
+  <form class="upload-view" @submit.prevent="create">
     <div class="top-container">
       <div class="title">
         <h1>Sube tu receta</h1>
       </div>
       <div class="input-recipe-textbox">
-        <input
-          type="text"
-          placeholder="    Nombre de tu receta"
-          class="name-input-bar"
-        />
+        <input type="text" placeholder="    Nombre de tu receta" class="name-input-bar" v-model="recipeForm.title" />
       </div>
       <div class="image">
         <h4>Imágenes</h4>
         <div class="upload-image">
-          <input
-            type="file"
-            name="imagen"
-            class="input-file"
-            @change="onFileChange"
-          />
+          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
           <div id="preview">
-            <img
-              v-if="url == null"
-              src="../assets/svg/imageupload.svg"
-              alt=""
-            />
+            <img v-if="url == null" src="../assets/svg/imageupload.svg" alt="" />
             <img v-if="url" :src="url" />
           </div>
           <p v-if="url == null">
@@ -88,35 +42,8 @@ export default {
         </div>
       </div>
       <div class="categories">
-        <h2>Categorías</h2>
-        <div class="dropdown-wrapper">
-          <div @click="isVisible = !isVisible" class="selected-item">
-            <div class="dropdown-popover">
-              <input
-                v-model="searchQuery"
-                type="text"
-                placeholder="Search for category"
-              />
-              <div class="options">
-                <ul>
-                  <li>Vegana</li>
-                  <li>Smoothie</li>
-                  <li>Cremas y sopas</li>
-                  <li>Pastas</li>
-                  <li>Postres</li>
-                  <li>Fast food</li>
-                  <li>Vegetariana</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- <div
-          v-for="(category, i) in categories"
-          :key="i"
-          class="categories-recipes"
-        >
+        <div v-for="(category, i) in categories" :key="i" class="categories-recipes">
           <button class="title">{{ category.name }}</button>
-        </div> -->
         </div>
       </div>
       <div class="ingredients">
@@ -130,20 +57,15 @@ export default {
       <div class="time">
         <h4>Tiempo de preparación</h4>
         <div class="time-set">
-          <input type="number" id="number" value="10" min="10" max="120" />
+          <input type="number" v-model="recipeForm.time"/> <!-- type="number" id="number" value="10" min="10" max="120" -->
         </div>
       </div>
       <div class="preparation">
         <h4>Descripción</h4>
         <div class="steps-preparation">
           <!-- Aqui falta ver como meter el {{message}} https://es.vuejs.org/v2/guide/forms.html -->
-          <textarea
-            class="boxtext"
-            v-model="preparationSteps"
-            placeholder="Escribe aquí tu receta"
-            rows="10"
-            columns="5"
-          ></textarea>
+          <textarea class="boxtext" v-model="preparationSteps" placeholder="Escribe aquí tu receta" rows="10"
+            columns="5"></textarea>
         </div>
       </div>
       <div class="upload">
@@ -153,18 +75,9 @@ export default {
     <div class="desktop-container">
       <div class="image">
         <div class="upload-image">
-          <input
-            type="file"
-            name="imagen"
-            class="input-file"
-            @change="onFileChange"
-          />
+          <input type="file" name="imagen" class="input-file" @change="onFileChange" />
           <div id="preview">
-            <img
-              v-if="url == null"
-              src="../assets/svg/imageuploadbig.svg"
-              alt=""
-            />
+            <img v-if="url == null" src="../assets/svg/imageuploadbig.svg" alt="" />
             <img v-if="url" :src="url" />
             <p v-if="url == null">
               Pincha en el recuadro para agregar una imagen
@@ -176,10 +89,8 @@ export default {
         <button class="upload-button">Subir receta</button>
       </div>
     </div>
-  </main>
+  </form>
 </template>
-
-
 
 <style lang="scss" scoped>
 body {
@@ -215,10 +126,11 @@ body {
 
         .name-input-bar {
           width: 100%;
-          height: 1.5rem;
+          height: 2.5rem;
           border-radius: 15px;
           border: 0;
           background-color: white;
+          text-indent: 1rem;
         }
 
         & input::placeholder {
@@ -228,41 +140,23 @@ body {
     }
 
     & .categories {
-      margin-top: 2rem;
+      margin-top: 1rem;
       display: grid;
       grid-template-columns: 33% 33% 33%;
-      grid-row-gap: 1rem;
+      grid-row-gap: 0.5rem;
       border-radius: 30px;
       font-size: 1rem;
       place-items: center;
 
-      & .dropdown-popover {
-        display: flex;
-      }
-
-      & input {
-        background-color: #ffffff;
+      & button {
+        background-color: #f9458e;
         color: white;
-        width: 8rem;
+        width: 6rem;
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.28);
         border-radius: 15px;
         border: none;
-        height: 2rem;
-      }
-
-      & .options {
-        width: 100%;
-
-        & ul {
-          list-style: none;
-          text-align: left;
-          overflow-y: scroll;
-          overflow-x: hidden;
-        }
-        & li {
-          width: 100%;
-          cursor: pointer;
-        }
+        height: 1.5rem;
+        cursor: pointer;
       }
     }
 
@@ -338,7 +232,7 @@ body {
           border-radius: 20px;
           border: none;
           font-size: 0.8rem;
-          text-indent: 20px;
+          text-indent: 1rem;
         }
 
         & button {
@@ -349,12 +243,13 @@ body {
           border-radius: 30px;
           border: none;
           height: 2rem;
+          cursor: pointer;
         }
       }
     }
 
     & .time {
-      margin-top: 1.5rem;
+      /* margin-top: 1.5rem; */
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -370,7 +265,8 @@ body {
         justify-content: end;
 
         & input {
-          text-indent: 15px;
+          /* text-indent: 1rem; */
+          text-align: center;
           width: 80%;
           height: 2rem;
           display: flex;
@@ -445,11 +341,15 @@ body {
       margin-bottom: 0;
       display: grid;
       grid-template-columns: 60% 40%;
-      padding: 6rem 0 0 6rem;
+      position: absolute;
+      top: 5.5rem;
+      left: 6.5rem;
+      width: 94%;
+      height: 90%;
       box-sizing: border-box;
 
       & .top-container {
-        padding: 2% 4% 2% 4%;
+        padding: 2rem;
         box-sizing: border-box;
         width: 100%;
 
@@ -462,8 +362,8 @@ body {
         }
 
         & .categories {
-          margin-top: 2rem;
-          margin-bottom: 1.5rem;
+          /* margin-top: 2rem;
+          margin-bottom: 1.5rem; */
 
           & button {
             width: 8rem;
@@ -514,8 +414,8 @@ body {
         & .time {
           width: 90%;
           height: 3rem;
-          margin-bottom: 1.5rem;
-          margin-top: 2rem;
+          /* margin-bottom: 1.5rem;
+          margin-top: 2rem; */
           font-size: 1.5rem;
           display: flex;
           justify-content: space-between;
@@ -531,7 +431,7 @@ body {
         }
 
         & .preparation {
-          margin-top: 2.5rem;
+          /* margin-top: 2.5rem; */
 
           & h4 {
             font-size: 1.5rem;
@@ -540,11 +440,12 @@ body {
 
           & .steps-preparation {
             & textarea {
-              padding: 15px 15px 15px 15px;
+              /* padding: 15px 15px 15px 15px; */
               width: 100%;
               height: 15rem;
               box-sizing: content-box;
               font-size: 1rem;
+              display: flex;
             }
 
             & textarea::placeholder {
@@ -559,12 +460,12 @@ body {
       }
 
       & .desktop-container {
-        margin-top: 6rem;
-        margin-left: 1.5rem;
+        /* margin-top: 6rem;
+        margin-left: 1.5rem; */
         width: 90%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
 
         & .upload-image {

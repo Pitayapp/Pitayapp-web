@@ -4,7 +4,7 @@
     import FooterLoginRegister from "../components/FooterLoginRegister.vue";
     import SliderLoginRegister from "../components/SliderLoginRegister.vue";
     import IsotypePitayapp from "../components/IsotypePitayapp.vue";
-    import { Icon } from '@iconify/vue';
+    /* import { Icon } from '@iconify/vue'; */
     import { useUserStore } from "../stores/userStore";
 
     const loginUserForm = ref({});
@@ -14,9 +14,9 @@
         userStore.loginUser(loginUserForm.value);
     }
 
-    const google = async () => {
+    /* const google = async () => {
         userStore.enterWithGoogle();
-    }
+    } */
 
 
 </script>
@@ -37,7 +37,7 @@
                 <form @submit.prevent="login">
                     <div class="alterMethods">
                         <RouterLink id="login" to="/login">Iniciar Sesión</RouterLink>
-                        <RouterLink id="register" to="/register">Regístrate</RouterLink>
+                        <RouterLink id="register" to="/register">Registrarte</RouterLink>
                     </div>  
                     <input type="email" placeholder="Correo" v-model="loginUserForm.email" required>
                     <input type="password" placeholder="Contraseña" v-model="loginUserForm.password" required>
@@ -46,10 +46,10 @@
                         <button id="loginAccess"><p>Acceder</p></button>
                     </div>
                 </form>
-                <a id="accessGoogle" @click="google">
+                <!-- <a id="accessGoogle" @click="google">
                     <p>Iniciar sesión con Google</p>
                     <Icon icon="ant-design:google-outlined" />
-                </a>
+                </a> -->
                 <RouterView></RouterView>
             </article>
             <FooterLoginRegister />
@@ -170,6 +170,11 @@ main{
                         justify-content: center;
                         align-items: center;
                         margin: 0rem 0.4rem;
+                        transition: all 1s;
+                    }
+                    #register:hover{
+                        background: #663C11;
+                        transition: all 1s;
                     }
                 }
 
@@ -206,6 +211,12 @@ main{
                         align-items: center;
                         margin: 0rem 0.4rem;
                         cursor: pointer;
+                        transition: all 1s;
+                    }
+
+                    #loginAccess:hover{
+                        background: #b83268;
+                        transition: all 1s;
                     }
                 }
             }
